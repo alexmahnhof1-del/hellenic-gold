@@ -1,0 +1,2301 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="description" content="Hellenic Gold – Premium Extra Virgin Olivenöl direkt aus Griechenland. Einmal im Jahr handgeerntet. Reich an Antioxidantien und Polyphenolen. Jetzt kaufen."/>
+<meta name="keywords" content="griechisches Olivenöl kaufen, Olivenöl Gesundheit, Premium Olivenöl Griechenland, Extra Virgin Olivenöl, Olivenöl Antioxidantien"/>
+<title>Hellenic Gold – Premium Olivenöl aus Griechenland</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet"/>
+<style>
+/* ═══════════════════════════════════
+   CSS VARIABLES & RESET
+═══════════════════════════════════ */
+:root{
+  --green:        #3B5828;
+  --green-mid:    #4E7239;
+  --green-light:  #6A9455;
+  --green-pale:   #EDF2E7;
+  --gold:         #C8A24A;
+  --gold-light:   #E6D08E;
+  --gold-pale:    #FAF4E2;
+  --terra:        #B8714E;
+  --terra-light:  #D4956F;
+  --cream:        #F8F3EB;
+  --cream-dark:   #EDE4D2;
+  --warm-white:   #FDFAF5;
+  --text:         #1E1E1E;
+  --text-mid:     #4A4A4A;
+  --text-light:   #7A7A7A;
+  --border:       #DDD6C8;
+  --shadow:       rgba(40,40,20,.10);
+  --shadow-lg:    rgba(40,40,20,.16);
+}
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;font-size:18px;}
+body{
+  font-family:'Inter',sans-serif;
+  font-size:1rem;
+  line-height:1.75;
+  color:var(--text);
+  background:var(--warm-white);
+  overflow-x:hidden;
+}
+img{display:block;max-width:100%;height:auto;}
+a{color:inherit;text-decoration:none;}
+button,input,select,textarea{font-family:inherit;font-size:inherit;}
+ul{list-style:none;}
+
+/* ═══════════════════════════════════
+   UTILITY
+═══════════════════════════════════ */
+.container{max-width:1200px;margin:0 auto;padding:0 32px;}
+.section-pad{padding:100px 0;}
+.text-center{text-align:center;}
+.text-left{text-align:left;}
+
+.label{
+  display:inline-block;
+  font-size:.7rem;
+  font-weight:700;
+  letter-spacing:3.5px;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:16px;
+}
+
+h1,h2,h3,h4{
+  font-family:'Playfair Display',serif;
+  line-height:1.2;
+  color:var(--green);
+}
+h1{font-size:clamp(2.4rem,5.5vw,4rem);font-weight:700;}
+h2{font-size:clamp(2rem,4vw,3rem);font-weight:600;}
+h3{font-size:clamp(1.3rem,2.5vw,1.75rem);font-weight:600;}
+h4{font-size:1.15rem;font-weight:600;}
+
+.divider{
+  width:48px;height:2px;
+  background:var(--gold);
+  margin:20px 0 32px;
+}
+.divider.center{margin-left:auto;margin-right:auto;}
+
+p{color:var(--text-mid);line-height:1.85;}
+p+p{margin-top:16px;}
+
+/* ═══════════════════════════════════
+   BUTTONS
+═══════════════════════════════════ */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  font-size:.88rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;
+  padding:17px 38px;border:none;cursor:pointer;
+  transition:all .25s ease;text-decoration:none;
+  white-space:nowrap;
+}
+.btn-primary{
+  background:var(--gold);color:var(--green);
+}
+.btn-primary:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 8px 24px rgba(200,162,74,.35);}
+
+.btn-outline{
+  background:transparent;color:var(--warm-white);
+  border:2px solid rgba(255,255,255,.65);
+}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px);}
+
+.btn-green{
+  background:var(--green);color:var(--warm-white);
+}
+.btn-green:hover{background:var(--green-mid);transform:translateY(-2px);box-shadow:0 8px 24px rgba(59,88,40,.3);}
+
+.btn-green-outline{
+  background:transparent;color:var(--green);
+  border:2px solid var(--green);
+}
+.btn-green-outline:hover{background:var(--green);color:var(--warm-white);}
+
+/* ═══════════════════════════════════
+   REVEAL ANIMATIONS
+═══════════════════════════════════ */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;}
+.reveal.up{opacity:1;transform:none;}
+.delay-1{transition-delay:.1s;}
+.delay-2{transition-delay:.2s;}
+.delay-3{transition-delay:.3s;}
+.delay-4{transition-delay:.4s;}
+.delay-5{transition-delay:.5s;}
+
+/* ═══════════════════════════════════
+   CART SIDEBAR
+═══════════════════════════════════ */
+.cart-overlay{
+  position:fixed;inset:0;background:rgba(0,0,0,.5);
+  z-index:2000;opacity:0;pointer-events:none;transition:opacity .3s;
+}
+.cart-overlay.open{opacity:1;pointer-events:all;}
+
+.cart-sidebar{
+  position:fixed;top:0;right:-420px;width:420px;max-width:100vw;
+  height:100%;background:var(--warm-white);z-index:2001;
+  display:flex;flex-direction:column;
+  box-shadow:-8px 0 40px rgba(0,0,0,.15);
+  transition:right .35s cubic-bezier(.25,.8,.25,1);
+}
+.cart-sidebar.open{right:0;}
+
+.cart-header{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:26px 30px;
+  border-bottom:1px solid var(--border);
+}
+.cart-header h4{color:var(--green);font-size:1.1rem;}
+.cart-close{
+  width:36px;height:36px;border:1px solid var(--border);background:none;
+  cursor:pointer;display:flex;align-items:center;justify-content:center;
+  font-size:1.1rem;transition:background .2s;
+}
+.cart-close:hover{background:var(--cream);}
+
+.cart-items{flex:1;overflow-y:auto;padding:20px 30px;}
+.cart-empty{text-align:center;padding:60px 0;color:var(--text-light);}
+.cart-empty span{font-size:3rem;display:block;margin-bottom:16px;}
+.cart-empty p{font-size:.9rem;}
+
+.cart-item{
+  display:flex;gap:16px;padding:16px 0;
+  border-bottom:1px solid var(--border);
+}
+.cart-item-img{
+  width:72px;height:88px;object-fit:cover;flex-shrink:0;border:1px solid var(--border);
+}
+.cart-item-info{flex:1;}
+.cart-item-name{font-weight:600;font-size:.9rem;color:var(--text);margin-bottom:4px;}
+.cart-item-price{font-size:.85rem;color:var(--gold);}
+.cart-item-remove{
+  background:none;border:none;color:var(--text-light);
+  cursor:pointer;font-size:.8rem;margin-top:6px;
+  text-decoration:underline;transition:color .2s;
+}
+.cart-item-remove:hover{color:var(--terra);}
+.cart-qty{
+  display:flex;align-items:center;gap:10px;margin-top:8px;
+}
+.qty-btn{
+  width:28px;height:28px;border:1px solid var(--border);background:none;
+  cursor:pointer;font-size:.9rem;display:flex;align-items:center;justify-content:center;
+  transition:background .2s;
+}
+.qty-btn:hover{background:var(--cream);}
+.qty-num{font-size:.88rem;font-weight:600;min-width:20px;text-align:center;}
+
+.cart-footer{
+  padding:24px 30px;
+  border-top:1px solid var(--border);
+  background:var(--cream);
+}
+.cart-total{
+  display:flex;justify-content:space-between;
+  font-weight:600;font-size:1.05rem;color:var(--green);
+  margin-bottom:18px;
+}
+.cart-footer .btn{width:100%;justify-content:center;}
+
+/* ═══════════════════════════════════
+   NAVIGATION
+═══════════════════════════════════ */
+#nav{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  padding:18px 0;
+  transition:background .35s ease,padding .35s ease,box-shadow .35s ease;
+}
+#nav.scrolled{
+  background:rgba(248,243,235,.97);
+  padding:12px 0;
+  box-shadow:0 2px 20px var(--shadow);
+}
+
+.nav-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  max-width:1300px;margin:0 auto;padding:0 36px;
+}
+
+.nav-logo{
+  font-family:'Playfair Display',serif;
+  font-size:1.45rem;font-weight:700;
+  color:var(--warm-white);
+  letter-spacing:.5px;
+  transition:color .3s;
+}
+.nav-logo span{color:var(--gold);}
+#nav.scrolled .nav-logo{color:var(--green);}
+
+.nav-badge{
+  background:var(--gold);color:var(--green);
+  font-size:.58rem;font-weight:700;letter-spacing:1.5px;
+  text-transform:uppercase;padding:4px 10px;
+  border-radius:20px;white-space:nowrap;
+  display:none;
+}
+#nav.scrolled .nav-badge{display:inline-block;}
+
+.nav-links{
+  display:flex;align-items:center;gap:28px;
+}
+.nav-links a{
+  font-size:.8rem;font-weight:500;letter-spacing:.5px;
+  color:rgba(255,255,255,.85);
+  transition:color .25s;position:relative;
+}
+.nav-links a::after{
+  content:'';position:absolute;bottom:-3px;left:0;
+  width:0;height:1px;background:var(--gold);
+  transition:width .25s;
+}
+.nav-links a:hover::after{width:100%;}
+.nav-links a:hover{color:var(--gold);}
+#nav.scrolled .nav-links a{color:var(--text-mid);}
+#nav.scrolled .nav-links a:hover{color:var(--green);}
+
+.nav-right{
+  display:flex;align-items:center;gap:16px;
+}
+.nav-cart-btn{
+  background:var(--gold);color:var(--green);
+  border:none;cursor:pointer;
+  display:flex;align-items:center;gap:7px;
+  padding:11px 20px;
+  font-size:.78rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
+  transition:background .25s;
+  position:relative;
+}
+.nav-cart-btn:hover{background:var(--gold-light);}
+.cart-count{
+  background:var(--green);color:#fff;
+  width:20px;height:20px;border-radius:50%;
+  font-size:.65rem;font-weight:700;
+  display:flex;align-items:center;justify-content:center;
+}
+
+.hamburger{
+  display:none;flex-direction:column;gap:5px;
+  cursor:pointer;background:none;border:none;padding:6px;
+}
+.hamburger span{
+  width:26px;height:2px;background:var(--warm-white);
+  display:block;transition:all .3s;
+}
+#nav.scrolled .hamburger span{background:var(--green);}
+
+/* Mobile nav drawer */
+.mobile-nav{
+  position:fixed;top:0;left:-100%;width:85%;max-width:320px;
+  height:100%;background:var(--cream);z-index:1500;
+  padding:90px 36px 40px;
+  display:flex;flex-direction:column;gap:8px;
+  box-shadow:4px 0 30px rgba(0,0,0,.15);
+  transition:left .35s cubic-bezier(.25,.8,.25,1);
+}
+.mobile-nav.open{left:0;}
+.mobile-nav a{
+  font-size:1rem;font-weight:500;color:var(--text-mid);
+  padding:13px 0;border-bottom:1px solid var(--border);
+  transition:color .2s;
+}
+.mobile-nav a:hover{color:var(--green);}
+.mobile-overlay{
+  position:fixed;inset:0;background:rgba(0,0,0,.4);
+  z-index:1400;display:none;
+}
+.mobile-overlay.open{display:block;}
+
+/* ═══════════════════════════════════
+   HERO
+═══════════════════════════════════ */
+.hero{
+  position:relative;min-height:100vh;
+  display:flex;align-items:center;justify-content:center;
+  overflow:hidden;
+  background:var(--green);
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background-color:var(--green);
+  background-image:url('https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=1920&q=85&auto=format&fit=crop');
+  background-size:cover;background-position:center 30%;
+  animation:heroZoom 14s ease-out both;
+}
+@keyframes heroZoom{from{transform:scale(1.08);}to{transform:scale(1.0);}}
+.hero-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(155deg,rgba(20,40,12,.82) 0%,rgba(30,55,18,.62) 55%,rgba(40,60,20,.4) 100%);
+}
+.hero-content{
+  position:relative;text-align:center;
+  padding:0 24px;
+  max-width:900px;
+  animation:fadeUp 1s ease both;animation-delay:.4s;
+}
+@keyframes fadeUp{from{opacity:0;transform:translateY(36px);}to{opacity:1;transform:none;}}
+
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:12px;
+  font-size:.72rem;font-weight:700;letter-spacing:4px;
+  text-transform:uppercase;color:var(--gold);
+  margin-bottom:28px;
+}
+.hero-eyebrow::before,.hero-eyebrow::after{
+  content:'';flex:1;height:1px;width:40px;background:var(--gold);opacity:.5;
+}
+
+.hero-title{
+  color:var(--warm-white);
+  font-size:clamp(2.2rem,5.5vw,4.2rem);
+  font-weight:700;line-height:1.18;
+  margin-bottom:28px;
+  text-shadow:0 2px 40px rgba(0,0,0,.35);
+}
+.hero-title .gold{color:var(--gold-light);}
+
+.hero-sub{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(1.1rem,2.5vw,1.45rem);
+  font-weight:300;font-style:italic;
+  color:rgba(255,255,255,.88);
+  max-width:680px;margin:0 auto 50px;
+  line-height:1.7;
+}
+
+.hero-btns{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;}
+
+.hero-trust{
+  position:absolute;bottom:44px;left:50%;transform:translateX(-50%);
+  display:flex;gap:40px;align-items:center;
+  color:rgba(255,255,255,.75);font-size:.78rem;
+  white-space:nowrap;flex-wrap:wrap;justify-content:center;
+}
+.hero-trust-item{display:flex;align-items:center;gap:8px;}
+.hero-trust-dot{width:5px;height:5px;background:var(--gold);border-radius:50%;}
+
+/* ═══════════════════════════════════
+   BAND / STRIP
+═══════════════════════════════════ */
+.band{
+  background:var(--green);
+  padding:22px 0;
+  overflow:hidden;
+}
+.band-inner{
+  display:flex;justify-content:center;gap:60px;
+  flex-wrap:wrap;padding:0 32px;
+}
+.band-item{
+  display:flex;align-items:center;gap:12px;
+  color:rgba(255,255,255,.82);font-size:.8rem;
+}
+.band-icon{color:var(--gold);font-size:1.1rem;}
+.band-item strong{
+  display:block;font-size:.78rem;font-weight:700;
+  letter-spacing:1px;text-transform:uppercase;color:#fff;
+}
+
+/* ═══════════════════════════════════
+   INTRO QUOTE SECTION
+═══════════════════════════════════ */
+.intro-quote{
+  background:var(--cream);
+  padding:90px 0;
+  text-align:center;
+}
+.intro-quote blockquote{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(1.5rem,3vw,2.2rem);
+  font-style:italic;
+  color:var(--green);
+  max-width:780px;
+  margin:0 auto;
+  line-height:1.55;
+  font-weight:400;
+}
+.intro-quote cite{
+  display:block;margin-top:22px;
+  font-family:'Inter',sans-serif;
+  font-style:normal;font-size:.8rem;
+  font-weight:600;letter-spacing:2px;
+  text-transform:uppercase;color:var(--gold);
+}
+
+/* ═══════════════════════════════════
+   ERNTE SECTION
+═══════════════════════════════════ */
+.ernte{background:var(--warm-white);}
+
+.ernte-top{
+  display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;
+  margin-bottom:80px;
+}
+.ernte-text .section-label{}
+.ernte-text p{font-size:1rem;max-width:520px;}
+.ernte-features{margin-top:36px;display:flex;flex-direction:column;gap:18px;}
+.ernte-feature{
+  display:flex;align-items:flex-start;gap:14px;
+}
+.feature-icon{
+  width:40px;height:40px;flex-shrink:0;
+  background:var(--green-pale);
+  border:1px solid rgba(59,88,40,.15);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1rem;
+}
+.feature-text strong{
+  display:block;font-size:.88rem;font-weight:700;
+  color:var(--text);margin-bottom:2px;
+}
+.feature-text span{font-size:.85rem;color:var(--text-light);}
+
+.ernte-main-img{
+  position:relative;overflow:hidden;
+  height:480px;
+}
+.ernte-main-img img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform .8s ease;
+}
+.ernte-main-img:hover img{transform:scale(1.04);}
+.ernte-badge{
+  position:absolute;bottom:28px;left:28px;
+  background:var(--gold);color:var(--green);
+  padding:14px 20px;
+  text-align:center;
+}
+.ernte-badge strong{font-size:1.5rem;font-family:'Playfair Display',serif;display:block;}
+.ernte-badge span{font-size:.62rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;}
+
+.ernte-gallery{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:16px;
+}
+.ernte-gallery-item{
+  overflow:hidden;height:260px;position:relative;
+}
+.ernte-gallery-item img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform .6s ease;
+}
+.ernte-gallery-item:hover img{transform:scale(1.06);}
+.ernte-gallery-item:first-child{grid-column:span 2;}
+
+/* ═══════════════════════════════════
+   PROCESS (ERNTE → FLASCHE)
+═══════════════════════════════════ */
+.process-section{background:var(--cream);}
+
+.process-header{text-align:center;margin-bottom:70px;}
+.process-header p{max-width:580px;margin:0 auto;font-size:1rem;}
+
+.process-steps{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:0;
+  position:relative;
+}
+.process-line{
+  position:absolute;top:95px;left:calc(12.5% + 20px);right:calc(12.5% + 20px);
+  height:1px;background:linear-gradient(to right,var(--gold),rgba(200,162,74,.25));
+  z-index:0;
+}
+.process-step{
+  position:relative;z-index:1;
+  padding:0 24px;text-align:center;
+}
+.step-img{
+  width:112px;height:112px;border-radius:50%;overflow:hidden;
+  margin:0 auto 26px;
+  border:3px solid var(--gold);
+  background:var(--cream-dark);
+}
+.step-img img{width:100%;height:100%;object-fit:cover;}
+.step-number{
+  position:absolute;top:0;right:calc(50% - 72px);
+  width:26px;height:26px;border-radius:50%;
+  background:var(--gold);color:var(--green);
+  font-size:.62rem;font-weight:700;
+  display:flex;align-items:center;justify-content:center;
+  z-index:2;
+}
+.step-title{
+  font-family:'Playfair Display',serif;
+  font-size:1.05rem;font-weight:600;
+  color:var(--green);margin-bottom:10px;
+}
+.step-text{font-size:.88rem;color:var(--text-mid);line-height:1.65;}
+
+/* ═══════════════════════════════════
+   HEALTH SECTION
+═══════════════════════════════════ */
+.health{background:var(--green);}
+
+.health-header{text-align:center;margin-bottom:70px;}
+.health-header .label{color:var(--gold-light);}
+.health-header h2{color:var(--warm-white);}
+.health-header p{color:rgba(255,255,255,.75);max-width:620px;margin:0 auto;font-size:1rem;}
+.health-header .divider{background:var(--gold);margin:20px auto 28px;}
+
+.health-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:24px;
+  margin-bottom:60px;
+}
+.health-card{
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.1);
+  padding:36px 30px;
+  transition:background .3s,transform .3s;
+}
+.health-card:hover{background:rgba(255,255,255,.1);transform:translateY(-4px);}
+.health-card-icon{
+  font-size:2rem;margin-bottom:18px;display:block;
+}
+.health-card h4{
+  font-family:'Playfair Display',serif;
+  font-size:1.05rem;color:var(--warm-white);
+  margin-bottom:12px;
+}
+.health-card p{font-size:.88rem;color:rgba(255,255,255,.68);line-height:1.7;}
+.health-card .study-note{
+  display:block;margin-top:12px;
+  font-size:.75rem;color:var(--gold-light);
+  font-style:italic;
+}
+
+.health-studies{
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.1);
+  padding:40px 48px;
+}
+.health-studies h3{
+  font-family:'Playfair Display',serif;
+  font-size:1.3rem;color:var(--warm-white);
+  margin-bottom:24px;
+}
+.studies-list{
+  display:grid;grid-template-columns:1fr 1fr;gap:14px 40px;
+}
+.study-item{
+  display:flex;align-items:flex-start;gap:10px;
+  font-size:.88rem;color:rgba(255,255,255,.75);
+}
+.study-dot{
+  width:6px;height:6px;border-radius:50%;
+  background:var(--gold);flex-shrink:0;margin-top:8px;
+}
+
+/* ═══════════════════════════════════
+   SHOP / PRODUKTE
+═══════════════════════════════════ */
+.shop{background:var(--warm-white);}
+.shop-header{text-align:center;margin-bottom:70px;}
+.shop-header p{max-width:560px;margin:0 auto;font-size:1rem;}
+.scarcity-banner{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--gold-pale);border:1px solid var(--gold);
+  color:var(--terra);padding:10px 22px;
+  font-size:.8rem;font-weight:700;letter-spacing:1.5px;
+  text-transform:uppercase;margin-top:28px;
+}
+.scarcity-banner .pulse{
+  width:8px;height:8px;border-radius:50%;background:var(--terra);
+  animation:pulse 1.4s ease infinite;
+}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.5;transform:scale(.7);}}
+
+.products-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:28px;
+}
+.product-card{
+  background:var(--warm-white);
+  border:1px solid var(--border);
+  position:relative;overflow:hidden;
+  transition:transform .35s ease,box-shadow .35s ease;
+}
+.product-card:hover{transform:translateY(-6px);box-shadow:0 20px 50px var(--shadow-lg);}
+
+.product-badge{
+  position:absolute;top:18px;left:18px;z-index:2;
+  font-size:.62rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
+  padding:5px 12px;
+}
+.badge-best{background:var(--gold);color:var(--green);}
+.badge-limited{background:var(--terra);color:#fff;}
+.badge-pop{background:var(--green);color:#fff;}
+
+.product-img-wrap{
+  height:320px;overflow:hidden;
+  background:var(--cream);
+  display:flex;align-items:center;justify-content:center;
+  position:relative;
+}
+.product-img-wrap img{
+  height:100%;width:100%;object-fit:cover;
+  transition:transform .6s ease;
+}
+.product-card:hover .product-img-wrap img{transform:scale(1.05);}
+
+.product-body{padding:28px 26px 30px;}
+.product-cat{
+  font-size:.68rem;font-weight:700;letter-spacing:2.5px;
+  text-transform:uppercase;color:var(--gold);margin-bottom:8px;
+}
+.product-name{
+  font-family:'Playfair Display',serif;
+  font-size:1.35rem;font-weight:600;color:var(--green);
+  margin-bottom:6px;
+}
+.product-vol{font-size:.8rem;color:var(--text-light);margin-bottom:12px;}
+.product-desc{font-size:.88rem;color:var(--text-mid);line-height:1.65;margin-bottom:18px;}
+
+.product-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;}
+.tag{
+  font-size:.64rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;
+  padding:4px 10px;border:1px solid var(--border);color:var(--text-mid);
+  background:var(--cream);
+}
+
+.product-footer{
+  display:flex;align-items:center;justify-content:space-between;
+  padding-top:18px;border-top:1px solid var(--border);
+}
+.product-price{
+  font-family:'Playfair Display',serif;
+  font-size:1.7rem;font-weight:700;color:var(--green);
+}
+.product-price sub{
+  font-size:.72rem;font-family:'Inter',sans-serif;
+  color:var(--text-light);font-weight:400;
+}
+.btn-cart{
+  font-size:.72rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
+  padding:12px 20px;background:var(--green);color:#fff;
+  border:none;cursor:pointer;
+  transition:background .25s,transform .2s;
+}
+.btn-cart:hover{background:var(--green-mid);transform:translateY(-1px);}
+
+/* ═══════════════════════════════════
+   WARUM WIR
+═══════════════════════════════════ */
+.why{background:var(--cream);}
+
+.why-inner{
+  display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;
+}
+.why-img{
+  position:relative;overflow:hidden;height:500px;
+}
+.why-img img{width:100%;height:100%;object-fit:cover;transition:transform .8s;}
+.why-img:hover img{transform:scale(1.03);}
+.why-img-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(20,40,12,.5),transparent 60%);
+}
+
+.why-content{}
+.why-points{display:flex;flex-direction:column;gap:26px;margin-top:36px;}
+.why-point{
+  display:flex;align-items:flex-start;gap:18px;
+  padding:22px 24px;
+  background:var(--warm-white);
+  border:1px solid var(--border);
+  border-left:3px solid var(--gold);
+  transition:transform .25s,box-shadow .25s;
+}
+.why-point:hover{transform:translateX(4px);box-shadow:4px 0 20px var(--shadow);}
+.why-point-icon{font-size:1.3rem;flex-shrink:0;margin-top:2px;}
+.why-point-text h4{font-size:.92rem;color:var(--text);margin-bottom:4px;}
+.why-point-text p{font-size:.84rem;color:var(--text-mid);line-height:1.6;}
+
+/* ═══════════════════════════════════
+   TESTIMONIALS
+═══════════════════════════════════ */
+.testimonials{background:var(--warm-white);}
+.test-header{text-align:center;margin-bottom:60px;}
+.test-header p{max-width:500px;margin:0 auto;font-size:.95rem;}
+
+.test-grid{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:28px;
+}
+.test-card{
+  background:var(--cream);
+  padding:40px 36px;
+  border:1px solid var(--border);
+  position:relative;
+  transition:transform .3s,box-shadow .3s;
+}
+.test-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px var(--shadow);}
+.test-card::before{
+  content:'\201C';
+  font-family:'Playfair Display',serif;
+  font-size:5rem;color:var(--gold);opacity:.3;
+  position:absolute;top:8px;left:26px;line-height:1;
+}
+.test-stars{color:var(--gold);font-size:.9rem;letter-spacing:2px;margin-bottom:16px;}
+.test-text{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.15rem;font-style:italic;
+  color:var(--text-mid);line-height:1.8;
+  margin-bottom:26px;
+}
+.test-author{display:flex;align-items:center;gap:14px;}
+.test-avatar{
+  width:50px;height:50px;border-radius:50%;overflow:hidden;
+  border:2px solid var(--gold);flex-shrink:0;
+}
+.test-avatar img{width:100%;height:100%;object-fit:cover;}
+.test-name{
+  font-size:.82rem;font-weight:700;letter-spacing:1.5px;
+  text-transform:uppercase;color:var(--green);display:block;
+}
+.test-detail{font-size:.78rem;color:var(--text-light);}
+
+.test-verified{
+  display:inline-flex;align-items:center;gap:5px;
+  font-size:.68rem;font-weight:600;letter-spacing:1px;
+  text-transform:uppercase;color:var(--green-light);
+  margin-top:4px;
+}
+
+/* ═══════════════════════════════════
+   NEWSLETTER / CTA STRIP
+═══════════════════════════════════ */
+.cta-strip{
+  background:var(--gold-pale);
+  border-top:1px solid var(--gold);
+  border-bottom:1px solid var(--gold);
+  padding:70px 0;text-align:center;
+}
+.cta-strip h2{font-size:clamp(1.6rem,3vw,2.4rem);margin-bottom:14px;}
+.cta-strip p{color:var(--text-mid);max-width:520px;margin:0 auto 36px;font-size:1rem;}
+.newsletter-form{
+  display:flex;gap:0;max-width:480px;margin:0 auto;
+  box-shadow:0 4px 20px var(--shadow);
+}
+.newsletter-form input{
+  flex:1;padding:16px 22px;
+  border:1px solid var(--border);border-right:none;
+  outline:none;background:#fff;
+  font-size:.92rem;color:var(--text);
+}
+.newsletter-form input::placeholder{color:var(--text-light);}
+.newsletter-form input:focus{border-color:var(--gold);}
+.newsletter-form button{
+  padding:16px 28px;
+  background:var(--green);color:#fff;
+  border:none;cursor:pointer;
+  font-size:.78rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
+  transition:background .25s;white-space:nowrap;
+}
+.newsletter-form button:hover{background:var(--green-mid);}
+
+/* ═══════════════════════════════════
+   FOOTER
+═══════════════════════════════════ */
+footer{background:#111;color:rgba(255,255,255,.6);padding:80px 0 36px;}
+
+.footer-top{
+  display:grid;grid-template-columns:2.2fr 1fr 1fr 1fr;
+  gap:60px;margin-bottom:60px;
+}
+.footer-brand .nav-logo{color:#fff;display:inline-block;margin-bottom:20px;font-size:1.35rem;}
+.footer-brand .nav-logo span{color:var(--gold);}
+.footer-brand p{font-size:.88rem;line-height:1.8;margin-bottom:22px;}
+
+.footer-social{display:flex;gap:12px;}
+.soc-btn{
+  width:38px;height:38px;border:1px solid rgba(255,255,255,.2);
+  background:none;color:rgba(255,255,255,.55);
+  font-size:.7rem;font-weight:700;
+  cursor:pointer;display:flex;align-items:center;justify-content:center;
+  transition:border-color .25s,color .25s;text-decoration:none;
+}
+.soc-btn:hover{border-color:var(--gold);color:var(--gold);}
+
+.footer-col h5{
+  font-family:'Inter',sans-serif;
+  font-size:.7rem;font-weight:700;letter-spacing:3px;
+  text-transform:uppercase;color:#fff;margin-bottom:22px;
+}
+.footer-col ul{display:flex;flex-direction:column;gap:10px;}
+.footer-col ul li a{
+  font-size:.88rem;color:rgba(255,255,255,.5);
+  transition:color .25s;
+}
+.footer-col ul li a:hover{color:var(--gold);}
+
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,.08);
+  padding-top:28px;
+  display:flex;justify-content:space-between;align-items:center;
+  flex-wrap:wrap;gap:14px;
+}
+.footer-bottom span,.footer-legal a{font-size:.78rem;}
+.footer-legal{display:flex;gap:22px;}
+.footer-legal a{color:rgba(255,255,255,.4);transition:color .25s;}
+.footer-legal a:hover{color:var(--gold);}
+
+.payment-icons{
+  display:flex;gap:10px;align-items:center;margin-top:18px;
+}
+.pay-icon{
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);
+  padding:5px 12px;font-size:.65rem;font-weight:700;letter-spacing:1px;color:rgba(255,255,255,.5);
+}
+
+/* ═══════════════════════════════════
+   CONTACT SECTION (in footer-col)
+═══════════════════════════════════ */
+.contact-mini input,
+.contact-mini textarea{
+  width:100%;padding:11px 14px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.12);
+  color:#fff;font-size:.85rem;
+  outline:none;
+  transition:border-color .25s;
+  margin-bottom:10px;
+}
+.contact-mini input::placeholder,
+.contact-mini textarea::placeholder{color:rgba(255,255,255,.3);}
+.contact-mini input:focus,
+.contact-mini textarea:focus{border-color:var(--gold);}
+.contact-mini textarea{resize:vertical;min-height:90px;}
+.contact-mini button{
+  width:100%;padding:12px;
+  background:var(--gold);color:var(--green);border:none;
+  font-size:.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+  cursor:pointer;transition:background .25s;
+}
+.contact-mini button:hover{background:var(--gold-light);}
+
+/* ═══════════════════════════════════
+   NOTIFICATION TOAST
+═══════════════════════════════════ */
+.toast{
+  position:fixed;bottom:30px;left:50%;transform:translateX(-50%) translateY(80px);
+  background:var(--green);color:#fff;
+  padding:14px 30px;
+  font-size:.85rem;font-weight:600;
+  box-shadow:0 8px 30px rgba(0,0,0,.25);
+  z-index:3000;
+  transition:transform .35s cubic-bezier(.25,.8,.25,1),opacity .35s;
+  opacity:0;white-space:nowrap;
+  display:flex;align-items:center;gap:10px;
+}
+.toast.show{transform:translateX(-50%) translateY(0);opacity:1;}
+.toast-check{color:var(--gold);font-size:1rem;}
+
+/* ═══════════════════════════════════
+   ANNOUNCEMENT BAR
+═══════════════════════════════════ */
+.announce-bar{
+  background:var(--green);
+  color:rgba(255,255,255,.9);
+  text-align:center;
+  padding:11px 20px;
+  font-size:.78rem;font-weight:500;letter-spacing:.5px;
+  position:fixed;top:0;left:0;right:0;z-index:1100;
+  display:flex;align-items:center;justify-content:center;gap:20px;
+  transition:transform .3s ease;
+}
+.announce-bar.hidden{transform:translateY(-100%);}
+.announce-bar strong{color:var(--gold);}
+.announce-close{
+  position:absolute;right:16px;
+  background:none;border:none;color:rgba(255,255,255,.55);
+  font-size:1rem;cursor:pointer;line-height:1;
+  transition:color .2s;
+}
+.announce-close:hover{color:#fff;}
+.announce-ticker{
+  display:flex;align-items:center;gap:24px;flex-wrap:wrap;justify-content:center;
+}
+.announce-sep{opacity:.35;}
+
+/* push body down when bar is visible */
+body.bar-visible{padding-top:42px;}
+body.bar-visible #nav{top:42px;}
+
+/* ═══════════════════════════════════
+   BACK TO TOP
+═══════════════════════════════════ */
+.back-top{
+  position:fixed;bottom:36px;right:36px;z-index:900;
+  width:46px;height:46px;
+  background:var(--green);color:#fff;
+  border:none;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.1rem;
+  opacity:0;pointer-events:none;
+  transform:translateY(12px);
+  transition:opacity .3s,transform .3s,background .25s;
+  box-shadow:0 4px 20px rgba(0,0,0,.2);
+}
+.back-top.visible{opacity:1;pointer-events:all;transform:none;}
+.back-top:hover{background:var(--green-mid);}
+
+/* ═══════════════════════════════════
+   COOKIE BANNER
+═══════════════════════════════════ */
+.cookie-bar{
+  position:fixed;bottom:0;left:0;right:0;z-index:1200;
+  background:rgba(20,30,14,.96);
+  color:rgba(255,255,255,.82);
+  padding:20px 32px;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:24px;flex-wrap:wrap;
+  transform:translateY(0);
+  transition:transform .4s ease;
+  box-shadow:0 -4px 30px rgba(0,0,0,.2);
+}
+.cookie-bar.hidden{transform:translateY(110%);}
+.cookie-text{font-size:.82rem;line-height:1.6;max-width:680px;}
+.cookie-text a{color:var(--gold);text-decoration:underline;}
+.cookie-btns{display:flex;gap:10px;flex-shrink:0;flex-wrap:wrap;}
+.cookie-accept{
+  padding:10px 24px;background:var(--gold);color:var(--green);
+  border:none;cursor:pointer;font-size:.78rem;font-weight:700;
+  letter-spacing:1.5px;text-transform:uppercase;
+  transition:background .25s;
+}
+.cookie-accept:hover{background:var(--gold-light);}
+.cookie-decline{
+  padding:10px 20px;background:transparent;color:rgba(255,255,255,.55);
+  border:1px solid rgba(255,255,255,.2);cursor:pointer;
+  font-size:.78rem;transition:border-color .25s,color .25s;
+}
+.cookie-decline:hover{border-color:rgba(255,255,255,.5);color:#fff;}
+
+/* ═══════════════════════════════════
+   FAMILY / ÜBER UNS
+═══════════════════════════════════ */
+.family{background:var(--cream);}
+.family-inner{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:0;align-items:stretch;
+}
+.family-img-col{
+  position:relative;overflow:hidden;min-height:540px;
+}
+.family-img-col img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform .8s ease;
+}
+.family-img-col:hover img{transform:scale(1.03);}
+.family-quote-overlay{
+  position:absolute;bottom:0;left:0;right:0;
+  background:linear-gradient(to top,rgba(20,40,12,.75),transparent);
+  padding:40px 36px 32px;
+}
+.family-quote-overlay blockquote{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.2rem;font-style:italic;font-weight:300;
+  color:#fff;line-height:1.6;
+}
+.family-quote-overlay cite{
+  display:block;margin-top:10px;
+  font-size:.7rem;font-weight:700;letter-spacing:2px;
+  text-transform:uppercase;color:var(--gold);
+  font-style:normal;
+}
+.family-content{
+  padding:90px 80px;
+  background:var(--warm-white);
+  display:flex;flex-direction:column;justify-content:center;
+}
+.family-content p{font-size:1rem;color:var(--text-mid);line-height:1.85;}
+.family-timeline{
+  margin-top:44px;
+  display:flex;flex-direction:column;gap:0;
+  border-left:2px solid var(--cream-dark);
+  padding-left:28px;
+}
+.timeline-item{
+  position:relative;padding-bottom:28px;
+}
+.timeline-item:last-child{padding-bottom:0;}
+.timeline-item::before{
+  content:'';
+  position:absolute;left:-35px;top:6px;
+  width:14px;height:14px;border-radius:50%;
+  background:var(--gold);border:3px solid var(--warm-white);
+  box-shadow:0 0 0 2px var(--gold);
+}
+.timeline-year{
+  font-size:.7rem;font-weight:700;letter-spacing:2.5px;
+  text-transform:uppercase;color:var(--gold);
+  margin-bottom:4px;display:block;
+}
+.timeline-text{
+  font-size:.9rem;color:var(--text-mid);line-height:1.6;
+}
+
+/* ═══════════════════════════════════
+   CERTIFICATIONS
+═══════════════════════════════════ */
+.certs{
+  background:var(--green-pale);
+  padding:80px 0;
+  text-align:center;
+  border-top:1px solid rgba(59,88,40,.1);
+  border-bottom:1px solid rgba(59,88,40,.1);
+}
+.certs h3{
+  font-family:'Playfair Display',serif;
+  font-size:1.5rem;color:var(--green);
+  margin-bottom:8px;
+}
+.certs-sub{font-size:.9rem;color:var(--text-mid);margin-bottom:50px;}
+.cert-row{
+  display:flex;justify-content:center;align-items:stretch;
+  gap:0;flex-wrap:wrap;
+  max-width:960px;margin:0 auto;
+}
+.cert-item{
+  flex:1;min-width:160px;max-width:220px;
+  padding:32px 24px;
+  border:1px solid rgba(59,88,40,.12);
+  background:#fff;
+  text-align:center;
+  transition:transform .25s,box-shadow .25s;
+}
+.cert-item:hover{transform:translateY(-4px);box-shadow:0 12px 30px var(--shadow);}
+.cert-icon{font-size:2.4rem;margin-bottom:14px;display:block;}
+.cert-name{
+  font-size:.78rem;font-weight:700;letter-spacing:1.5px;
+  text-transform:uppercase;color:var(--green);
+  margin-bottom:6px;display:block;
+}
+.cert-desc{font-size:.78rem;color:var(--text-light);line-height:1.5;}
+
+/* ═══════════════════════════════════
+   FAQ
+═══════════════════════════════════ */
+.faq{background:var(--warm-white);}
+.faq-header{text-align:center;margin-bottom:60px;}
+.faq-header p{max-width:560px;margin:0 auto;font-size:1rem;color:var(--text-mid);}
+
+.faq-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:0 60px;
+  max-width:1100px;margin:0 auto;
+}
+.faq-item{
+  border-bottom:1px solid var(--border);
+}
+.faq-question{
+  width:100%;background:none;border:none;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:24px 0;
+  text-align:left;cursor:pointer;
+  gap:16px;
+}
+.faq-question span{
+  font-family:'Playfair Display',serif;
+  font-size:1rem;font-weight:600;color:var(--text);
+  line-height:1.4;flex:1;
+  transition:color .25s;
+}
+.faq-question:hover span{color:var(--green);}
+.faq-icon{
+  width:28px;height:28px;border-radius:50%;
+  background:var(--green-pale);
+  display:flex;align-items:center;justify-content:center;
+  font-size:.8rem;color:var(--green);flex-shrink:0;
+  transition:background .25s,transform .3s;
+  font-weight:700;
+}
+.faq-item.open .faq-icon{background:var(--gold);color:var(--green);transform:rotate(45deg);}
+.faq-answer{
+  max-height:0;overflow:hidden;
+  transition:max-height .4s ease,padding .3s ease;
+}
+.faq-answer-inner{
+  padding:0 0 22px;
+  font-size:.92rem;color:var(--text-mid);line-height:1.75;
+}
+.faq-item.open .faq-answer{max-height:300px;}
+
+/* ═══════════════════════════════════
+   SHIPPING INFO
+═══════════════════════════════════ */
+.shipping{background:var(--cream);}
+.shipping-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:0;
+  border:1px solid var(--border);
+  overflow:hidden;
+}
+.ship-card{
+  padding:40px 28px;text-align:center;
+  border-right:1px solid var(--border);
+  background:var(--warm-white);
+  transition:background .25s;
+}
+.ship-card:last-child{border-right:none;}
+.ship-card:hover{background:var(--cream);}
+.ship-icon{font-size:2rem;margin-bottom:16px;display:block;}
+.ship-title{
+  font-family:'Playfair Display',serif;
+  font-size:1rem;color:var(--green);
+  margin-bottom:8px;
+}
+.ship-text{font-size:.84rem;color:var(--text-mid);line-height:1.6;}
+
+/* ═══════════════════════════════════
+   RESPONSIVE ADDITIONS
+═══════════════════════════════════ */
+@media(max-width:900px){
+  .family-inner{grid-template-columns:1fr;}
+  .family-img-col{min-height:320px;}
+  .family-content{padding:60px 36px;}
+  .faq-grid{grid-template-columns:1fr;}
+  .shipping-grid{grid-template-columns:1fr 1fr;}
+  .ship-card:nth-child(2){border-right:none;}
+  .ship-card:nth-child(3){border-top:1px solid var(--border);}
+}
+@media(max-width:640px){
+  .cert-row{gap:0;}
+  .cert-item{min-width:50%;max-width:50%;}
+  .shipping-grid{grid-template-columns:1fr;}
+  .ship-card{border-right:none;border-bottom:1px solid var(--border);}
+  .faq-grid{gap:0;}
+  .back-top{right:20px;bottom:20px;}
+  .cookie-bar{padding:16px 20px;}
+  .announce-bar{font-size:.72rem;padding:10px 40px 10px 16px;}
+}
+
+/* ═══════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════ */
+@media(max-width:1100px){
+  .nav-links{gap:18px;}
+  .nav-links a{font-size:.75rem;}
+  .ernte-gallery{grid-template-columns:repeat(2,1fr);}
+  .ernte-gallery-item:first-child{grid-column:span 2;}
+  .health-grid{grid-template-columns:repeat(2,1fr);}
+  .footer-top{grid-template-columns:1fr 1fr;gap:40px;}
+}
+
+@media(max-width:900px){
+  .nav-links,.nav-badge{display:none;}
+  .hamburger{display:flex;}
+  html{font-size:17px;}
+  .ernte-top{grid-template-columns:1fr;gap:50px;}
+  .process-steps{grid-template-columns:1fr 1fr;gap:40px;}
+  .process-line{display:none;}
+  .products-grid{grid-template-columns:1fr 1fr;gap:20px;}
+  .why-inner{grid-template-columns:1fr;gap:50px;}
+  .why-img{height:380px;}
+  .test-grid{grid-template-columns:1fr;}
+  .studies-list{grid-template-columns:1fr;}
+}
+
+@media(max-width:640px){
+  html{font-size:16px;}
+  section.section-pad{padding:70px 0;}
+  .container{padding:0 20px;}
+  .products-grid{grid-template-columns:1fr;}
+  .health-grid{grid-template-columns:1fr;}
+  .ernte-gallery{grid-template-columns:1fr;}
+  .ernte-gallery-item:first-child{grid-column:span 1;}
+  .process-steps{grid-template-columns:1fr;}
+  .band-inner{gap:24px;}
+  .hero-btns{flex-direction:column;align-items:center;}
+  .newsletter-form{flex-direction:column;}
+  .newsletter-form input{border-right:1px solid var(--border);border-bottom:none;}
+  .hero-trust{gap:20px;bottom:28px;}
+  .footer-top{grid-template-columns:1fr;gap:36px;}
+  .cart-sidebar{width:100%;max-width:100vw;}
+}
+</style>
+</head>
+<body class="bar-visible">
+
+<!-- ════════════ ANNOUNCEMENT BAR ════════════ -->
+<div class="announce-bar" id="announceBar">
+  <div class="announce-ticker">
+    <span>🫒 <strong>Ernte 2024</strong> – Jetzt verfügbar</span>
+    <span class="announce-sep">·</span>
+    <span>✈️ Kostenloser Versand ab <strong>€49</strong></span>
+    <span class="announce-sep">·</span>
+    <span>🎁 <strong>10 % Rabatt</strong> bei Newsletter-Anmeldung</span>
+    <span class="announce-sep">·</span>
+    <span>📅 Nur einmal im Jahr – begrenzte Menge!</span>
+  </div>
+  <button class="announce-close" onclick="closeAnnounce()" aria-label="Schließen">✕</button>
+</div>
+
+<!-- ════════════ CART OVERLAY + SIDEBAR ════════════ -->
+<div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+<aside class="cart-sidebar" id="cartSidebar">
+  <div class="cart-header">
+    <h4>Ihr Warenkorb</h4>
+    <button class="cart-close" onclick="closeCart()" aria-label="Warenkorb schließen">✕</button>
+  </div>
+  <div class="cart-items" id="cartItems">
+    <div class="cart-empty" id="cartEmpty">
+      <span>🫒</span>
+      <p>Ihr Warenkorb ist noch leer.</p>
+    </div>
+  </div>
+  <div class="cart-footer" id="cartFooter" style="display:none;">
+    <div class="cart-total">
+      <span>Gesamt</span>
+      <span id="cartTotalPrice">€0,00</span>
+    </div>
+    <button class="btn btn-primary" onclick="showToast('Weiterleitung zur Kasse …')">Zur Kasse →</button>
+  </div>
+</aside>
+
+<!-- ════════════ MOBILE NAV ════════════ -->
+<div class="mobile-overlay" id="mobileOverlay" onclick="closeMobileNav()"></div>
+<nav class="mobile-nav" id="mobileNav">
+  <a href="#start" onclick="closeMobileNav()">Start</a>
+  <a href="#ernte" onclick="closeMobileNav()">Unsere Ernte</a>
+  <a href="#prozess" onclick="closeMobileNav()">Von der Ernte zur Flasche</a>
+  <a href="#health" onclick="closeMobileNav()">Gesundheit & Wohlbefinden</a>
+  <a href="#shop" onclick="closeMobileNav()">Shop</a>
+  <a href="#about" onclick="closeMobileNav()">Über uns</a>
+  <a href="#kontakt" onclick="closeMobileNav()">Kontakt</a>
+</nav>
+
+<!-- ════════════ NAVIGATION ════════════ -->
+<header id="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="#start">Hellenic <span>Gold</span></a>
+    <span class="nav-badge">✦ Nur eine Ernte pro Jahr</span>
+    <nav class="nav-links">
+      <a href="#start">Start</a>
+      <a href="#ernte">Unsere Ernte</a>
+      <a href="#prozess">Von der Ernte zur Flasche</a>
+      <a href="#health">Gesundheit</a>
+      <a href="#shop">Shop</a>
+      <a href="#about">Über uns</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <div class="nav-right">
+      <button class="nav-cart-btn" onclick="openCart()" aria-label="Warenkorb öffnen">
+        🛒 Warenkorb
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+      <button class="hamburger" onclick="openMobileNav()" aria-label="Menü öffnen">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ════════════ HERO ════════════ -->
+<section class="hero" id="start">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Griechenland · Handgeerntet · Seit Generationen</div>
+    <h1 class="hero-title">Das reine <span class="gold">Gold</span> Griechenlands –<br>Einmal im Jahr geerntet<br>für Ihre Gesundheit</h1>
+    <p class="hero-sub">
+      Authentisches Premium-Olivenöl direkt aus Griechenland –<br>
+      reich an Antioxidantien und wertvollen Nährstoffen<br>
+      für Ihr Wohlbefinden im besten Alter.
+    </p>
+    <div class="hero-btns">
+      <a href="#shop" class="btn btn-primary">Jetzt im Shop entdecken →</a>
+      <a href="#ernte" class="btn btn-outline">Mehr zur Ernte erfahren</a>
+    </div>
+  </div>
+  <div class="hero-trust">
+    <span class="hero-trust-item">🏅 Kaltgepresst</span>
+    <span class="hero-trust-dot"></span>
+    <span class="hero-trust-item">🌿 100% Bio-zertifiziert</span>
+    <span class="hero-trust-dot"></span>
+    <span class="hero-trust-item">✈️ Versand in 2–4 Tagen</span>
+    <span class="hero-trust-dot"></span>
+    <span class="hero-trust-item">⭐ Nur eine Ernte pro Jahr</span>
+  </div>
+</section>
+
+<!-- ════════════ BAND ════════════ -->
+<div class="band">
+  <div class="band-inner">
+    <div class="band-item"><span class="band-icon">🫒</span><div><strong>Extra Vergine</strong><span>Höchste Qualitätsstufe</span></div></div>
+    <div class="band-item"><span class="band-icon">❄️</span><div><strong>Kaltgepresst</strong><span>Max. 27 °C – alle Nährstoffe erhalten</span></div></div>
+    <div class="band-item"><span class="band-icon">🌿</span><div><strong>Bio-zertifiziert</strong><span>Ohne Pestizide &amp; Kunstdünger</span></div></div>
+    <div class="band-item"><span class="band-icon">🏺</span><div><strong>Direkt vom Erzeuger</strong><span>Kein Zwischenhändler</span></div></div>
+    <div class="band-item"><span class="band-icon">🔬</span><div><strong>Laborgeprüft</strong><span>Säuregehalt unter 0,2 %</span></div></div>
+  </div>
+</div>
+
+<!-- ════════════ INTRO QUOTE ════════════ -->
+<div class="intro-quote">
+  <div class="container">
+    <blockquote class="reveal">
+      „Olivenöl ist nicht einfach ein Lebensmittel – es ist flüssige Gesundheit,<br>
+      destilliert aus jahrhundertealten Bäumen und der Sonne Griechenlands."
+    </blockquote>
+    <cite class="reveal delay-2">Hellenic Gold · Premium Olivenöl seit Generationen</cite>
+  </div>
+</div>
+
+<!-- ════════════ UNSERE ERNTE ════════════ -->
+<section class="ernte section-pad" id="ernte">
+  <div class="container">
+    <div class="ernte-top">
+      <div class="ernte-text reveal">
+        <span class="label">Unsere Ernte</span>
+        <h2>Einmal im Jahr.<br>Mit Herz und Händen.</h2>
+        <div class="divider"></div>
+        <p>
+          Auf den Hügeln Kretas, wo die Sonne das ganze Jahr über scheint und der Meereswind
+          die Olivenbäume streichelt, findet jedes Jahr im Oktober unsere sorgfältigste
+          Handarbeit statt: die Ernte.
+        </p>
+        <p>
+          Jede einzelne Olive wird von Hand gepflückt – nie vom Boden aufgelesen. Nur
+          gesunde, frisch geerntete Früchte gelangen innerhalb weniger Stunden in
+          unsere Kaltpresse. Das Ergebnis: ein Öl von außergewöhnlicher Frische und
+          Tiefe, wie es nur einmal im Jahr möglich ist.
+        </p>
+        <div class="ernte-features">
+          <div class="ernte-feature reveal delay-1">
+            <div class="feature-icon">🌿</div>
+            <div class="feature-text">
+              <strong>Handgepflückte Koroneiki-Oliven</strong>
+              <span>Die aromatischste und polyphenolreichste Sorte Griechenlands</span>
+            </div>
+          </div>
+          <div class="ernte-feature reveal delay-2">
+            <div class="feature-icon">⏱️</div>
+            <div class="feature-text">
+              <strong>Von der Olive zur Presse in unter 4 Stunden</strong>
+              <span>Maximale Frische, kein Oxidationsverlust</span>
+            </div>
+          </div>
+          <div class="ernte-feature reveal delay-3">
+            <div class="feature-icon">📅</div>
+            <div class="feature-text">
+              <strong>Nur eine Ernte pro Jahr – Oktober/November</strong>
+              <span>Limitierte Menge, garantierte Qualität</span>
+            </div>
+          </div>
+          <div class="ernte-feature reveal delay-4">
+            <div class="feature-icon">🏔️</div>
+            <div class="feature-text">
+              <strong>Terroir der Extraklasse – Lassithi, Kreta, 900 m ü. M.</strong>
+              <span>Einzigartiges Mikroklima für intensive Aromen</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ernte-main-img reveal delay-2">
+        <img src="https://images.unsplash.com/photo-1508253578933-20b529302151?w=900&q=85&auto=format&fit=crop" alt="Olivenernte auf Kreta – Bäuerinnen pflücken Oliven von Hand"/>
+        <div class="ernte-badge">
+          <strong>1×</strong>
+          <span>Ernte pro Jahr</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Gallery -->
+    <div class="ernte-gallery">
+      <div class="ernte-gallery-item reveal">
+        <img src="https://images.unsplash.com/photo-1543083477-4f785aeafaa9?w=900&q=85&auto=format&fit=crop" alt="Weit ausgedehnte Olivenplantage auf Kreta" loading="lazy"/>
+      </div>
+      <div class="ernte-gallery-item reveal delay-1">
+        <img src="https://images.unsplash.com/photo-1560717845-968823efbee1?w=600&q=85&auto=format&fit=crop" alt="Hundertjähriger Olivenbaum" loading="lazy"/>
+      </div>
+      <div class="ernte-gallery-item reveal delay-2">
+        <img src="https://images.unsplash.com/photo-1611171711912-e3f4b0af2aa7?w=600&q=85&auto=format&fit=crop" alt="Frische grüne Oliven nach der Ernte" loading="lazy"/>
+      </div>
+      <div class="ernte-gallery-item reveal delay-3">
+        <img src="https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=600&q=85&auto=format&fit=crop" alt="Goldenes Premium Olivenöl" loading="lazy"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ PROZESS ════════════ -->
+<section class="process-section section-pad" id="prozess">
+  <div class="container">
+    <div class="process-header reveal">
+      <span class="label">Vom Baum zur Flasche</span>
+      <h2>Der Weg unseres <em style="font-style:italic;color:var(--gold)">flüssigen Goldes</em></h2>
+      <div class="divider center"></div>
+      <p>Vier Schritte. Kein Kompromiss. Jeder Handgriff prägt den Geschmack in Ihrer Flasche.</p>
+    </div>
+
+    <div class="process-steps">
+      <div class="process-line"></div>
+
+      <div class="process-step reveal delay-1">
+        <div class="step-img">
+          <img src="https://images.unsplash.com/photo-1508253578933-20b529302151?w=300&q=80&auto=format&fit=crop" alt="Handernte der Oliven" loading="lazy"/>
+        </div>
+        <span class="step-number">01</span>
+        <h3 class="step-title">Handernte</h3>
+        <p class="step-text">Jede Olive wird sorgsam von Hand gepflückt – in den sonnigen Morgenstunden des Oktobers, wenn die Früchte ihren Höchstgehalt an Polyphenolen erreicht haben.</p>
+      </div>
+
+      <div class="process-step reveal delay-2">
+        <div class="step-img">
+          <img src="https://images.unsplash.com/photo-1611171711912-e3f4b0af2aa7?w=300&q=80&auto=format&fit=crop" alt="Selektion und Reinigung der Oliven" loading="lazy"/>
+        </div>
+        <span class="step-number">02</span>
+        <h3 class="step-title">Sorgfältige Selektion</h3>
+        <p class="step-text">Blätter und ungeeignete Früchte werden sofort entfernt. Nur makellose, gesunde Oliven gelangen zur Presse – innerhalb weniger Stunden nach der Ernte.</p>
+      </div>
+
+      <div class="process-step reveal delay-3">
+        <div class="step-img">
+          <img src="https://images.unsplash.com/photo-1519051256044-8f5cde9a8a9f?w=300&q=80&auto=format&fit=crop" alt="Kaltpressung bei max. 27 Grad" loading="lazy"/>
+        </div>
+        <span class="step-number">03</span>
+        <h3 class="step-title">Schonende Kaltpressung</h3>
+        <p class="step-text">Bei maximal 27 °C gepresst – so bleiben alle Aromen, Vitamine, Antioxidantien und Polyphenole vollständig erhalten. Keine Hitze. Keine Kompromisse.</p>
+      </div>
+
+      <div class="process-step reveal delay-4">
+        <div class="step-img">
+          <img src="https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=300&q=80&auto=format&fit=crop" alt="Abfüllung in dunkle Glasflaschen" loading="lazy"/>
+        </div>
+        <span class="step-number">04</span>
+        <h3 class="step-title">Schützende Abfüllung</h3>
+        <p class="step-text">In lichtgeschützte dunkle Glasflaschen abgefüllt und versiegelt – so bewahrt das Öl seine volle Qualität und Frische bis zu Ihrem Tisch.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ HEALTH ════════════ -->
+<section class="health section-pad" id="health">
+  <div class="container">
+    <div class="health-header reveal">
+      <span class="label">Gesundheit &amp; Wohlbefinden</span>
+      <h2 style="color:var(--warm-white);">Was die Forschung sagt –<br>und was Sie spüren werden</h2>
+      <div class="divider center"></div>
+      <p>Premium Olivenöl extra vergine gehört zu den am besten erforschten Lebensmitteln der Welt. Die Ergebnisse sprechen für sich.</p>
+    </div>
+
+    <div class="health-grid">
+      <div class="health-card reveal delay-1">
+        <span class="health-card-icon">❤️</span>
+        <h4>Herzgesundheit</h4>
+        <p>Die einfach ungesättigten Fettsäuren im Olivenöl (insb. Ölsäure) senken nachweislich den LDL-Cholesterinspiegel und schützen die Herzgefäße.</p>
+        <span class="study-note">PREDIMED-Studie (2013): –30 % kardiovaskuläres Risiko durch mediterrane Ernährung</span>
+      </div>
+      <div class="health-card reveal delay-2">
+        <span class="health-card-icon">🛡️</span>
+        <h4>Antioxidantien &amp; Polyphenole</h4>
+        <p>Hellenic Gold enthält außergewöhnlich viele Polyphenole – natürliche Antioxidantien, die freie Radikale neutralisieren und Zellen vor vorzeitiger Alterung schützen.</p>
+        <span class="study-note">Journal of Nutritional Biochemistry: Polyphenole reduzieren oxidativen Stress signifikant</span>
+      </div>
+      <div class="health-card reveal delay-3">
+        <span class="health-card-icon">🔥</span>
+        <h4>Entzündungshemmende Wirkung</h4>
+        <p>Oleocanthal, ein natürlicher Wirkstoff im extra vergine Olivenöl, wirkt ähnlich wie Ibuprofen – entzündungshemmend und schmerzlindernd, aber vollkommen natürlich.</p>
+        <span class="study-note">Nature (2005): Oleocanthal hemmt COX-Enzyme wie klassische Antirheumatika</span>
+      </div>
+      <div class="health-card reveal delay-1">
+        <span class="health-card-icon">🧠</span>
+        <h4>Gehirn &amp; geistige Klarheit</h4>
+        <p>Regelmäßiger Olivenölkonsum ist mit verbesserter Gedächtnisleistung und einem verringerten Risiko für neurodegenerative Erkrankungen verbunden.</p>
+        <span class="study-note">Annals of Clinical Nutrition: Mediterrane Diät schützt kognitive Funktionen im Alter</span>
+      </div>
+      <div class="health-card reveal delay-2">
+        <span class="health-card-icon">🦴</span>
+        <h4>Gelenke &amp; Mobilität</h4>
+        <p>Die antioxidativen und entzündungshemmenden Eigenschaften des Olivenöls unterstützen die Gelenkgesundheit und lindern Beschwerden bei rheumatischen Erkrankungen.</p>
+        <span class="study-note">Nutrients (2018): Polyphenole reduzieren Marker für Gelenkentzündungen</span>
+      </div>
+      <div class="health-card reveal delay-3">
+        <span class="health-card-icon">✨</span>
+        <h4>Haut &amp; langes Leben</h4>
+        <p>Olivenöl versorgt die Haut von innen mit wertvollen Fettsäuren und Vitamin E, fördert Zellerneuerung und ist in der Mittelmeerregion – bekannt für ihre Langlebigkeit – tägliches Grundnahrungsmittel.</p>
+        <span class="study-note">Blue Zones-Forschung: Bewohner mit höchster Olivenölkonsumrate leben statistisch länger</span>
+      </div>
+    </div>
+
+    <div class="health-studies reveal">
+      <h3 style="font-family:'Playfair Display',serif;color:var(--warm-white);">Was Studien zeigen – zusammengefasst für Sie</h3>
+      <div class="studies-list">
+        <div class="study-item"><span class="study-dot"></span><span>Senkt nachweislich LDL-Cholesterin (schlechtes Cholesterin)</span></div>
+        <div class="study-item"><span class="study-dot"></span><span>Reduziert das Risiko von Herzerkrankungen um bis zu 30 %</span></div>
+        <div class="study-item"><span class="study-dot"></span><span>Schützt vor oxidativem Stress und Zellalterung</span></div>
+        <div class="study-item"><span class="study-dot"></span><span>Fördert eine gesunde Verdauung und Darmflora</span></div>
+        <div class="study-item"><span class="study-dot"></span><span>Unterstützt das Immunsystem durch natürliche Polyphenole</span></div>
+        <div class="study-item"><span class="study-dot"></span><span>Verbessert die Insulinsensitivität bei regelmäßigem Konsum</span></div>
+        <div class="study-item"><span class="study-dot"></span><span>Schützt Gehirnzellen – assoziiert mit verringertem Demenzrisiko</span></div>
+        <div class="study-item"><span class="study-dot"></span><span>Wirkt natürlich entzündungshemmend – ideal bei Gelenkschmerzen</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ SHOP ════════════ -->
+<section class="shop section-pad" id="shop">
+  <div class="container">
+    <div class="shop-header reveal">
+      <span class="label">Unsere Produkte</span>
+      <h2>Wählen Sie Ihr <em style="font-style:italic;color:var(--gold)">flüssiges Gold</em></h2>
+      <div class="divider center"></div>
+      <p>Jede Flasche trägt die Arbeit einer gesamten Erntesaison in sich.<br>Limitiert verfügbar – nur bis der Jahresvorrat erschöpft ist.</p>
+      <div class="scarcity-banner reveal delay-2">
+        <span class="pulse"></span>
+        Nur begrenzt verfügbar – jährlich nur eine Ernte
+      </div>
+    </div>
+
+    <div class="products-grid">
+
+      <!-- Produkt 1 -->
+      <div class="product-card reveal delay-1">
+        <span class="product-badge badge-pop">Beliebt bei 50+</span>
+        <div class="product-img-wrap">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&q=85&auto=format&fit=crop" alt="Hellenic Gold Classico 500ml – Premium Olivenöl" loading="lazy"/>
+        </div>
+        <div class="product-body">
+          <span class="product-cat">Extra Vergine · Kaltgepresst</span>
+          <h3 class="product-name">Classico</h3>
+          <div class="product-vol">500 ml · Koroneiki-Olive</div>
+          <p class="product-desc">Unser meistgeliebtes Olivenöl: fruchtig, mild und aromatisch. Ideal zum täglichen Genuss – auf Salaten, Gemüse, Brot oder pur als Gesundheitsritual jeden Morgen.</p>
+          <div class="product-tags">
+            <span class="tag">🌿 Bio</span>
+            <span class="tag">❄️ Kaltgepresst</span>
+            <span class="tag">🏅 Säure &lt; 0,2 %</span>
+          </div>
+          <div class="product-footer">
+            <div class="product-price">€22<sub>/Flasche</sub></div>
+            <button class="btn-cart" onclick="addToCart('Classico 500ml', 22, this)">In den Warenkorb</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Produkt 2 -->
+      <div class="product-card reveal delay-2">
+        <span class="product-badge badge-best">⭐ Bestseller</span>
+        <div class="product-img-wrap">
+          <img src="https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=700&q=85&auto=format&fit=crop" alt="Hellenic Gold Riserva 500ml – Frühernte Olivenöl" loading="lazy"/>
+        </div>
+        <div class="product-body">
+          <span class="product-cat">Frühernte · Höchster Polyphenolgehalt</span>
+          <h3 class="product-name">Riserva</h3>
+          <div class="product-vol">500 ml · Koroneiki-Frühernte</div>
+          <p class="product-desc">Von unreif geernteten Oliven gewonnen – intensiv grün, würzig mit leichtem Pfeffer-Abgang. Außergewöhnlich reich an Polyphenolen und Antioxidantien. Für alle, die das Beste wollen.</p>
+          <div class="product-tags">
+            <span class="tag">🔬 Reichste Polyphenole</span>
+            <span class="tag">💚 Anti-entzündlich</span>
+            <span class="tag">🌿 Bio</span>
+          </div>
+          <div class="product-footer">
+            <div class="product-price">€32<sub>/Flasche</sub></div>
+            <button class="btn-cart" onclick="addToCart('Riserva 500ml', 32, this)">In den Warenkorb</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Produkt 3 -->
+      <div class="product-card reveal delay-3">
+        <span class="product-badge badge-limited">⏳ Limitiert</span>
+        <div class="product-img-wrap">
+          <img src="https://images.unsplash.com/photo-1601024445121-e5b82f020549?w=700&q=85&auto=format&fit=crop" alt="Hellenic Gold Grand Cru 250ml" loading="lazy"/>
+        </div>
+        <div class="product-body">
+          <span class="product-cat">Grand Cru · Uralte Bäume · 250 ml</span>
+          <h3 class="product-name">Grand Cru</h3>
+          <div class="product-vol">250 ml · Selektion über 400-jähriger Bäume</div>
+          <p class="product-desc">Aus dem ältesten Teil unserer Plantage – Bäume, die seit über 400 Jahren Wurzeln schlagen. Limitiert auf 800 Flaschen pro Saison. Ein Öl für besondere Momente und edle Geschenke.</p>
+          <div class="product-tags">
+            <span class="tag">💎 Limitiert</span>
+            <span class="tag">🏺 400-j. Bäume</span>
+            <span class="tag">🎁 Geschenkidee</span>
+          </div>
+          <div class="product-footer">
+            <div class="product-price">€54<sub>/Flasche</sub></div>
+            <button class="btn-cart" onclick="addToCart('Grand Cru 250ml', 54, this)">In den Warenkorb</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Produkt 4 -->
+      <div class="product-card reveal delay-1">
+        <span class="product-badge badge-pop">Sparpaket</span>
+        <div class="product-img-wrap">
+          <img src="https://images.unsplash.com/photo-1560717845-968823efbee1?w=700&q=85&auto=format&fit=crop" alt="Hellenic Gold Classico 1 Liter" loading="lazy"/>
+        </div>
+        <div class="product-body">
+          <span class="product-cat">Extra Vergine · Haushaltsgröße</span>
+          <h3 class="product-name">Classico 1 Liter</h3>
+          <div class="product-vol">1000 ml · Vorteilsgröße für die Familie</div>
+          <p class="product-desc">Unser Classico in der praktischen 1-Liter-Flasche – ideal für alle, die täglich von den Vorteilen des Premium-Olivenöls profitieren möchten. Besonders wirtschaftlich.</p>
+          <div class="product-tags">
+            <span class="tag">💰 Sparpreis</span>
+            <span class="tag">🌿 Bio</span>
+            <span class="tag">🏡 Familiengröße</span>
+          </div>
+          <div class="product-footer">
+            <div class="product-price">€38<sub>/Flasche</sub></div>
+            <button class="btn-cart" onclick="addToCart('Classico 1L', 38, this)">In den Warenkorb</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Produkt 5 -->
+      <div class="product-card reveal delay-2">
+        <span class="product-badge badge-best">🎁 Geschenk-Tipp</span>
+        <div class="product-img-wrap">
+          <img src="https://images.unsplash.com/photo-1543083477-4f785aeafaa9?w=700&q=85&auto=format&fit=crop" alt="Hellenic Gold Probier-Set – alle drei Sorten" loading="lazy"/>
+        </div>
+        <div class="product-body">
+          <span class="product-cat">Exklusives Probier-Set · 3 Flaschen</span>
+          <h3 class="product-name">Probier-Set</h3>
+          <div class="product-vol">3 × 250 ml – Classico, Riserva &amp; Grand Cru</div>
+          <p class="product-desc">Das ideale Einstiegsset: Entdecken Sie alle drei Sorten und erleben Sie die Vielfalt unseres griechischen Olivenöls. Auch ein wunderschönes Geschenk für liebe Menschen.</p>
+          <div class="product-tags">
+            <span class="tag">🎁 Perfektes Geschenk</span>
+            <span class="tag">💚 3 Sorten</span>
+            <span class="tag">⭐ Beliebt</span>
+          </div>
+          <div class="product-footer">
+            <div class="product-price">€65<sub>/Set</sub></div>
+            <button class="btn-cart" onclick="addToCart('Probier-Set 3×250ml', 65, this)">In den Warenkorb</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Produkt 6 -->
+      <div class="product-card reveal delay-3">
+        <span class="product-badge badge-limited">Neu</span>
+        <div class="product-img-wrap">
+          <img src="https://images.unsplash.com/photo-1519051256044-8f5cde9a8a9f?w=700&q=85&auto=format&fit=crop" alt="Hellenic Gold Riserva 1 Liter – Große Flasche" loading="lazy"/>
+        </div>
+        <div class="product-body">
+          <span class="product-cat">Frühernte · Riserva · Großflasche</span>
+          <h3 class="product-name">Riserva 1 Liter</h3>
+          <div class="product-vol">1000 ml · Für den gesundheitsbewussten Genuss</div>
+          <p class="product-desc">Unser polyphenolreichstes Öl jetzt auch in der 1-Liter-Flasche – für alle, die täglich von der heilsamen Kraft der Frühernte-Oliven profitieren möchten.</p>
+          <div class="product-tags">
+            <span class="tag">🔬 Polyphenol-Reich</span>
+            <span class="tag">💰 Großpackung</span>
+            <span class="tag">🌿 Bio</span>
+          </div>
+          <div class="product-footer">
+            <div class="product-price">€58<sub>/Flasche</sub></div>
+            <button class="btn-cart" onclick="addToCart('Riserva 1L', 58, this)">In den Warenkorb</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ ZERTIFIKATE ════════════ -->
+<div class="certs">
+  <div class="container">
+    <h3 class="reveal">Geprüfte Qualität – Jede Charge zertifiziert</h3>
+    <p class="certs-sub reveal delay-1">Unabhängige Labore und internationale Organisationen bestätigen unsere Qualität.</p>
+    <div class="cert-row">
+      <div class="cert-item reveal delay-1">
+        <span class="cert-icon">🌿</span>
+        <span class="cert-name">Bio-Zertifikat</span>
+        <span class="cert-desc">Zertifiziert nach EU-Öko-Verordnung Nr. 848/2018</span>
+      </div>
+      <div class="cert-item reveal delay-2">
+        <span class="cert-icon">🏺</span>
+        <span class="cert-name">PDO Kreta</span>
+        <span class="cert-desc">Geschützte Ursprungsbezeichnung – Lassithi, Kreta</span>
+      </div>
+      <div class="cert-item reveal delay-3">
+        <span class="cert-icon">❄️</span>
+        <span class="cert-name">Extra Vergine</span>
+        <span class="cert-desc">Säuregehalt unter 0,2 % – höchste Qualitätsstufe</span>
+      </div>
+      <div class="cert-item reveal delay-4">
+        <span class="cert-icon">🔬</span>
+        <span class="cert-name">Laborgeprüft</span>
+        <span class="cert-desc">Polyphenolgehalt & Frische bei jeder Ernte analysiert</span>
+      </div>
+      <div class="cert-item reveal delay-5">
+        <span class="cert-icon">🏅</span>
+        <span class="cert-name">12 Auszeichnungen</span>
+        <span class="cert-desc">International preisgekrönt – u. a. NYIOOC Gold Award</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════ WARUM WIR ════════════ -->
+<section class="why section-pad" id="about">
+  <div class="container">
+    <div class="why-inner">
+      <div class="why-img reveal">
+        <img src="https://images.unsplash.com/photo-1543083477-4f785aeafaa9?w=900&q=85&auto=format&fit=crop" alt="Hellenic Gold – Olivenplantage Kreta" loading="lazy"/>
+        <div class="why-img-overlay"></div>
+      </div>
+      <div class="why-content reveal delay-1">
+        <span class="label">Warum Hellenic Gold</span>
+        <h2>Qualität, der<br>Sie vertrauen können</h2>
+        <div class="divider"></div>
+        <p>Wir sind keine anonyme Großmarke. Wir sind eine Familie aus Kreta, die seit Generationen Olivenöl mit Leidenschaft und Verantwortung herstellt – für Menschen, denen Qualität und Gesundheit etwas bedeuten.</p>
+        <div class="why-points">
+          <div class="why-point reveal delay-1">
+            <span class="why-point-icon">🇬🇷</span>
+            <div class="why-point-text">
+              <h4>Direkt aus Griechenland – kein Zwischenhändler</h4>
+              <p>Von unserer Plantage auf Kreta direkt in Ihre Hände – ohne Umwege, ohne Qualitätsverlust.</p>
+            </div>
+          </div>
+          <div class="why-point reveal delay-2">
+            <span class="why-point-icon">🌿</span>
+            <div class="why-point-text">
+              <h4>100 % bio-zertifiziert seit über 30 Jahren</h4>
+              <p>Kein Pestizid, kein Kunstdünger. Nur Sonne, Erde, Wasser und die Arbeit unserer Hände.</p>
+            </div>
+          </div>
+          <div class="why-point reveal delay-3">
+            <span class="why-point-icon">🔬</span>
+            <div class="why-point-text">
+              <h4>Laborgeprüft – jede Charge analysiert</h4>
+              <p>Säuregehalt, Polyphenolgehalt und Frische werden von unabhängigen Laboren bestätigt.</p>
+            </div>
+          </div>
+          <div class="why-point reveal delay-4">
+            <span class="why-point-icon">📦</span>
+            <div class="why-point-text">
+              <h4>Sichere Lieferung &amp; 30 Tage Zufriedenheitsgarantie</h4>
+              <p>Ihre Bestellung kommt sicher verpackt an – und wenn Sie nicht begeistert sind, erstatten wir den Betrag vollständig.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ TESTIMONIALS ════════════ -->
+<section class="testimonials section-pad">
+  <div class="container">
+    <div class="test-header reveal">
+      <span class="label">Kundenstimmen</span>
+      <h2>Was unsere Kunden <em style="font-style:italic;color:var(--gold)">sagen</em></h2>
+      <div class="divider center"></div>
+      <p>Echte Erfahrungen von Menschen, denen Qualität und Gesundheit wichtig sind.</p>
+    </div>
+    <div class="test-grid">
+
+      <div class="test-card reveal delay-1">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-text">„Ich habe in meinem Leben viele Olivenöle probiert – aber das Riserva von Hellenic Gold ist etwas Besonderes. Der Geschmack ist so intensiv und frisch, dass ich es jeden Morgen pur mit einem Löffel nehme. Mein Arzt ist begeistert von meinen Cholesterinwerten!"</p>
+        <div class="test-author">
+          <div class="test-avatar"><img src="https://images.unsplash.com/photo-1499952127939-9bbf5af6c51c?w=100&q=80&auto=format&fit=crop&face=1" alt="Ursula K." loading="lazy"/></div>
+          <div>
+            <span class="test-name">Ursula K.</span>
+            <span class="test-detail">67 Jahre · München</span>
+            <span class="test-verified">✓ Verifizierter Kauf</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="test-card reveal delay-2">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-text">„Seit ich das Hellenic Gold täglich verwende, spüre ich einen Unterschied in meinen Gelenken. Weniger Steifheit morgens. Meine Frau und ich bestellen jetzt regelmäßig das große Paket. Ein Produkt, das wirklich hält, was es verspricht."</p>
+        <div class="test-author">
+          <div class="test-avatar"><img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&q=80&auto=format&fit=crop&face=1" alt="Gerhard W." loading="lazy"/></div>
+          <div>
+            <span class="test-name">Gerhard W.</span>
+            <span class="test-detail">72 Jahre · Hamburg</span>
+            <span class="test-verified">✓ Verifizierter Kauf</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="test-card reveal delay-3">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-text">„Das Grand Cru ist das schönste Geschenk, das ich meiner Schwester je gemacht habe. Sie ist 70 und schwärmt noch heute davon. Die elegante Flasche, der einzigartige Geschmack – einfach Luxus pur. Ich habe gleich noch ein Probier-Set für mich bestellt."</p>
+        <div class="test-author">
+          <div class="test-avatar"><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80&auto=format&fit=crop&face=1" alt="Brigitte H." loading="lazy"/></div>
+          <div>
+            <span class="test-name">Brigitte H.</span>
+            <span class="test-detail">63 Jahre · Köln</span>
+            <span class="test-verified">✓ Verifizierter Kauf</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="test-card reveal delay-4">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-text">„Ich bin pensionierter Arzt und esse seit Jahren mediterran. Hellenic Gold ist das einzige Olivenöl, das ich meinen Patienten wirklich guten Gewissens empfehlen kann. Der Polyphenolgehalt ist beeindruckend – spürbar im Geschmack und spürbar für den Körper."</p>
+        <div class="test-author">
+          <div class="test-avatar"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80&auto=format&fit=crop&face=1" alt="Dr. Klaus M." loading="lazy"/></div>
+          <div>
+            <span class="test-name">Dr. Klaus M.</span>
+            <span class="test-detail">68 Jahre · Stuttgart · Pensionierter Arzt</span>
+            <span class="test-verified">✓ Verifizierter Kauf</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ FAMILIE / GESCHICHTE ════════════ -->
+<section class="family section-pad" id="familie">
+  <div class="family-inner">
+    <div class="family-img-col reveal">
+      <img src="https://images.unsplash.com/photo-1560717845-968823efbee1?w=900&q=85&auto=format&fit=crop" alt="Die Familie Konstantinou – vier Generationen Olivenöl auf Kreta" loading="lazy"/>
+      <div class="family-quote-overlay">
+        <blockquote>„Jede Flasche trägt die Arbeit unserer Hände und die Liebe zu diesem Land in sich."</blockquote>
+        <cite>Nikos Konstantinou, 3. Generation</cite>
+      </div>
+    </div>
+    <div class="family-content reveal delay-1">
+      <span class="label">Unsere Familie</span>
+      <h2>Vier Generationen.<br><em style="font-style:italic;color:var(--gold)">Ein Versprechen.</em></h2>
+      <div class="divider"></div>
+      <p>Was 1923 als kleiner Olivenhain auf dem Hochplateau von Lassithi begann, ist heute ein Familienunternehmen mit Herz und Seele. Giorgos Konstantinou pflanzte die ersten Bäume – seine Ur-Ur-Enkel ernten heute von denselben Wurzeln.</p>
+      <p>Wir verkaufen kein Olivenöl. Wir teilen ein Stück unserer Geschichte, unseres Bodens und unserer Überzeugung: Dass das Beste, was die Natur zu bieten hat, keine Kompromisse verträgt.</p>
+      <div class="family-timeline">
+        <div class="timeline-item">
+          <span class="timeline-year">1923</span>
+          <span class="timeline-text">Giorgos Konstantinou pflanzt die ersten 120 Koroneiki-Olivenbäume auf dem Plateau von Lassithi, Kreta.</span>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-year">1967</span>
+          <span class="timeline-text">Sohn Stavros baut die Plantage auf 1.200 Bäume aus und führt als Erster Bio-Anbau in der Region ein.</span>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-year">1995</span>
+          <span class="timeline-text">Nikos modernisiert die Kaltpresse, ohne die Tradition zu brechen. Erste internationale Auszeichnung – NYIOOC Gold Award.</span>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-year">2019</span>
+          <span class="timeline-text">Enkelin Elena bringt Hellenic Gold nach Deutschland – damit Familien überall von diesem flüssigen Gold profitieren können.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ VERSAND & SERVICE ════════════ -->
+<section class="shipping section-pad">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:50px;">
+      <span class="label reveal">Ihr Einkauf – sicher & einfach</span>
+      <h2 class="reveal delay-1">Bestellen Sie mit Vertrauen</h2>
+      <div class="divider center reveal delay-2"></div>
+    </div>
+    <div class="shipping-grid reveal">
+      <div class="ship-card">
+        <span class="ship-icon">📦</span>
+        <h4 class="ship-title">Sicherer Versand</h4>
+        <p class="ship-text">Jede Flasche wird sorgfältig verpackt und klimatisch geschützt geliefert – direkt aus unserer Mühle auf Kreta.</p>
+      </div>
+      <div class="ship-card">
+        <span class="ship-icon">✈️</span>
+        <h4 class="ship-title">Lieferung in 2–4 Tagen</h4>
+        <p class="ship-text">Schneller Versand nach Deutschland, Österreich und in die Schweiz. Kostenlos ab einem Bestellwert von €49.</p>
+      </div>
+      <div class="ship-card">
+        <span class="ship-icon">🔄</span>
+        <h4 class="ship-title">30 Tage Rückgabe</h4>
+        <p class="ship-text">Nicht zufrieden? Selten, aber kein Problem: Wir erstatten Ihnen den vollen Kaufpreis – ohne Fragen, ohne Bürokratie.</p>
+      </div>
+      <div class="ship-card">
+        <span class="ship-icon">📞</span>
+        <h4 class="ship-title">Persönlicher Service</h4>
+        <p class="ship-text">Unser deutschsprachiges Team ist Mo–Fr von 9–17 Uhr erreichbar. Wir helfen Ihnen gerne persönlich und geduldig.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ FAQ ════════════ -->
+<section class="faq section-pad">
+  <div class="container">
+    <div class="faq-header">
+      <span class="label reveal">Häufige Fragen</span>
+      <h2 class="reveal delay-1">Ihre Fragen –<br><em style="font-style:italic;color:var(--gold)">unsere Antworten</em></h2>
+      <div class="divider center reveal delay-2"></div>
+      <p class="reveal delay-3">Alles, was Sie über Hellenic Gold wissen möchten – klar und verständlich erklärt.</p>
+    </div>
+    <div class="faq-grid">
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>Was bedeutet „Nur eine Ernte pro Jahr"?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Olivenbäume tragen einmal im Jahr Früchte. Wir ernten ausschließlich in dieser einen Saison – im Oktober/November – und pressen nur diese frischen Früchte. Das bedeutet: limitierte Menge, maximale Frische und eine Qualität, die das ganze Jahr nicht wieder erreicht wird.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>Wie sollte ich das Olivenöl aufbewahren?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Bewahren Sie Hellenic Gold kühl, dunkel und trocken auf – am besten im Küchenschrank, weg von Herd und Fenster. Die dunkle Glasflasche schützt das Öl bereits vor Lichteinstrahlung. Bitte nicht im Kühlschrank lagern – das trübt das Öl (ist harmlos, aber unnötig).</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>Wie lange ist das Öl haltbar?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Ungeöffnet hält Hellenic Gold mindestens 18 Monate ab Abfülldatum. Nach dem Öffnen empfehlen wir, das Öl innerhalb von 3–4 Monaten zu verbrauchen, damit Sie stets den vollen Genuss und die maximale Nährstoffdichte haben.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>Was ist der Unterschied zwischen Classico und Riserva?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Der Classico wird aus vollreifen Oliven gewonnen – mild, fruchtig und ideal für den täglichen Genuss. Der Riserva stammt von früh geernteten, noch grünen Oliven: intensiver im Geschmack, würziger im Abgang und deutlich reicher an gesundheitsfördernden Polyphenolen. Für Gesundheitsbewusste ist der Riserva unsere erste Empfehlung.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>Kann ich Hellenic Gold auch zum Braten verwenden?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Ja – entgegen einem weit verbreiteten Mythos ist Extra Vergine Olivenöl auch zum Braten bei mittlerer Hitze gut geeignet. Der Rauchpunkt liegt bei ca. 180–210 °C. Für scharfes Anbraten empfehlen wir jedoch, das kostbare Riserva oder Grand Cru lieber für kalte Gerichte, Salate oder als Finish zu verwenden.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>Eignet sich Hellenic Gold als Geschenk?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Absolut! Unser Probier-Set mit allen drei Sorten und das Grand Cru in der eleganten Flasche sind wunderschöne Geschenke – zu Geburtstagen, Weihnachten, Ostern oder einfach als Zeichen der Wertschätzung. Auf Wunsch legen wir eine persönliche Grußkarte bei.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>Ist das Öl wirklich 100 % bio-zertifiziert?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Ja, seit über 30 Jahren. Unsere Plantage ist vollständig nach EU-Öko-Verordnung zertifiziert. Wir verzichten seit Generationen auf Pestizide, Herbizide und Kunstdünger. Die jährliche Zertifizierung durch eine unabhängige Kontrollbehörde können Sie auf Wunsch jederzeit einsehen.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>Wie kann ich bestellen, wenn ich kein Internet-Experte bin?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Kein Problem! Schreiben Sie uns einfach über das Kontaktformular oder rufen Sie uns an. Unser Team hilft Ihnen gerne dabei, Ihre Bestellung telefonisch oder per E-Mail aufzugeben – ganz persönlich und ohne Stress. Wir sind Mo–Fr von 9 bis 17 Uhr für Sie da.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ CTA STRIP / NEWSLETTER ════════════ -->
+<div class="cta-strip" id="kontakt">
+  <div class="container">
+    <h2 class="reveal">Erhalten Sie die Nachricht,<br>wenn die neue Ernte verfügbar ist</h2>
+    <p class="reveal delay-1">Unser Jahresvorrat ist jedes Jahr begrenzt. Tragen Sie sich ein und seien Sie unter den Ersten, die bestellen können – und erhalten Sie 10 % Rabatt auf Ihre erste Bestellung.</p>
+    <form class="newsletter-form reveal delay-2" onsubmit="handleNewsletter(event)">
+      <input type="email" placeholder="Ihre E-Mail-Adresse" required aria-label="E-Mail Adresse"/>
+      <button type="submit">Jetzt anmelden</button>
+    </form>
+  </div>
+</div>
+
+<!-- ════════════ FOOTER ════════════ -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+
+      <div class="footer-brand">
+        <a class="nav-logo" href="#start">Hellenic <span>Gold</span></a>
+        <p>Premium Extra Vergine Olivenöl, handgeerntet auf Kreta – direkt zu Ihnen nach Hause. Vier Generationen Leidenschaft in jeder Flasche.</p>
+        <div class="payment-icons">
+          <span class="pay-icon">VISA</span>
+          <span class="pay-icon">MC</span>
+          <span class="pay-icon">PAYPAL</span>
+          <span class="pay-icon">SEPA</span>
+        </div>
+        <div class="footer-social" style="margin-top:20px;">
+          <a class="soc-btn" href="#" aria-label="Instagram">IG</a>
+          <a class="soc-btn" href="#" aria-label="Facebook">FB</a>
+          <a class="soc-btn" href="#" aria-label="Pinterest">PT</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h5>Navigation</h5>
+        <ul>
+          <li><a href="#start">Start</a></li>
+          <li><a href="#ernte">Unsere Ernte</a></li>
+          <li><a href="#prozess">Von der Ernte zur Flasche</a></li>
+          <li><a href="#health">Gesundheit & Wohlbefinden</a></li>
+          <li><a href="#shop">Shop</a></li>
+          <li><a href="#about">Über uns</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Kundenservice</h5>
+        <ul>
+          <li><a href="#">Versand & Lieferung</a></li>
+          <li><a href="#">Rückgabe & Umtausch</a></li>
+          <li><a href="#">Zahlungsmethoden</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Kontakt aufnehmen</a></li>
+          <li><a href="#">Bestellung verfolgen</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col" id="kontakt-form">
+        <h5>Schreiben Sie uns</h5>
+        <form class="contact-mini" onsubmit="handleContact(event)">
+          <input type="text" placeholder="Ihr Name" required aria-label="Name"/>
+          <input type="email" placeholder="Ihre E-Mail" required aria-label="E-Mail"/>
+          <textarea placeholder="Ihre Nachricht …" aria-label="Nachricht"></textarea>
+          <button type="submit">Nachricht senden</button>
+        </form>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2024 Hellenic Gold · Alle Rechte vorbehalten · Lassithi, Kreta, Griechenland</span>
+      <div class="footer-legal">
+        <a href="#">Impressum</a>
+        <a href="#">Datenschutz</a>
+        <a href="#">AGB</a>
+        <a href="#">Widerrufsrecht</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ════════════ BACK TO TOP ════════════ -->
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Nach oben scrollen">↑</button>
+
+<!-- ════════════ COOKIE BANNER ════════════ -->
+<div class="cookie-bar" id="cookieBar">
+  <p class="cookie-text">
+    🍪 Wir verwenden Cookies, um Ihnen die beste Erfahrung auf unserer Website zu bieten. Mit der Nutzung dieser Seite stimmen Sie unserer <a href="#">Datenschutzerklärung</a> zu.
+  </p>
+  <div class="cookie-btns">
+    <button class="cookie-accept" onclick="acceptCookie()">Alle akzeptieren</button>
+    <button class="cookie-decline" onclick="declineCookie()">Nur notwendige</button>
+  </div>
+</div>
+
+<!-- ════════════ TOAST ════════════ -->
+<div class="toast" id="toast">
+  <span class="toast-check">✓</span>
+  <span id="toastMsg">In den Warenkorb gelegt</span>
+</div>
+
+<!-- ════════════ JAVASCRIPT ════════════ -->
+<script>
+/* ── Cart State ───────────────────── */
+let cart = [];
+
+function addToCart(name, price, btn) {
+  const existing = cart.find(i => i.name === name);
+  if (existing) {
+    existing.qty++;
+  } else {
+    cart.push({ name, price, qty: 1 });
+  }
+  updateCart();
+  openCart();
+  showToast(`„${name}" in den Warenkorb gelegt`);
+  btn.textContent = '✓ Hinzugefügt';
+  btn.style.background = 'var(--green-mid)';
+  setTimeout(() => {
+    btn.textContent = 'In den Warenkorb';
+    btn.style.background = '';
+  }, 1800);
+}
+
+function updateCart() {
+  const count = cart.reduce((s, i) => s + i.qty, 0);
+  document.getElementById('cartCount').textContent = count;
+
+  const itemsEl = document.getElementById('cartItems');
+  const footerEl = document.getElementById('cartFooter');
+  const emptyEl  = document.getElementById('cartEmpty');
+
+  if (cart.length === 0) {
+    emptyEl.style.display = 'block';
+    footerEl.style.display = 'none';
+    return;
+  }
+
+  emptyEl.style.display = 'none';
+  footerEl.style.display = 'block';
+
+  // Re-render items (keep empty el in DOM)
+  const itemNodes = itemsEl.querySelectorAll('.cart-item');
+  itemNodes.forEach(n => n.remove());
+
+  cart.forEach((item, idx) => {
+    const el = document.createElement('div');
+    el.className = 'cart-item';
+    el.innerHTML = `
+      <img class="cart-item-img" src="https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=200&q=70&auto=format&fit=crop" alt="${item.name}"/>
+      <div class="cart-item-info">
+        <div class="cart-item-name">${item.name}</div>
+        <div class="cart-item-price">€${(item.price * item.qty).toFixed(2).replace('.',',')}</div>
+        <div class="cart-qty">
+          <button class="qty-btn" onclick="changeQty(${idx}, -1)">−</button>
+          <span class="qty-num">${item.qty}</span>
+          <button class="qty-btn" onclick="changeQty(${idx}, 1)">+</button>
+        </div>
+        <button class="cart-item-remove" onclick="removeItem(${idx})">Entfernen</button>
+      </div>`;
+    itemsEl.appendChild(el);
+  });
+
+  const total = cart.reduce((s, i) => s + i.price * i.qty, 0);
+  document.getElementById('cartTotalPrice').textContent = '€' + total.toFixed(2).replace('.', ',');
+}
+
+function changeQty(idx, delta) {
+  cart[idx].qty += delta;
+  if (cart[idx].qty <= 0) cart.splice(idx, 1);
+  updateCart();
+}
+
+function removeItem(idx) {
+  cart.splice(idx, 1);
+  updateCart();
+}
+
+function openCart() {
+  document.getElementById('cartOverlay').classList.add('open');
+  document.getElementById('cartSidebar').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeCart() {
+  document.getElementById('cartOverlay').classList.remove('open');
+  document.getElementById('cartSidebar').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+/* ── Toast ────────────────────────── */
+let toastTimer;
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  document.getElementById('toastMsg').textContent = msg;
+  t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove('show'), 2800);
+}
+
+/* ── Mobile Nav ───────────────────── */
+function openMobileNav() {
+  document.getElementById('mobileNav').classList.add('open');
+  document.getElementById('mobileOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeMobileNav() {
+  document.getElementById('mobileNav').classList.remove('open');
+  document.getElementById('mobileOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+/* ── Sticky Nav ───────────────────── */
+const navEl = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  navEl.classList.toggle('scrolled', window.scrollY > 70);
+}, { passive: true });
+
+/* ── Back to Top ──────────────────── */
+const backTopBtn = document.getElementById('backTop');
+window.addEventListener('scroll', () => {
+  backTopBtn.classList.toggle('visible', window.scrollY > 500);
+}, { passive: true });
+
+/* ── Announcement Bar ─────────────── */
+function closeAnnounce() {
+  const bar = document.getElementById('announceBar');
+  bar.classList.add('hidden');
+  document.body.classList.remove('bar-visible');
+  document.getElementById('nav').style.top = '0';
+  sessionStorage.setItem('announceClosed', '1');
+}
+// Restore closed state across page loads within session
+if (sessionStorage.getItem('announceClosed')) closeAnnounce();
+
+/* ── Cookie Banner ────────────────── */
+function acceptCookie() {
+  document.getElementById('cookieBar').classList.add('hidden');
+  localStorage.setItem('cookieConsent', 'accepted');
+}
+function declineCookie() {
+  document.getElementById('cookieBar').classList.add('hidden');
+  localStorage.setItem('cookieConsent', 'declined');
+}
+if (localStorage.getItem('cookieConsent')) {
+  document.getElementById('cookieBar').classList.add('hidden');
+}
+
+/* ── FAQ Accordion ────────────────── */
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const isOpen = item.classList.contains('open');
+  // Close all
+  document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+  // Toggle clicked
+  if (!isOpen) item.classList.add('open');
+}
+
+/* ── Scroll Reveal ────────────────── */
+const revealEls = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('up'); io.unobserve(e.target); }
+  });
+}, { threshold: 0.08 });
+revealEls.forEach(el => io.observe(el));
+
+/* ── Forms ────────────────────────── */
+function handleNewsletter(e) {
+  e.preventDefault();
+  showToast('Vielen Dank! Sie erhalten eine Bestätigung per E-Mail.');
+  e.target.reset();
+}
+function handleContact(e) {
+  e.preventDefault();
+  const btn = e.target.querySelector('button');
+  btn.textContent = '✓ Gesendet!';
+  btn.style.background = 'var(--green)';
+  btn.style.color = '#fff';
+  setTimeout(() => {
+    btn.textContent = 'Nachricht senden';
+    btn.style.background = '';
+    btn.style.color = '';
+    e.target.reset();
+  }, 3000);
+}
+</script>
+</body>
+</html>
