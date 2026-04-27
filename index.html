@@ -1409,9 +1409,10 @@ body.bar-visible #nav{top:42px;}
 .product-card:hover .product-img-overlay{opacity:1;}
 .prod-overlay-btn{
   font-size:.64rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;
-  color:#fff;border:1px solid rgba(255,255,255,.55);
-  padding:8px 18px;background:transparent;cursor:default;
+  color:#fff;border:1px solid rgba(255,255,255,.65);
+  padding:9px 20px;background:rgba(0,0,0,.15);cursor:pointer;
   transform:translateY(8px);transition:transform .4s cubic-bezier(.25,.8,.25,1);
+  pointer-events:none;
 }
 .product-card:hover .prod-overlay-btn{transform:translateY(0);}
 
@@ -1429,6 +1430,213 @@ body.bar-visible #nav{top:42px;}
 }
 .orn-line.orn-rev{background:linear-gradient(to left,transparent,var(--gold));}
 .orn-leaf{color:var(--gold);font-size:.75rem;opacity:.8;}
+
+/* ═══════════════════════════════════
+   PRODUCT MODAL
+═══════════════════════════════════ */
+.prod-modal-overlay{
+  position:fixed;inset:0;background:rgba(10,20,8,.72);
+  z-index:3000;opacity:0;pointer-events:none;
+  transition:opacity .3s ease;
+}
+.prod-modal-overlay.open{opacity:1;pointer-events:all;}
+.prod-modal{
+  position:fixed;top:50%;left:50%;
+  transform:translate(-50%,-52%) scale(.97);
+  width:min(920px,93vw);max-height:90vh;
+  background:var(--warm-white);z-index:3001;
+  display:grid;grid-template-columns:1fr 1fr;
+  opacity:0;pointer-events:none;
+  transition:opacity .35s ease,transform .35s cubic-bezier(.25,.8,.25,1);
+  overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.35);
+}
+.prod-modal.open{opacity:1;pointer-events:all;transform:translate(-50%,-50%) scale(1);}
+.prod-modal-close{
+  position:absolute;top:14px;right:14px;z-index:10;
+  width:36px;height:36px;border-radius:50%;
+  background:rgba(0,0,0,.09);border:none;cursor:pointer;
+  font-size:.85rem;display:flex;align-items:center;justify-content:center;
+  transition:background .2s,transform .2s;color:var(--text);
+}
+.prod-modal-close:hover{background:rgba(0,0,0,.18);transform:rotate(90deg);}
+.prod-modal-img-col{
+  position:relative;min-height:420px;overflow:hidden;background:var(--cream);
+}
+.prod-modal-img-col img{
+  width:100%;height:100%;object-fit:cover;transition:transform .6s ease;
+}
+.prod-modal-img-col:hover img{transform:scale(1.04);}
+.prod-modal-badge{
+  position:absolute;top:16px;left:16px;z-index:2;
+  font-size:.58rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
+  padding:5px 11px;
+}
+.prod-modal-info-col{
+  padding:36px 28px 24px;overflow-y:auto;
+  display:flex;flex-direction:column;gap:11px;
+}
+.prod-modal-label{
+  font-size:.6rem;font-weight:700;letter-spacing:3px;
+  text-transform:uppercase;color:var(--gold);
+}
+.prod-modal-name{
+  font-family:'Playfair Display',serif;
+  font-size:1.6rem;font-weight:700;color:var(--green);line-height:1.15;
+}
+.prod-modal-vol{font-size:.8rem;color:var(--text-light);}
+.prod-modal-divider{height:1px;background:var(--border);margin:2px 0;}
+.prod-modal-desc{font-size:.87rem;color:var(--text-mid);line-height:1.78;}
+.prod-modal-analysis{
+  display:grid;grid-template-columns:1fr 1fr;gap:7px;
+  background:var(--cream);padding:12px 14px;
+}
+.analysis-item{
+  font-size:.74rem;color:var(--text-mid);
+  display:flex;align-items:center;gap:7px;line-height:1.35;
+}
+.analysis-dot{width:5px;height:5px;border-radius:50%;background:var(--gold);flex-shrink:0;}
+.prod-modal-tags{display:flex;flex-wrap:wrap;gap:5px;}
+.prod-modal-tags .tag{font-size:.58rem;padding:3px 8px;}
+.prod-modal-footer{
+  display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+  margin-top:auto;padding-top:14px;border-top:1px solid var(--border);
+}
+.prod-modal-price{
+  font-family:'Playfair Display',serif;
+  font-size:1.8rem;font-weight:700;color:var(--green);
+}
+.prod-modal-qty{
+  display:flex;align-items:center;border:1px solid var(--border);
+}
+.prod-modal-qty .qty-btn{
+  width:34px;height:38px;border:none;background:var(--cream);
+  cursor:pointer;font-size:1.1rem;display:flex;align-items:center;justify-content:center;
+  transition:background .2s;
+}
+.prod-modal-qty .qty-btn:hover{background:var(--cream-dark);}
+.prod-modal-qty .qty-num{
+  min-width:36px;height:38px;display:flex;align-items:center;justify-content:center;
+  font-weight:700;font-size:.95rem;
+  border-left:1px solid var(--border);border-right:1px solid var(--border);
+}
+.prod-modal-add{
+  flex:1;padding:12px 16px;background:var(--green);color:#fff;
+  border:none;cursor:pointer;font-size:.72rem;font-weight:700;
+  letter-spacing:1.5px;text-transform:uppercase;
+  transition:background .25s,transform .2s;white-space:nowrap;
+}
+.prod-modal-add:hover{background:var(--green-mid);transform:translateY(-1px);}
+@media(max-width:680px){
+  .prod-modal{grid-template-columns:1fr;}
+  .prod-modal-img-col{min-height:200px;max-height:230px;}
+  .prod-modal-info-col{padding:20px 16px 16px;}
+  .prod-modal-name{font-size:1.3rem;}
+}
+
+/* ═══════════════════════════════════
+   CHECKOUT MODAL
+═══════════════════════════════════ */
+.checkout-overlay{
+  position:fixed;inset:0;background:rgba(10,20,8,.72);
+  z-index:4000;opacity:0;pointer-events:none;transition:opacity .3s ease;
+}
+.checkout-overlay.open{opacity:1;pointer-events:all;}
+.checkout-modal{
+  position:fixed;top:50%;left:50%;
+  transform:translate(-50%,-52%) scale(.97);
+  width:min(560px,93vw);max-height:90vh;
+  background:var(--warm-white);z-index:4001;
+  opacity:0;pointer-events:none;overflow-y:auto;
+  transition:opacity .35s ease,transform .35s cubic-bezier(.25,.8,.25,1);
+  box-shadow:0 30px 80px rgba(0,0,0,.35);
+}
+.checkout-modal.open{opacity:1;pointer-events:all;transform:translate(-50%,-50%) scale(1);}
+.checkout-header{
+  background:var(--green);color:#fff;
+  padding:20px 26px;
+  display:flex;justify-content:space-between;align-items:center;
+  position:sticky;top:0;z-index:2;
+}
+.checkout-header h3{font-family:'Playfair Display',serif;font-size:1.1rem;color:#fff;margin:0;}
+.checkout-close{
+  background:none;border:none;color:rgba(255,255,255,.7);font-size:1rem;
+  cursor:pointer;transition:color .2s;width:30px;height:30px;
+  display:flex;align-items:center;justify-content:center;
+}
+.checkout-close:hover{color:#fff;}
+.checkout-body{padding:26px 26px 20px;}
+.checkout-step{display:none;}
+.checkout-step.active{display:block;}
+.checkout-progress{
+  display:flex;gap:6px;margin-bottom:6px;
+}
+.cp-bar{flex:1;height:3px;background:var(--cream-dark);transition:background .4s;}
+.cp-bar.done{background:var(--gold);}
+.cp-labels{
+  display:flex;justify-content:space-between;
+  font-size:.62rem;font-weight:700;letter-spacing:1.5px;
+  text-transform:uppercase;color:var(--text-light);margin-bottom:20px;
+}
+.checkout-summary{
+  background:var(--cream);padding:14px 16px;margin-bottom:18px;
+  border:1px solid var(--border);
+}
+.cs-item{
+  display:flex;justify-content:space-between;align-items:center;
+  font-size:.85rem;color:var(--text-mid);padding:5px 0;
+  border-bottom:1px solid rgba(0,0,0,.06);gap:8px;
+}
+.cs-item:last-child{border-bottom:none;}
+.cs-item-name{flex:1;}
+.cs-item-qty{color:var(--text-light);font-size:.78rem;}
+.cs-total{
+  display:flex;justify-content:space-between;align-items:center;
+  font-weight:700;font-size:1rem;color:var(--green);
+  padding-top:10px;margin-top:6px;border-top:2px solid var(--gold);
+}
+.checkout-field{margin-bottom:13px;}
+.checkout-field label{
+  display:block;font-size:.68rem;font-weight:700;letter-spacing:1.5px;
+  text-transform:uppercase;color:var(--text-mid);margin-bottom:5px;
+}
+.checkout-field input,.checkout-field select{
+  width:100%;padding:11px 13px;border:1px solid var(--border);
+  background:#fff;font-size:.88rem;color:var(--text);outline:none;
+  transition:border-color .2s;
+}
+.checkout-field input:focus,.checkout-field select:focus{border-color:var(--gold);}
+.checkout-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.pay-opts{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:16px;}
+.pay-opt{
+  border:2px solid var(--border);padding:12px 6px;text-align:center;cursor:pointer;
+  transition:border-color .2s,background .2s;
+  font-size:.72rem;font-weight:700;color:var(--text-mid);
+}
+.pay-opt:hover{border-color:var(--gold-light);}
+.pay-opt.selected{border-color:var(--gold);background:var(--gold-pale);color:var(--green);}
+.pay-opt-icon{font-size:1.3rem;display:block;margin-bottom:4px;}
+.checkout-btn{
+  width:100%;padding:14px;background:var(--green);color:#fff;border:none;
+  cursor:pointer;font-size:.78rem;font-weight:700;letter-spacing:2px;
+  text-transform:uppercase;transition:background .25s;margin-top:6px;
+}
+.checkout-btn:hover{background:var(--green-mid);}
+.checkout-btn.gold-btn{background:var(--gold);color:var(--green);}
+.checkout-btn.gold-btn:hover{background:var(--gold-light);}
+.checkout-note{font-size:.75rem;color:var(--text-light);text-align:center;margin-top:10px;}
+.checkout-success{text-align:center;padding:16px 8px;}
+.checkout-success-icon{font-size:3.8rem;margin-bottom:16px;display:block;}
+.checkout-success h3{
+  font-family:'Playfair Display',serif;font-size:1.35rem;
+  color:var(--green);margin-bottom:12px;
+}
+.checkout-success p{font-size:.87rem;color:var(--text-mid);line-height:1.75;}
+.checkout-success .order-num{
+  display:inline-block;margin-top:14px;
+  background:var(--green-pale);color:var(--green);
+  font-size:.72rem;font-weight:700;letter-spacing:2px;
+  padding:8px 20px;
+}
 
 /* ═══════════════════════════════════
    IMAGE FADE-IN ON LOAD
@@ -1535,7 +1743,7 @@ footer{border-top:2px solid rgba(200,162,74,.2);}
       <span>Gesamt</span>
       <span id="cartTotalPrice">€0,00</span>
     </div>
-    <button class="btn btn-primary" onclick="showToast('Weiterleitung zur Kasse …')">Zur Kasse →</button>
+    <button class="btn btn-primary" onclick="openCheckout()">Zur Kasse →</button>
   </div>
 </aside>
 
@@ -1873,7 +2081,7 @@ footer{border-top:2px solid rgba(200,162,74,.2);}
         <span class="product-badge badge-pop">Beliebt bei 50+</span>
         <div class="product-img-wrap">
           <img src="https://images.pexels.com/photos/6231898/pexels-photo-6231898.jpeg?auto=compress&cs=tinysrgb&w=700&h=400&fit=crop" alt="Zakariya Classico 500ml" loading="lazy" class="img-reveal"/>
-          <div class="product-img-overlay"><span class="prod-overlay-btn">Details ansehen</span></div>
+          <div class="product-img-overlay" onclick="openProductModal('Classico 500ml')" style="cursor:pointer;"><span class="prod-overlay-btn">Details ansehen</span></div>
         </div>
         <div class="product-body">
           <span class="product-cat">Extra Vergine · Kaltgepresst</span>
@@ -1897,7 +2105,7 @@ footer{border-top:2px solid rgba(200,162,74,.2);}
         <span class="product-badge badge-best">⭐ Bestseller</span>
         <div class="product-img-wrap">
           <img src="https://images.pexels.com/photos/9025074/pexels-photo-9025074.jpeg?auto=compress&cs=tinysrgb&w=700&h=400&fit=crop" alt="Zakariya Riserva 500ml" loading="lazy" class="img-reveal"/>
-          <div class="product-img-overlay"><span class="prod-overlay-btn">Details ansehen</span></div>
+          <div class="product-img-overlay" onclick="openProductModal('Riserva 500ml')" style="cursor:pointer;"><span class="prod-overlay-btn">Details ansehen</span></div>
         </div>
         <div class="product-body">
           <span class="product-cat">Frühernte · Höchster Polyphenolgehalt</span>
@@ -1921,7 +2129,7 @@ footer{border-top:2px solid rgba(200,162,74,.2);}
         <span class="product-badge badge-limited">⏳ Limitiert</span>
         <div class="product-img-wrap">
           <img src="https://images.pexels.com/photos/4109912/pexels-photo-4109912.jpeg?auto=compress&cs=tinysrgb&w=700&h=400&fit=crop" alt="Zakariya Grand Cru 250ml" loading="lazy" class="img-reveal"/>
-          <div class="product-img-overlay"><span class="prod-overlay-btn">Details ansehen</span></div>
+          <div class="product-img-overlay" onclick="openProductModal('Grand Cru 250ml')" style="cursor:pointer;"><span class="prod-overlay-btn">Details ansehen</span></div>
         </div>
         <div class="product-body">
           <span class="product-cat">Grand Cru · Uralte Bäume · 250 ml</span>
@@ -1945,7 +2153,7 @@ footer{border-top:2px solid rgba(200,162,74,.2);}
         <span class="product-badge badge-pop">Sparpaket</span>
         <div class="product-img-wrap">
           <img src="https://images.pexels.com/photos/11254917/pexels-photo-11254917.jpeg?auto=compress&cs=tinysrgb&w=700&h=400&fit=crop" alt="Zakariya Classico 1 Liter" loading="lazy" class="img-reveal"/>
-          <div class="product-img-overlay"><span class="prod-overlay-btn">Details ansehen</span></div>
+          <div class="product-img-overlay" onclick="openProductModal('Classico 1L')" style="cursor:pointer;"><span class="prod-overlay-btn">Details ansehen</span></div>
         </div>
         <div class="product-body">
           <span class="product-cat">Extra Vergine · Haushaltsgröße</span>
@@ -1968,8 +2176,8 @@ footer{border-top:2px solid rgba(200,162,74,.2);}
       <div class="product-card reveal delay-2">
         <span class="product-badge badge-best">🎁 Geschenk-Tipp</span>
         <div class="product-img-wrap">
-          <img src="https://images.pexels.com/photos/5931/food-salad-healthy-lunch.jpg?auto=compress&cs=tinysrgb&w=700&h=400&fit=crop" alt="Zakariya Probier-Set" loading="lazy" class="img-reveal"/>
-          <div class="product-img-overlay"><span class="prod-overlay-btn">Details ansehen</span></div>
+          <img src="https://images.pexels.com/photos/5737246/pexels-photo-5737246.jpeg?auto=compress&cs=tinysrgb&w=700&h=400&fit=crop" alt="Zakariya Probier-Set" loading="lazy" class="img-reveal"/>
+          <div class="product-img-overlay" onclick="openProductModal('Probier-Set 3×250ml')" style="cursor:pointer;"><span class="prod-overlay-btn">Details ansehen</span></div>
         </div>
         <div class="product-body">
           <span class="product-cat">Exklusives Probier-Set · 3 Flaschen</span>
@@ -1993,7 +2201,7 @@ footer{border-top:2px solid rgba(200,162,74,.2);}
         <span class="product-badge badge-limited">Neu</span>
         <div class="product-img-wrap">
           <img src="https://images.pexels.com/photos/6094524/pexels-photo-6094524.jpeg?auto=compress&cs=tinysrgb&w=700&h=400&fit=crop" alt="Zakariya Riserva 1 Liter" loading="lazy" class="img-reveal"/>
-          <div class="product-img-overlay"><span class="prod-overlay-btn">Details ansehen</span></div>
+          <div class="product-img-overlay" onclick="openProductModal('Riserva 1L')" style="cursor:pointer;"><span class="prod-overlay-btn">Details ansehen</span></div>
         </div>
         <div class="product-body">
           <span class="product-cat">Frühernte · Riserva · Großflasche</span>
@@ -2437,6 +2645,126 @@ footer{border-top:2px solid rgba(200,162,74,.2);}
   </div>
 </div>
 
+<!-- ════════════ PRODUCT DETAIL MODAL ════════════ -->
+<div class="prod-modal-overlay" id="prodModalOverlay" onclick="closeProductModal()"></div>
+<div class="prod-modal" id="prodModal" role="dialog" aria-modal="true">
+  <button class="prod-modal-close" onclick="closeProductModal()" aria-label="Schließen">✕</button>
+  <div class="prod-modal-img-col">
+    <span class="prod-modal-badge badge-best" id="prodModalBadge"></span>
+    <img id="prodModalImg" src="" alt=""/>
+  </div>
+  <div class="prod-modal-info-col">
+    <span class="prod-modal-label" id="prodModalLabel"></span>
+    <h2 class="prod-modal-name" id="prodModalName"></h2>
+    <div class="prod-modal-vol" id="prodModalVol"></div>
+    <div class="prod-modal-divider"></div>
+    <p class="prod-modal-desc" id="prodModalDesc"></p>
+    <div class="prod-modal-analysis" id="prodModalAnalysis"></div>
+    <div class="prod-modal-tags" id="prodModalTags"></div>
+    <div class="prod-modal-footer">
+      <div class="prod-modal-price" id="prodModalPrice"></div>
+      <div class="prod-modal-qty">
+        <button class="qty-btn" onclick="adjustModalQty(-1)">−</button>
+        <span class="qty-num" id="modalQtyDisplay">1</span>
+        <button class="qty-btn" onclick="adjustModalQty(1)">+</button>
+      </div>
+      <button class="prod-modal-add" onclick="addModalToCart()">In den Warenkorb</button>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════ CHECKOUT MODAL ════════════ -->
+<div class="checkout-overlay" id="checkoutOverlay" onclick="closeCheckout()"></div>
+<div class="checkout-modal" id="checkoutModal" role="dialog" aria-modal="true">
+  <div class="checkout-header">
+    <h3 id="checkoutTitle">Zur Kasse</h3>
+    <button class="checkout-close" onclick="closeCheckout()">✕</button>
+  </div>
+  <div class="checkout-body">
+    <!-- Progress -->
+    <div class="checkout-progress">
+      <div class="cp-bar done" id="cpBar1"></div>
+      <div class="cp-bar" id="cpBar2"></div>
+      <div class="cp-bar" id="cpBar3"></div>
+    </div>
+    <div class="cp-labels">
+      <span>Warenkorb</span><span>Versand</span><span>Zahlung</span>
+    </div>
+
+    <!-- Step 1: Bestellübersicht -->
+    <div class="checkout-step active" id="checkoutStep1">
+      <div class="checkout-summary" id="checkoutSummary"></div>
+      <div class="checkout-field">
+        <label>Gutscheincode</label>
+        <input type="text" placeholder="Code eingeben (z.B. ZAKARIYA10)" id="couponInput"/>
+      </div>
+      <button class="checkout-btn gold-btn" onclick="checkoutNext(2)">Weiter zur Lieferadresse →</button>
+      <p class="checkout-note">🔒 Sichere, verschlüsselte Übertragung · SSL-geschützt</p>
+    </div>
+
+    <!-- Step 2: Lieferadresse -->
+    <div class="checkout-step" id="checkoutStep2">
+      <div class="checkout-row">
+        <div class="checkout-field"><label>Vorname *</label><input type="text" placeholder="Max" required/></div>
+        <div class="checkout-field"><label>Nachname *</label><input type="text" placeholder="Mustermann" required/></div>
+      </div>
+      <div class="checkout-field"><label>E-Mail *</label><input type="email" placeholder="max@beispiel.de" required/></div>
+      <div class="checkout-field"><label>Telefon</label><input type="tel" placeholder="+49 123 456 7890"/></div>
+      <div class="checkout-field"><label>Straße & Hausnummer *</label><input type="text" placeholder="Musterstraße 12" required/></div>
+      <div class="checkout-row">
+        <div class="checkout-field"><label>PLZ *</label><input type="text" placeholder="12345" required/></div>
+        <div class="checkout-field"><label>Stadt *</label><input type="text" placeholder="Berlin" required/></div>
+      </div>
+      <div class="checkout-field">
+        <label>Land</label>
+        <select>
+          <option>Deutschland</option>
+          <option>Österreich</option>
+          <option>Schweiz</option>
+        </select>
+      </div>
+      <button class="checkout-btn" onclick="checkoutNext(3)">Weiter zur Zahlung →</button>
+    </div>
+
+    <!-- Step 3: Zahlung -->
+    <div class="checkout-step" id="checkoutStep3">
+      <p style="font-size:.82rem;color:var(--text-mid);margin-bottom:14px;">Wählen Sie Ihre bevorzugte Zahlungsmethode:</p>
+      <div class="pay-opts">
+        <div class="pay-opt selected" onclick="selectPayment(this)">
+          <span class="pay-opt-icon">💳</span>Kreditkarte
+        </div>
+        <div class="pay-opt" onclick="selectPayment(this)">
+          <span class="pay-opt-icon">🅿️</span>PayPal
+        </div>
+        <div class="pay-opt" onclick="selectPayment(this)">
+          <span class="pay-opt-icon">🏦</span>Banküberweisung
+        </div>
+      </div>
+      <div id="paymentFields">
+        <div class="checkout-field"><label>Karteninhaber</label><input type="text" placeholder="Max Mustermann"/></div>
+        <div class="checkout-field"><label>Kartennummer</label><input type="text" placeholder="•••• •••• •••• ••••" maxlength="19"/></div>
+        <div class="checkout-row">
+          <div class="checkout-field"><label>Gültig bis</label><input type="text" placeholder="MM/JJ" maxlength="5"/></div>
+          <div class="checkout-field"><label>CVC</label><input type="text" placeholder="•••" maxlength="4"/></div>
+        </div>
+      </div>
+      <button class="checkout-btn gold-btn" onclick="checkoutFinish()">Jetzt kaufen – kostenpflichtig bestellen ✓</button>
+      <p class="checkout-note">🌿 Zufriedenheitsgarantie · 30 Tage kostenlose Rückgabe</p>
+    </div>
+
+    <!-- Step 4: Bestätigung -->
+    <div class="checkout-step" id="checkoutStep4">
+      <div class="checkout-success">
+        <span class="checkout-success-icon">🫒</span>
+        <h3>Vielen Dank für Ihre Bestellung!</h3>
+        <p>Ihre Bestellung wurde erfolgreich aufgegeben. Sie erhalten in Kürze eine Bestätigung per E-Mail mit allen Details.</p>
+        <p style="margin-top:10px;">Ihr Zakariya Olivenöl wird mit größter Sorgfalt verpackt und innerhalb von <strong>2–4 Werktagen</strong> geliefert.</p>
+        <span class="order-num" id="orderNumber"></span>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- ════════════ TOAST ════════════ -->
 <div class="toast" id="toast">
   <span class="toast-check">✓</span>
@@ -2445,6 +2773,73 @@ footer{border-top:2px solid rgba(200,162,74,.2);}
 
 <!-- ════════════ JAVASCRIPT ════════════ -->
 <script>
+/* ── Helpers ──────────────────────── */
+const id = selector => document.getElementById(selector);
+
+/* ── Product Catalogue ────────────── */
+const PRODUCTS = {
+  'Classico 500ml': {
+    name: 'Classico', label: 'Extra Vergine · Kaltgepresst',
+    vol: '500 ml · Koroneiki-Olive', price: 22,
+    badge: '🌿 Beliebt bei 50+', badgeClass: 'badge-pop',
+    img: 'https://images.pexels.com/photos/6231898/pexels-photo-6231898.jpeg?auto=compress&cs=tinysrgb&w=900&h=700&fit=crop',
+    thumb: 'https://images.pexels.com/photos/6231898/pexels-photo-6231898.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop',
+    desc: 'Unser meistgeliebtes Olivenöl: fruchtig, mild und aromatisch. Ideal zum täglichen Genuss – auf Salaten, Gemüse, Brot oder pur als Gesundheitsritual jeden Morgen.',
+    analysis: ['Polyphenole: 280 mg/kg','Säuregehalt: 0,18 %','Peroxidzahl: < 5 meq/kg','Ernte: Oktober 2024'],
+    tags: ['🌿 Bio-zertifiziert','❄️ Kaltgepresst','🏅 Extra Vergine','🇬🇷 Kreta']
+  },
+  'Riserva 500ml': {
+    name: 'Riserva', label: 'Frühernte · Höchster Polyphenolgehalt',
+    vol: '500 ml · Koroneiki-Frühernte', price: 32,
+    badge: '⭐ Bestseller', badgeClass: 'badge-best',
+    img: 'https://images.pexels.com/photos/9025074/pexels-photo-9025074.jpeg?auto=compress&cs=tinysrgb&w=900&h=700&fit=crop',
+    thumb: 'https://images.pexels.com/photos/9025074/pexels-photo-9025074.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop',
+    desc: 'Von unreif geernteten Oliven gewonnen – intensiv grün, würzig mit leichtem Pfeffer-Abgang. Außergewöhnlich reich an Polyphenolen und Antioxidantien.',
+    analysis: ['Polyphenole: 620 mg/kg','Säuregehalt: 0,12 %','Peroxidzahl: < 4 meq/kg','Ernte: Oktober 2024'],
+    tags: ['🔬 Reichste Polyphenole','💚 Anti-entzündlich','🌿 Bio','⭐ Bestseller']
+  },
+  'Grand Cru 250ml': {
+    name: 'Grand Cru', label: 'Selektion · Uralte Bäume · 250 ml',
+    vol: '250 ml · Selektion über 400-jähriger Bäume', price: 54,
+    badge: '⏳ Limitiert', badgeClass: 'badge-limited',
+    img: 'https://images.pexels.com/photos/4109912/pexels-photo-4109912.jpeg?auto=compress&cs=tinysrgb&w=900&h=700&fit=crop',
+    thumb: 'https://images.pexels.com/photos/4109912/pexels-photo-4109912.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop',
+    desc: 'Aus dem ältesten Teil unserer Plantage – Bäume, die seit über 400 Jahren Wurzeln schlagen. Limitiert auf 800 Flaschen pro Saison.',
+    analysis: ['Polyphenole: 780 mg/kg','Säuregehalt: 0,09 %','Nur 800 Flaschen / Jahr','NYIOOC Gold Award 2024'],
+    tags: ['💎 Limitiert','🏺 400-j. Bäume','🎁 Geschenkidee','🏅 Gold Award']
+  },
+  'Classico 1L': {
+    name: 'Classico 1 Liter', label: 'Extra Vergine · Haushaltsgröße',
+    vol: '1000 ml · Vorteilsgröße für die Familie', price: 38,
+    badge: '💰 Sparpaket', badgeClass: 'badge-pop',
+    img: 'https://images.pexels.com/photos/11254917/pexels-photo-11254917.jpeg?auto=compress&cs=tinysrgb&w=900&h=700&fit=crop',
+    thumb: 'https://images.pexels.com/photos/11254917/pexels-photo-11254917.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop',
+    desc: 'Unser Classico in der praktischen 1-Liter-Flasche – ideal für alle, die täglich von den Vorteilen des Premium-Olivenöls profitieren möchten.',
+    analysis: ['Polyphenole: 280 mg/kg','Säuregehalt: 0,18 %','€3,80 pro 100ml','Ernte: Oktober 2024'],
+    tags: ['💰 Sparpreis','🌿 Bio','🏡 Familiengröße','❄️ Kaltgepresst']
+  },
+  'Probier-Set 3×250ml': {
+    name: 'Probier-Set', label: 'Exklusives Set · 3 Sorten',
+    vol: '3 × 250 ml – Classico, Riserva & Grand Cru', price: 65,
+    badge: '🎁 Geschenk-Tipp', badgeClass: 'badge-best',
+    img: 'https://images.pexels.com/photos/5737246/pexels-photo-5737246.jpeg?auto=compress&cs=tinysrgb&w=900&h=700&fit=crop',
+    thumb: 'https://images.pexels.com/photos/5737246/pexels-photo-5737246.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop',
+    desc: 'Das ideale Einstiegsset: Entdecken Sie alle drei Sorten und erleben Sie die Vielfalt unseres griechischen Olivenöls. Auch ein wunderschönes Geschenk für liebe Menschen.',
+    analysis: ['3 Flaschen à 250 ml','Classico + Riserva + Grand Cru','Inkl. Verkostungsguide','Elegante Geschenkbox'],
+    tags: ['🎁 Perfektes Geschenk','💚 3 Sorten','⭐ Beliebt','📦 Geschenkverpackung']
+  },
+  'Riserva 1L': {
+    name: 'Riserva 1 Liter', label: 'Frühernte · Riserva · Großflasche',
+    vol: '1000 ml · Für den gesundheitsbewussten Genuss', price: 58,
+    badge: '✨ Neu', badgeClass: 'badge-limited',
+    img: 'https://images.pexels.com/photos/6094524/pexels-photo-6094524.jpeg?auto=compress&cs=tinysrgb&w=900&h=700&fit=crop',
+    thumb: 'https://images.pexels.com/photos/6094524/pexels-photo-6094524.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop',
+    desc: 'Unser polyphenolreichstes Öl jetzt auch in der 1-Liter-Flasche – für alle, die täglich von der heilsamen Kraft der Frühernte-Oliven profitieren möchten.',
+    analysis: ['Polyphenole: 620 mg/kg','Säuregehalt: 0,12 %','€5,80 pro 100ml','Ernte: Oktober 2024'],
+    tags: ['🔬 Polyphenol-Reich','💰 Großpackung','🌿 Bio','❄️ Kaltgepresst']
+  }
+};
+
 /* ── Cart State ───────────────────── */
 let cart = [];
 
@@ -2488,12 +2883,15 @@ function updateCart() {
   itemNodes.forEach(n => n.remove());
 
   cart.forEach((item, idx) => {
+    const prod = PRODUCTS[item.name];
+    const imgUrl = prod ? prod.thumb : 'https://images.pexels.com/photos/6231898/pexels-photo-6231898.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop';
+    const displayName = prod ? prod.name : item.name;
     const el = document.createElement('div');
     el.className = 'cart-item';
     el.innerHTML = `
-      <img class="cart-item-img" src="https://images.pexels.com/photos/6231898/pexels-photo-6231898.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop" alt="${item.name}"/>
+      <img class="cart-item-img" src="${imgUrl}" alt="${displayName}"/>
       <div class="cart-item-info">
-        <div class="cart-item-name">${item.name}</div>
+        <div class="cart-item-name">${displayName}</div>
         <div class="cart-item-price">€${(item.price * item.qty).toFixed(2).replace('.',',')}</div>
         <div class="cart-qty">
           <button class="qty-btn" onclick="changeQty(${idx}, -1)">−</button>
@@ -2637,6 +3035,133 @@ function updateGalleryParallax() {
 window.addEventListener('scroll', () => {
   if (!galleryTicking) { requestAnimationFrame(updateGalleryParallax); galleryTicking = true; }
 }, { passive: true });
+
+/* ── Product Modal ────────────────── */
+let modalQty = 1;
+let currentModalKey = null;
+
+function openProductModal(key) {
+  const p = PRODUCTS[key];
+  if (!p) return;
+  currentModalKey = key;
+  modalQty = 1;
+
+  const el = id => document.getElementById(id);
+  el('prodModalImg').src = p.img;
+  el('prodModalImg').alt = p.name;
+  el('prodModalLabel').textContent = p.label;
+  el('prodModalName').textContent = p.name;
+  el('prodModalVol').textContent = p.vol;
+  el('prodModalDesc').textContent = p.desc;
+  el('prodModalPrice').textContent = '€' + p.price;
+  el('modalQtyDisplay').textContent = '1';
+
+  const badge = el('prodModalBadge');
+  badge.textContent = p.badge;
+  badge.className = 'prod-modal-badge ' + p.badgeClass;
+
+  el('prodModalAnalysis').innerHTML = p.analysis
+    .map(a => `<div class="analysis-item"><span class="analysis-dot"></span>${a}</div>`)
+    .join('');
+  el('prodModalTags').innerHTML = p.tags
+    .map(t => `<span class="tag">${t}</span>`).join('');
+
+  el('prodModalOverlay').classList.add('open');
+  el('prodModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeProductModal() {
+  document.getElementById('prodModalOverlay').classList.remove('open');
+  document.getElementById('prodModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function adjustModalQty(delta) {
+  modalQty = Math.max(1, Math.min(10, modalQty + delta));
+  document.getElementById('modalQtyDisplay').textContent = modalQty;
+}
+
+function addModalToCart() {
+  const p = PRODUCTS[currentModalKey];
+  if (!p) return;
+  const existing = cart.find(i => i.name === currentModalKey);
+  if (existing) existing.qty += modalQty;
+  else cart.push({ name: currentModalKey, price: p.price, qty: modalQty });
+  updateCart();
+  closeProductModal();
+  openCart();
+  showToast(`„${p.name}" (${modalQty}×) in den Warenkorb gelegt`);
+}
+
+/* ── Checkout ─────────────────────── */
+let currentCheckoutStep = 1;
+
+function openCheckout() {
+  if (cart.length === 0) { showToast('Ihr Warenkorb ist leer.'); return; }
+  closeCart();
+  currentCheckoutStep = 1;
+  renderCheckoutSummary();
+  updateCheckoutProgress(1);
+  document.querySelectorAll('.checkout-step').forEach(s => s.classList.remove('active'));
+  document.getElementById('checkoutStep1').classList.add('active');
+  document.getElementById('checkoutTitle').textContent = 'Bestellübersicht';
+  document.getElementById('checkoutOverlay').classList.add('open');
+  document.getElementById('checkoutModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeCheckout() {
+  document.getElementById('checkoutOverlay').classList.remove('open');
+  document.getElementById('checkoutModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function renderCheckoutSummary() {
+  const el = document.getElementById('checkoutSummary');
+  const total = cart.reduce((s, i) => s + i.price * i.qty, 0);
+  const shipping = total >= 49 ? 0 : 4.90;
+  el.innerHTML = cart.map(item => {
+    const prod = PRODUCTS[item.name];
+    return `<div class="cs-item">
+      <span class="cs-item-name">${prod ? prod.name : item.name}</span>
+      <span class="cs-item-qty">${item.qty}×</span>
+      <span>€${(item.price * item.qty).toFixed(2).replace('.',',')}</span>
+    </div>`;
+  }).join('') +
+  `<div class="cs-item"><span class="cs-item-name">Versand</span><span></span><span>${shipping === 0 ? '<span style="color:var(--green)">Kostenlos</span>' : '€' + shipping.toFixed(2).replace('.',',')}</span></div>` +
+  `<div class="cs-total"><span>Gesamtbetrag</span><span>€${(total + shipping).toFixed(2).replace('.',',')}</span></div>`;
+}
+
+function updateCheckoutProgress(step) {
+  ['cpBar1','cpBar2','cpBar3'].forEach((id, i) => {
+    document.getElementById(id).classList.toggle('done', i < step);
+  });
+  const titles = ['','Bestellübersicht','Lieferadresse','Zahlung','Bestätigung'];
+  document.getElementById('checkoutTitle').textContent = titles[step] || 'Kasse';
+}
+
+function checkoutNext(step) {
+  document.querySelectorAll('.checkout-step').forEach(s => s.classList.remove('active'));
+  document.getElementById('checkoutStep' + step).classList.add('active');
+  currentCheckoutStep = step;
+  updateCheckoutProgress(step);
+  document.getElementById('checkoutModal').scrollTop = 0;
+}
+
+function selectPayment(el) {
+  document.querySelectorAll('.pay-opt').forEach(o => o.classList.remove('selected'));
+  el.classList.add('selected');
+}
+
+function checkoutFinish() {
+  const orderNum = 'ZAK-' + new Date().getFullYear() + '-' + Math.floor(Math.random() * 90000 + 10000);
+  document.getElementById('orderNumber').textContent = 'Bestellnummer: ' + orderNum;
+  checkoutNext(4);
+  updateCheckoutProgress(3);
+  cart = [];
+  updateCart();
+}
 
 /* ── Page Load Overlay ────────────── */
 window.addEventListener('load', () => {
