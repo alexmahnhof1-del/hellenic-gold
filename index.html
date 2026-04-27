@@ -1263,10 +1263,245 @@ body.bar-visible #nav{top:42px;}
   .hero-trust{gap:20px;bottom:28px;}
   .footer-top{grid-template-columns:1fr;gap:36px;}
   .cart-sidebar{width:100%;max-width:100vw;}
+  .stats-grid{grid-template-columns:1fr 1fr;}
+  .stat-item:nth-child(2){border-right:none;}
+  .stat-item:nth-child(3){border-top:1px solid rgba(255,255,255,.1);}
+  .whatsapp-float{bottom:20px;left:16px;width:44px;height:44px;font-size:1.1rem;}
+  .hero-scroll{display:none;}
 }
+
+/* ═══════════════════════════════════
+   SCROLL PROGRESS BAR
+═══════════════════════════════════ */
+#progress-bar{
+  position:fixed;top:0;left:0;z-index:2100;
+  height:3px;width:0%;
+  background:linear-gradient(90deg,var(--gold),var(--gold-light),var(--gold));
+  transition:width .1s linear;
+  pointer-events:none;
+  box-shadow:0 0 8px rgba(200,162,74,.6);
+}
+
+/* ═══════════════════════════════════
+   PAGE LOAD OVERLAY
+═══════════════════════════════════ */
+#page-overlay{
+  position:fixed;inset:0;z-index:9999;
+  background:var(--warm-white);
+  display:flex;align-items:center;justify-content:center;
+  flex-direction:column;gap:20px;
+  transition:opacity .7s ease,visibility .7s ease;
+}
+#page-overlay.fade-out{opacity:0;visibility:hidden;pointer-events:none;}
+.overlay-brand{
+  font-family:'Playfair Display',serif;
+  font-size:1.9rem;font-weight:700;letter-spacing:7px;
+  color:var(--green);
+  animation:ovlFade .8s ease both;
+}
+.overlay-brand em{color:var(--gold);font-style:italic;}
+.overlay-sub{
+  font-size:.62rem;font-weight:600;letter-spacing:4px;
+  text-transform:uppercase;color:var(--gold);opacity:.7;
+  animation:ovlFade .8s ease .2s both;
+}
+.overlay-bar{
+  width:60px;height:2px;background:var(--cream-dark);overflow:hidden;
+  animation:ovlFade .5s ease .3s both;
+}
+.overlay-bar-fill{
+  height:100%;width:0%;background:var(--gold);
+  animation:ovlLoad 1s ease .4s forwards;
+}
+@keyframes ovlFade{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+@keyframes ovlLoad{to{width:100%;}}
+
+/* ═══════════════════════════════════
+   HERO SCROLL INDICATOR
+═══════════════════════════════════ */
+.hero-scroll{
+  position:absolute;bottom:28px;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:7px;
+  color:rgba(255,255,255,.5);font-size:.62rem;letter-spacing:3px;
+  text-transform:uppercase;cursor:pointer;z-index:2;
+  animation:ovlFade 1s ease 2.5s both;
+}
+.scroll-mouse{
+  width:19px;height:30px;
+  border:1.5px solid rgba(255,255,255,.35);
+  border-radius:9px;
+  display:flex;justify-content:center;padding-top:5px;
+}
+.scroll-dot{
+  width:3px;height:5px;background:var(--gold);border-radius:2px;
+  animation:scrollDot 2s ease-in-out infinite;
+}
+@keyframes scrollDot{
+  0%,100%{transform:translateY(0);opacity:1;}
+  55%{transform:translateY(8px);opacity:.25;}
+}
+
+/* ═══════════════════════════════════
+   STATS / COUNTERS SECTION
+═══════════════════════════════════ */
+.stats{
+  background:linear-gradient(120deg,var(--green) 0%,var(--green-mid) 100%);
+  border-bottom:1px solid rgba(200,162,74,.2);
+}
+.stats-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);
+}
+.stat-item{
+  text-align:center;padding:32px 16px;
+  border-right:1px solid rgba(255,255,255,.1);
+  transition:background .3s;
+}
+.stat-item:last-child{border-right:none;}
+.stat-item:hover{background:rgba(255,255,255,.05);}
+.stat-number{
+  font-family:'Playfair Display',serif;
+  font-size:2.2rem;font-weight:700;
+  color:var(--gold);line-height:1;display:block;
+}
+.stat-label{
+  font-size:.66rem;font-weight:600;letter-spacing:2px;
+  text-transform:uppercase;color:rgba(255,255,255,.62);
+  margin-top:7px;display:block;line-height:1.4;
+}
+@media(max-width:900px){
+  .stats-grid{grid-template-columns:repeat(2,1fr);}
+  .stat-item:nth-child(2){border-right:none;}
+  .stat-item:nth-child(3){border-top:1px solid rgba(255,255,255,.1);}
+}
+
+/* ═══════════════════════════════════
+   WHATSAPP FLOAT BUTTON
+═══════════════════════════════════ */
+.whatsapp-float{
+  position:fixed;bottom:36px;left:36px;z-index:890;
+  width:48px;height:48px;background:#25D366;color:#fff;
+  border:none;border-radius:50%;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.25rem;
+  box-shadow:0 4px 18px rgba(37,211,102,.45);
+  transition:transform .25s,box-shadow .25s;
+  text-decoration:none;
+}
+.whatsapp-float:hover{transform:scale(1.12) translateY(-2px);box-shadow:0 8px 28px rgba(37,211,102,.55);}
+.wa-tooltip{
+  position:absolute;left:58px;top:50%;transform:translateY(-50%);
+  background:#111;color:#fff;
+  font-size:.68rem;font-weight:600;white-space:nowrap;
+  padding:5px 11px;opacity:0;pointer-events:none;
+  transition:opacity .2s;border-left:2px solid var(--gold);
+}
+.whatsapp-float:hover .wa-tooltip{opacity:1;}
+
+/* ═══════════════════════════════════
+   PRODUCT CARD OVERLAY + IMPROVEMENTS
+═══════════════════════════════════ */
+.product-img-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to bottom,rgba(20,40,12,.2),rgba(20,40,12,.55));
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;transition:opacity .35s;
+}
+.product-card:hover .product-img-overlay{opacity:1;}
+.prod-overlay-btn{
+  font-size:.64rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+  color:#fff;border:1px solid rgba(255,255,255,.55);
+  padding:8px 18px;background:transparent;cursor:default;
+  transform:translateY(8px);transition:transform .4s cubic-bezier(.25,.8,.25,1);
+}
+.product-card:hover .prod-overlay-btn{transform:translateY(0);}
+
+/* ═══════════════════════════════════
+   SECTION ORNAMENT
+═══════════════════════════════════ */
+.section-ornament{
+  display:flex;align-items:center;justify-content:center;
+  gap:14px;margin-bottom:18px;
+}
+.orn-line{
+  width:48px;height:1px;
+  background:linear-gradient(to right,transparent,var(--gold));
+  opacity:.5;
+}
+.orn-line.orn-rev{background:linear-gradient(to left,transparent,var(--gold));}
+.orn-leaf{color:var(--gold);font-size:.75rem;opacity:.8;}
+
+/* ═══════════════════════════════════
+   IMAGE FADE-IN ON LOAD
+═══════════════════════════════════ */
+img.img-reveal{
+  opacity:0;transition:opacity .55s ease;
+}
+img.img-reveal.loaded{opacity:1;}
+
+/* ═══════════════════════════════════
+   IMPROVED BACK-TO-TOP
+═══════════════════════════════════ */
+.back-top{
+  border-radius:50% !important;
+  background:var(--gold) !important;
+  color:var(--green) !important;
+  font-weight:900;font-size:1rem;
+  width:44px !important;height:44px !important;
+}
+.back-top:hover{background:var(--gold-light) !important;transform:translateY(-3px);}
+
+/* ═══════════════════════════════════
+   ACTIVE NAV LINK INDICATOR
+═══════════════════════════════════ */
+.nav-links a{position:relative;}
+.nav-links a::after{
+  content:'';position:absolute;bottom:-3px;left:0;right:0;
+  height:1px;background:var(--gold);
+  transform:scaleX(0);transform-origin:center;
+  transition:transform .25s ease;
+}
+.nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1);}
+
+/* ═══════════════════════════════════
+   SMOOTH SECTION SEPARATOR
+═══════════════════════════════════ */
+.section-wave{
+  width:100%;line-height:0;
+  background:var(--warm-white);
+}
+.section-wave svg{display:block;width:100%;}
+
+/* ═══════════════════════════════════
+   BETTER FOCUS + INTERACTIONS
+═══════════════════════════════════ */
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;}
+.btn-cart{position:relative;overflow:hidden;}
+.btn-cart::after{
+  content:'';position:absolute;inset:0;
+  background:rgba(255,255,255,.15);
+  transform:translateX(-100%);
+  transition:transform .35s ease;
+}
+.btn-cart:hover::after{transform:translateX(0);}
+
+/* ═══════════════════════════════════
+   FOOTER ENHANCEMENT
+═══════════════════════════════════ */
+footer{border-top:2px solid rgba(200,162,74,.2);}
+.footer-top{margin-bottom:40px;}
 </style>
 </head>
 <body class="bar-visible">
+
+<!-- ════════════ SCROLL PROGRESS BAR ════════════ -->
+<div id="progress-bar"></div>
+
+<!-- ════════════ PAGE LOAD OVERLAY ════════════ -->
+<div id="page-overlay">
+  <div class="overlay-brand"><em>Z</em>AKARIYA</div>
+  <div class="overlay-sub">Premium Olivenöl</div>
+  <div class="overlay-bar"><div class="overlay-bar-fill"></div></div>
+</div>
 
 <!-- ════════════ ANNOUNCEMENT BAR ════════════ -->
 <div class="announce-bar" id="announceBar">
@@ -1370,6 +1605,10 @@ body.bar-visible #nav{top:42px;}
     <span class="hero-trust-dot"></span>
     <span class="hero-trust-item">⭐ Nur eine Ernte pro Jahr</span>
   </div>
+  <a class="hero-scroll" href="#stats" aria-label="Nach unten scrollen">
+    <div class="scroll-mouse"><div class="scroll-dot"></div></div>
+    <span>Entdecken</span>
+  </a>
 </section>
 
 <!-- ════════════ BAND ════════════ -->
@@ -1380,6 +1619,28 @@ body.bar-visible #nav{top:42px;}
     <div class="band-item"><span class="band-icon">🌿</span><div><strong>Bio-zertifiziert</strong><span>Ohne Pestizide &amp; Kunstdünger</span></div></div>
     <div class="band-item"><span class="band-icon">🏺</span><div><strong>Direkt vom Erzeuger</strong><span>Kein Zwischenhändler</span></div></div>
     <div class="band-item"><span class="band-icon">🔬</span><div><strong>Laborgeprüft</strong><span>Säuregehalt unter 0,2 %</span></div></div>
+  </div>
+</div>
+
+<!-- ════════════ STATS / COUNTERS ════════════ -->
+<div class="stats" id="stats">
+  <div class="stats-grid">
+    <div class="stat-item">
+      <span class="stat-number" data-target="1247" data-suffix="+">1247+</span>
+      <span class="stat-label">Zufriedene<br>Kunden</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number" data-target="400" data-suffix=" J.">400 J.</span>
+      <span class="stat-label">Alter unserer<br>ältesten Bäume</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number" data-target="0.2" data-suffix="%" data-decimal="true">0,2%</span>
+      <span class="stat-label">Max. Säuregehalt<br>(Extra Vergine)</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number" data-target="12" data-suffix=" Auszeichnungen">12 Auszeichnungen</span>
+      <span class="stat-label">Internationale<br>Goldmedaillen</span>
+    </div>
   </div>
 </div>
 
@@ -1475,6 +1736,7 @@ body.bar-visible #nav{top:42px;}
 <section class="process-section section-pad" id="prozess">
   <div class="container">
     <div class="process-header reveal">
+      <div class="section-ornament"><div class="orn-line orn-rev"></div><span class="orn-leaf">🫒</span><div class="orn-line"></div></div>
       <span class="label">Vom Baum zur Flasche</span>
       <h2>Der Weg unseres <em style="font-style:italic;color:var(--gold)">flüssigen Goldes</em></h2>
       <div class="divider center"></div>
@@ -1527,6 +1789,7 @@ body.bar-visible #nav{top:42px;}
 <section class="health section-pad" id="health">
   <div class="container">
     <div class="health-header reveal">
+      <div class="section-ornament"><div class="orn-line orn-rev"></div><span class="orn-leaf">🫒</span><div class="orn-line"></div></div>
       <span class="label">Gesundheit &amp; Wohlbefinden</span>
       <h2 style="color:var(--warm-white);">Was die Forschung sagt –<br>und was Sie spüren werden</h2>
       <div class="divider center"></div>
@@ -1592,6 +1855,7 @@ body.bar-visible #nav{top:42px;}
 <section class="shop section-pad" id="shop">
   <div class="container">
     <div class="shop-header reveal">
+      <div class="section-ornament"><div class="orn-line orn-rev"></div><span class="orn-leaf">🫒</span><div class="orn-line"></div></div>
       <span class="label">Unsere Produkte</span>
       <h2>Wählen Sie Ihr <em style="font-style:italic;color:var(--gold)">flüssiges Gold</em></h2>
       <div class="divider center"></div>
@@ -1608,7 +1872,8 @@ body.bar-visible #nav{top:42px;}
       <div class="product-card reveal delay-1">
         <span class="product-badge badge-pop">Beliebt bei 50+</span>
         <div class="product-img-wrap">
-          <img src="https://images.pexels.com/photos/6231898/pexels-photo-6231898.jpeg?auto=compress&cs=tinysrgb&w=700&h=400&fit=crop" alt="Zakariya Classico 500ml" loading="lazy"/>
+          <img src="https://images.pexels.com/photos/6231898/pexels-photo-6231898.jpeg?auto=compress&cs=tinysrgb&w=700&h=400&fit=crop" alt="Zakariya Classico 500ml" loading="lazy" class="img-reveal"/>
+          <div class="product-img-overlay"><span class="prod-overlay-btn">Details ansehen</span></div>
         </div>
         <div class="product-body">
           <span class="product-cat">Extra Vergine · Kaltgepresst</span>
@@ -1631,7 +1896,8 @@ body.bar-visible #nav{top:42px;}
       <div class="product-card reveal delay-2">
         <span class="product-badge badge-best">⭐ Bestseller</span>
         <div class="product-img-wrap">
-          <img src="https://images.pexels.com/photos/9025074/pexels-photo-9025074.jpeg?auto=compress&cs=tinysrgb&w=700&h=400&fit=crop" alt="Zakariya Riserva 500ml" loading="lazy"/>
+          <img src="https://images.pexels.com/photos/9025074/pexels-photo-9025074.jpeg?auto=compress&cs=tinysrgb&w=700&h=400&fit=crop" alt="Zakariya Riserva 500ml" loading="lazy" class="img-reveal"/>
+          <div class="product-img-overlay"><span class="prod-overlay-btn">Details ansehen</span></div>
         </div>
         <div class="product-body">
           <span class="product-cat">Frühernte · Höchster Polyphenolgehalt</span>
@@ -1654,7 +1920,8 @@ body.bar-visible #nav{top:42px;}
       <div class="product-card reveal delay-3">
         <span class="product-badge badge-limited">⏳ Limitiert</span>
         <div class="product-img-wrap">
-          <img src="https://images.pexels.com/photos/4109912/pexels-photo-4109912.jpeg?auto=compress&cs=tinysrgb&w=700&h=400&fit=crop" alt="Zakariya Grand Cru 250ml" loading="lazy"/>
+          <img src="https://images.pexels.com/photos/4109912/pexels-photo-4109912.jpeg?auto=compress&cs=tinysrgb&w=700&h=400&fit=crop" alt="Zakariya Grand Cru 250ml" loading="lazy" class="img-reveal"/>
+          <div class="product-img-overlay"><span class="prod-overlay-btn">Details ansehen</span></div>
         </div>
         <div class="product-body">
           <span class="product-cat">Grand Cru · Uralte Bäume · 250 ml</span>
@@ -1677,7 +1944,8 @@ body.bar-visible #nav{top:42px;}
       <div class="product-card reveal delay-1">
         <span class="product-badge badge-pop">Sparpaket</span>
         <div class="product-img-wrap">
-          <img src="https://images.pexels.com/photos/11254917/pexels-photo-11254917.jpeg?auto=compress&cs=tinysrgb&w=700&h=400&fit=crop" alt="Zakariya Classico 1 Liter" loading="lazy"/>
+          <img src="https://images.pexels.com/photos/11254917/pexels-photo-11254917.jpeg?auto=compress&cs=tinysrgb&w=700&h=400&fit=crop" alt="Zakariya Classico 1 Liter" loading="lazy" class="img-reveal"/>
+          <div class="product-img-overlay"><span class="prod-overlay-btn">Details ansehen</span></div>
         </div>
         <div class="product-body">
           <span class="product-cat">Extra Vergine · Haushaltsgröße</span>
@@ -1700,7 +1968,8 @@ body.bar-visible #nav{top:42px;}
       <div class="product-card reveal delay-2">
         <span class="product-badge badge-best">🎁 Geschenk-Tipp</span>
         <div class="product-img-wrap">
-          <img src="https://images.pexels.com/photos/5931/food-salad-healthy-lunch.jpg?auto=compress&cs=tinysrgb&w=700&h=400&fit=crop" alt="Zakariya Probier-Set" loading="lazy"/>
+          <img src="https://images.pexels.com/photos/5931/food-salad-healthy-lunch.jpg?auto=compress&cs=tinysrgb&w=700&h=400&fit=crop" alt="Zakariya Probier-Set" loading="lazy" class="img-reveal"/>
+          <div class="product-img-overlay"><span class="prod-overlay-btn">Details ansehen</span></div>
         </div>
         <div class="product-body">
           <span class="product-cat">Exklusives Probier-Set · 3 Flaschen</span>
@@ -1723,7 +1992,8 @@ body.bar-visible #nav{top:42px;}
       <div class="product-card reveal delay-3">
         <span class="product-badge badge-limited">Neu</span>
         <div class="product-img-wrap">
-          <img src="https://images.pexels.com/photos/6094524/pexels-photo-6094524.jpeg?auto=compress&cs=tinysrgb&w=700&h=400&fit=crop" alt="Zakariya Riserva 1 Liter" loading="lazy"/>
+          <img src="https://images.pexels.com/photos/6094524/pexels-photo-6094524.jpeg?auto=compress&cs=tinysrgb&w=700&h=400&fit=crop" alt="Zakariya Riserva 1 Liter" loading="lazy" class="img-reveal"/>
+          <div class="product-img-overlay"><span class="prod-overlay-btn">Details ansehen</span></div>
         </div>
         <div class="product-body">
           <span class="product-cat">Frühernte · Riserva · Großflasche</span>
@@ -1833,6 +2103,7 @@ body.bar-visible #nav{top:42px;}
 <section class="testimonials section-pad">
   <div class="container">
     <div class="test-header reveal">
+      <div class="section-ornament"><div class="orn-line orn-rev"></div><span class="orn-leaf">🫒</span><div class="orn-line"></div></div>
       <span class="label">Kundenstimmen</span>
       <h2>Was unsere Kunden <em style="font-style:italic;color:var(--gold)">sagen</em></h2>
       <div class="divider center"></div>
@@ -2146,6 +2417,12 @@ body.bar-visible #nav{top:42px;}
   </div>
 </footer>
 
+<!-- ════════════ WHATSAPP FLOAT ════════════ -->
+<a class="whatsapp-float" href="https://wa.me/49123456789" target="_blank" rel="noopener" aria-label="WhatsApp Kontakt">
+  💬
+  <span class="wa-tooltip">Jetzt per WhatsApp anfragen</span>
+</a>
+
 <!-- ════════════ BACK TO TOP ════════════ -->
 <button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Nach oben scrollen">↑</button>
 
@@ -2360,6 +2637,80 @@ function updateGalleryParallax() {
 window.addEventListener('scroll', () => {
   if (!galleryTicking) { requestAnimationFrame(updateGalleryParallax); galleryTicking = true; }
 }, { passive: true });
+
+/* ── Page Load Overlay ────────────── */
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    document.getElementById('page-overlay').classList.add('fade-out');
+  }, 900);
+});
+
+/* ── Scroll Progress Bar ─────────── */
+(function() {
+  const bar = document.getElementById('progress-bar');
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    bar.style.width = pct + '%';
+  }, { passive: true });
+})();
+
+/* ── Animated Counters ────────────── */
+(function() {
+  const counterEls = document.querySelectorAll('.stat-number');
+  const counterObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const el = e.target;
+      const isDecimal = el.dataset.decimal === 'true';
+      const target = parseFloat(el.dataset.target);
+      const suffix = el.dataset.suffix || '';
+      const duration = 1600;
+      const start = performance.now();
+      const update = (now) => {
+        const elapsed = now - start;
+        const progress = Math.min(elapsed / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const val = eased * target;
+        el.textContent = (isDecimal ? val.toFixed(1).replace('.', ',') : Math.round(val).toLocaleString('de-DE')) + suffix;
+        if (progress < 1) requestAnimationFrame(update);
+        else el.textContent = (isDecimal ? target.toFixed(1).replace('.', ',') : target.toLocaleString('de-DE')) + suffix;
+      };
+      requestAnimationFrame(update);
+      counterObs.unobserve(el);
+    });
+  }, { threshold: 0.5 });
+  counterEls.forEach(el => counterObs.observe(el));
+})();
+
+/* ── Image Fade-In on Load ─────────── */
+(function() {
+  document.querySelectorAll('img.img-reveal').forEach(img => {
+    if (img.complete && img.naturalWidth > 0) {
+      img.classList.add('loaded');
+    } else {
+      img.addEventListener('load', () => img.classList.add('loaded'));
+      img.addEventListener('error', () => img.classList.add('loaded'));
+    }
+  });
+})();
+
+/* ── Active Nav Link on Scroll ─────── */
+(function() {
+  const sections = document.querySelectorAll('section[id], div[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        navLinks.forEach(a => {
+          a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id);
+        });
+      }
+    });
+  }, { rootMargin: '-40% 0px -50% 0px' });
+  sections.forEach(s => observer.observe(s));
+})();
 
 /* ── Forms ────────────────────────── */
 function handleNewsletter(e) {
