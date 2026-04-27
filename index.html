@@ -498,17 +498,35 @@ p+p{margin-top:16px;}
 .ernte-badge span{font-size:.62rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;}
 
 .ernte-gallery{
-  display:grid;grid-template-columns:repeat(4,1fr);gap:16px;
+  display:grid;
+  grid-template-columns:repeat(6,1fr);
+  grid-template-rows:300px 240px;
+  gap:14px;
 }
 .ernte-gallery-item{
-  overflow:hidden;height:260px;position:relative;
+  overflow:hidden;height:auto;position:relative;cursor:pointer;
 }
+.ernte-gallery-item:nth-child(1){ grid-column:1/4; }
+.ernte-gallery-item:nth-child(2){ grid-column:4/7; }
+.ernte-gallery-item:nth-child(3){ grid-column:1/3; }
+.ernte-gallery-item:nth-child(4){ grid-column:3/7; }
+/* Curtain reveal */
+.ernte-gallery-item::before{
+  content:'';position:absolute;inset:0;z-index:3;
+  background:var(--cream-dark);transform-origin:left;
+  transform:scaleX(1);
+  transition:transform .95s cubic-bezier(.76,0,.24,1);
+}
+.ernte-gallery-item:nth-child(even)::before{ transform-origin:right; }
+.ernte-gallery-item.curtain-open::before{ transform:scaleX(0); }
 .ernte-gallery-item img{
   width:100%;height:100%;object-fit:cover;
-  transition:transform .6s ease;
+  transform:scale(1.12);
+  transition:transform .95s ease;
+  will-change:transform;
 }
-.ernte-gallery-item:hover img{transform:scale(1.06);}
-.ernte-gallery-item:first-child{grid-column:span 2;}
+.ernte-gallery-item.curtain-open img{ transform:scale(1.02); }
+.ernte-gallery-item:hover img{ transform:scale(1.07) !important; }
 
 /* ═══════════════════════════════════
    PROCESS (ERNTE → FLASCHE)
@@ -1205,8 +1223,11 @@ body.bar-visible #nav{top:42px;}
   .nav-links{gap:12px;}
   .nav-links a{font-size:.7rem;}
   .cart-label{display:none;}
-  .ernte-gallery{grid-template-columns:repeat(2,1fr);}
-  .ernte-gallery-item:first-child{grid-column:span 2;}
+  .ernte-gallery{grid-template-columns:repeat(2,1fr);grid-template-rows:220px 200px;}
+  .ernte-gallery-item:nth-child(1){grid-column:1/2;}
+  .ernte-gallery-item:nth-child(2){grid-column:2/3;}
+  .ernte-gallery-item:nth-child(3){grid-column:1/2;}
+  .ernte-gallery-item:nth-child(4){grid-column:2/3;}
   .health-grid{grid-template-columns:repeat(2,1fr);}
   .footer-top{grid-template-columns:1fr 1fr;gap:40px;}
 }
@@ -1231,8 +1252,9 @@ body.bar-visible #nav{top:42px;}
   .container{padding:0 20px;}
   .products-grid{grid-template-columns:1fr;}
   .health-grid{grid-template-columns:1fr;}
-  .ernte-gallery{grid-template-columns:1fr;}
-  .ernte-gallery-item:first-child{grid-column:span 1;}
+  .ernte-gallery{grid-template-columns:1fr;grid-template-rows:repeat(4,220px);}
+  .ernte-gallery-item:nth-child(1),.ernte-gallery-item:nth-child(2),
+  .ernte-gallery-item:nth-child(3),.ernte-gallery-item:nth-child(4){grid-column:1/2;}
   .process-steps{grid-template-columns:1fr;}
   .band-inner{gap:24px;}
   .hero-btns{flex-direction:column;align-items:center;}
@@ -1433,16 +1455,16 @@ body.bar-visible #nav{top:42px;}
 
     <!-- Gallery -->
     <div class="ernte-gallery">
-      <div class="ernte-gallery-item reveal">
+      <div class="ernte-gallery-item">
         <img src="https://images.pexels.com/photos/15947667/pexels-photo-15947667.jpeg?auto=compress&cs=tinysrgb&w=900&h=600&fit=crop" alt="Olivenhain im Tal – Olivenplantage Kreta" loading="lazy"/>
       </div>
-      <div class="ernte-gallery-item reveal delay-1">
+      <div class="ernte-gallery-item">
         <img src="https://images.pexels.com/photos/16841983/pexels-photo-16841983.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" alt="Grüner Olivenbaum mit Oliven" loading="lazy"/>
       </div>
-      <div class="ernte-gallery-item reveal delay-2">
+      <div class="ernte-gallery-item">
         <img src="https://images.pexels.com/photos/4109912/pexels-photo-4109912.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" alt="Frische Oliven in einer Schale" loading="lazy"/>
       </div>
-      <div class="ernte-gallery-item reveal delay-3">
+      <div class="ernte-gallery-item">
         <img src="https://images.pexels.com/photos/6094524/pexels-photo-6094524.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" alt="Goldenes Olivenöl auf frischen Salat gegossen" loading="lazy"/>
       </div>
     </div>
@@ -2309,6 +2331,35 @@ const io = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.08 });
 revealEls.forEach(el => io.observe(el));
+
+/* ── Gallery Curtain Reveal + Parallax ─ */
+const galleryItems = document.querySelectorAll('.ernte-gallery-item');
+const curtainObs = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('curtain-open'), i * 130);
+      curtainObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12 });
+galleryItems.forEach(el => curtainObs.observe(el));
+
+let galleryTicking = false;
+function updateGalleryParallax() {
+  galleryItems.forEach(item => {
+    const rect = item.getBoundingClientRect();
+    if (rect.bottom < -80 || rect.top > window.innerHeight + 80) return;
+    const progress = (rect.top + rect.height / 2 - window.innerHeight / 2) / window.innerHeight;
+    const img = item.querySelector('img');
+    if (img && item.classList.contains('curtain-open')) {
+      img.style.transform = `scale(1.08) translateY(${progress * 26}px)`;
+    }
+  });
+  galleryTicking = false;
+}
+window.addEventListener('scroll', () => {
+  if (!galleryTicking) { requestAnimationFrame(updateGalleryParallax); galleryTicking = true; }
+}, { passive: true });
 
 /* ── Forms ────────────────────────── */
 function handleNewsletter(e) {
