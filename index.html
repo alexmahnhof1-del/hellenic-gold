@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<meta name="description" content="Hellenic Gold – Premium Extra Virgin Olivenöl direkt aus Griechenland. Einmal im Jahr handgeerntet. Reich an Antioxidantien und Polyphenolen. Jetzt kaufen."/>
+<meta name="description" content="Zakariya – Premium Extra Virgin Olivenöl direkt aus Griechenland. Einmal im Jahr handgeerntet. Reich an Antioxidantien und Polyphenolen. Jetzt kaufen."/>
 <meta name="keywords" content="griechisches Olivenöl kaufen, Olivenöl Gesundheit, Premium Olivenöl Griechenland, Extra Virgin Olivenöl, Olivenöl Antioxidantien"/>
-<title>Hellenic Gold – Premium Olivenöl aus Griechenland</title>
+<title>ZAKARIYA – Premium Olivenöl aus Griechenland</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet"/>
@@ -226,14 +226,40 @@ p+p{margin-top:16px;}
 }
 
 .nav-logo{
-  font-family:'Playfair Display',serif;
-  font-size:1.25rem;font-weight:700;
-  color:var(--warm-white);
-  letter-spacing:1px;white-space:nowrap;
-  transition:color .3s;flex-shrink:0;
+  display:flex;flex-direction:column;
+  line-height:1;flex-shrink:0;
+  text-decoration:none;gap:3px;
+  white-space:nowrap;
+  transition:opacity .3s;
 }
-.nav-logo span{color:var(--gold);}
-#nav.scrolled .nav-logo{color:var(--green);}
+.nav-logo:hover{opacity:.85;}
+.logo-main{
+  font-family:'Playfair Display',serif;
+  font-size:1.35rem;font-weight:700;
+  letter-spacing:6px;
+  text-transform:uppercase;
+  color:var(--warm-white);
+  display:flex;align-items:baseline;gap:0;
+  transition:color .3s;
+}
+.logo-z{
+  font-size:1.65rem;
+  color:var(--gold);
+  font-style:italic;
+  margin-right:1px;
+  line-height:1;
+}
+.logo-sub{
+  font-family:'Cormorant Garamond',serif;
+  font-size:.58rem;font-weight:300;font-style:italic;
+  letter-spacing:4px;text-transform:uppercase;
+  color:var(--gold);opacity:.8;
+  display:block;
+  transition:color .3s;
+}
+#nav.scrolled .logo-main{color:var(--green);}
+#nav.scrolled .logo-z{color:var(--gold);}
+#nav.scrolled .logo-sub{color:var(--green-mid);}
 
 .nav-badge{ display:none; }
 
@@ -801,8 +827,9 @@ footer{background:#111;color:rgba(255,255,255,.6);padding:80px 0 36px;}
   display:grid;grid-template-columns:2.2fr 1fr 1fr 1fr;
   gap:60px;margin-bottom:60px;
 }
-.footer-brand .nav-logo{color:#fff;display:inline-block;margin-bottom:20px;font-size:1.35rem;}
-.footer-brand .nav-logo span{color:var(--gold);}
+.footer-brand .nav-logo{margin-bottom:24px;}
+.footer-brand .logo-main{color:#fff;font-size:1.5rem;}
+.footer-brand .logo-sub{color:var(--gold-light);opacity:1;font-size:.62rem;}
 .footer-brand p{font-size:.88rem;line-height:1.8;margin-bottom:22px;}
 
 .footer-social{display:flex;gap:12px;}
@@ -1270,7 +1297,10 @@ body.bar-visible #nav{top:42px;}
 <!-- ════════════ NAVIGATION ════════════ -->
 <header id="nav">
   <div class="nav-inner">
-    <a class="nav-logo" href="#start">Hellenic&nbsp;<span>Gold</span></a>
+    <a class="nav-logo" href="#start">
+      <span class="logo-main"><em class="logo-z">Z</em>AKARIYA</span>
+      <span class="logo-sub">Premium Olivenöl</span>
+    </a>
     <nav class="nav-links">
       <a href="#start">Start</a>
       <a href="#ernte">Unsere Ernte</a>
@@ -1338,7 +1368,7 @@ body.bar-visible #nav{top:42px;}
       „Olivenöl ist nicht einfach ein Lebensmittel – es ist flüssige Gesundheit,<br>
       destilliert aus jahrhundertealten Bäumen und der Sonne Griechenlands."
     </blockquote>
-    <cite class="reveal delay-2">Hellenic Gold · Premium Olivenöl seit Generationen</cite>
+    <cite class="reveal delay-2">Zakariya · Premium Olivenöl seit Generationen</cite>
   </div>
 </div>
 
@@ -1491,7 +1521,7 @@ body.bar-visible #nav{top:42px;}
       <div class="health-card reveal delay-2">
         <span class="health-card-icon">🛡️</span>
         <h4>Antioxidantien &amp; Polyphenole</h4>
-        <p>Hellenic Gold enthält außergewöhnlich viele Polyphenole – natürliche Antioxidantien, die freie Radikale neutralisieren und Zellen vor vorzeitiger Alterung schützen.</p>
+        <p>Zakariya enthält außergewöhnlich viele Polyphenole – natürliche Antioxidantien, die freie Radikale neutralisieren und Zellen vor vorzeitiger Alterung schützen.</p>
         <span class="study-note">Journal of Nutritional Biochemistry: Polyphenole reduzieren oxidativen Stress signifikant</span>
       </div>
       <div class="health-card reveal delay-3">
@@ -1556,7 +1586,7 @@ body.bar-visible #nav{top:42px;}
       <div class="product-card reveal delay-1">
         <span class="product-badge badge-pop">Beliebt bei 50+</span>
         <div class="product-img-wrap">
-          <img src="https://images.pexels.com/photos/6231898/pexels-photo-6231898.jpeg?auto=compress&cs=tinysrgb&w=700&h=400&fit=crop" alt="Hellenic Gold Classico 500ml – Olivenzweig mit Oliven" loading="lazy"/>
+          <img src="https://images.pexels.com/photos/6231898/pexels-photo-6231898.jpeg?auto=compress&cs=tinysrgb&w=700&h=400&fit=crop" alt="Zakariya Classico 500ml" loading="lazy"/>
         </div>
         <div class="product-body">
           <span class="product-cat">Extra Vergine · Kaltgepresst</span>
@@ -1579,7 +1609,7 @@ body.bar-visible #nav{top:42px;}
       <div class="product-card reveal delay-2">
         <span class="product-badge badge-best">⭐ Bestseller</span>
         <div class="product-img-wrap">
-          <img src="https://images.pexels.com/photos/9025074/pexels-photo-9025074.jpeg?auto=compress&cs=tinysrgb&w=700&h=400&fit=crop" alt="Hellenic Gold Riserva 500ml – Olivenöl wird gegossen" loading="lazy"/>
+          <img src="https://images.pexels.com/photos/9025074/pexels-photo-9025074.jpeg?auto=compress&cs=tinysrgb&w=700&h=400&fit=crop" alt="Zakariya Riserva 500ml" loading="lazy"/>
         </div>
         <div class="product-body">
           <span class="product-cat">Frühernte · Höchster Polyphenolgehalt</span>
@@ -1602,7 +1632,7 @@ body.bar-visible #nav{top:42px;}
       <div class="product-card reveal delay-3">
         <span class="product-badge badge-limited">⏳ Limitiert</span>
         <div class="product-img-wrap">
-          <img src="https://images.pexels.com/photos/4109912/pexels-photo-4109912.jpeg?auto=compress&cs=tinysrgb&w=700&h=400&fit=crop" alt="Hellenic Gold Grand Cru 250ml – Exklusive Oliven" loading="lazy"/>
+          <img src="https://images.pexels.com/photos/4109912/pexels-photo-4109912.jpeg?auto=compress&cs=tinysrgb&w=700&h=400&fit=crop" alt="Zakariya Grand Cru 250ml" loading="lazy"/>
         </div>
         <div class="product-body">
           <span class="product-cat">Grand Cru · Uralte Bäume · 250 ml</span>
@@ -1625,7 +1655,7 @@ body.bar-visible #nav{top:42px;}
       <div class="product-card reveal delay-1">
         <span class="product-badge badge-pop">Sparpaket</span>
         <div class="product-img-wrap">
-          <img src="https://images.pexels.com/photos/11254917/pexels-photo-11254917.jpeg?auto=compress&cs=tinysrgb&w=700&h=400&fit=crop" alt="Hellenic Gold Classico 1 Liter – Olivenbaum" loading="lazy"/>
+          <img src="https://images.pexels.com/photos/11254917/pexels-photo-11254917.jpeg?auto=compress&cs=tinysrgb&w=700&h=400&fit=crop" alt="Zakariya Classico 1 Liter" loading="lazy"/>
         </div>
         <div class="product-body">
           <span class="product-cat">Extra Vergine · Haushaltsgröße</span>
@@ -1648,7 +1678,7 @@ body.bar-visible #nav{top:42px;}
       <div class="product-card reveal delay-2">
         <span class="product-badge badge-best">🎁 Geschenk-Tipp</span>
         <div class="product-img-wrap">
-          <img src="https://images.pexels.com/photos/5931/food-salad-healthy-lunch.jpg?auto=compress&cs=tinysrgb&w=700&h=400&fit=crop" alt="Hellenic Gold Probier-Set – Oliven" loading="lazy"/>
+          <img src="https://images.pexels.com/photos/5931/food-salad-healthy-lunch.jpg?auto=compress&cs=tinysrgb&w=700&h=400&fit=crop" alt="Zakariya Probier-Set" loading="lazy"/>
         </div>
         <div class="product-body">
           <span class="product-cat">Exklusives Probier-Set · 3 Flaschen</span>
@@ -1671,7 +1701,7 @@ body.bar-visible #nav{top:42px;}
       <div class="product-card reveal delay-3">
         <span class="product-badge badge-limited">Neu</span>
         <div class="product-img-wrap">
-          <img src="https://images.pexels.com/photos/6094524/pexels-photo-6094524.jpeg?auto=compress&cs=tinysrgb&w=700&h=400&fit=crop" alt="Hellenic Gold Riserva 1 Liter – Olivenöl auf Salat" loading="lazy"/>
+          <img src="https://images.pexels.com/photos/6094524/pexels-photo-6094524.jpeg?auto=compress&cs=tinysrgb&w=700&h=400&fit=crop" alt="Zakariya Riserva 1 Liter" loading="lazy"/>
         </div>
         <div class="product-body">
           <span class="product-cat">Frühernte · Riserva · Großflasche</span>
@@ -1734,11 +1764,11 @@ body.bar-visible #nav{top:42px;}
   <div class="container">
     <div class="why-inner">
       <div class="why-img reveal">
-        <img src="https://images.pexels.com/photos/15947667/pexels-photo-15947667.jpeg?auto=compress&cs=tinysrgb&w=900&h=600&fit=crop" alt="Hellenic Gold – Olivenplantage Kreta" loading="lazy"/>
+        <img src="https://images.pexels.com/photos/15947667/pexels-photo-15947667.jpeg?auto=compress&cs=tinysrgb&w=900&h=600&fit=crop" alt="Zakariya – Olivenplantage Kreta" loading="lazy"/>
         <div class="why-img-overlay"></div>
       </div>
       <div class="why-content reveal delay-1">
-        <span class="label">Warum Hellenic Gold</span>
+        <span class="label">Warum Zakariya</span>
         <h2>Qualität, der<br>Sie vertrauen können</h2>
         <div class="divider"></div>
         <p>Wir sind keine anonyme Großmarke. Wir sind eine Familie aus Kreta, die seit Generationen Olivenöl mit Leidenschaft und Verantwortung herstellt – für Menschen, denen Qualität und Gesundheit etwas bedeuten.</p>
@@ -1790,7 +1820,7 @@ body.bar-visible #nav{top:42px;}
 
       <div class="test-card reveal delay-1">
         <div class="test-stars">★★★★★</div>
-        <p class="test-text">„Ich habe in meinem Leben viele Olivenöle probiert – aber das Riserva von Hellenic Gold ist etwas Besonderes. Der Geschmack ist so intensiv und frisch, dass ich es jeden Morgen pur mit einem Löffel nehme. Mein Arzt ist begeistert von meinen Cholesterinwerten!"</p>
+        <p class="test-text">„Ich habe in meinem Leben viele Olivenöle probiert – aber das Riserva von Zakariya ist etwas Besonderes. Der Geschmack ist so intensiv und frisch, dass ich es jeden Morgen pur mit einem Löffel nehme. Mein Arzt ist begeistert von meinen Cholesterinwerten!"</p>
         <div class="test-author">
           <div class="test-avatar"><img src="https://images.unsplash.com/photo-1499952127939-9bbf5af6c51c?w=100&q=80&auto=format&fit=crop&face=1" alt="Ursula K." loading="lazy"/></div>
           <div>
@@ -1803,7 +1833,7 @@ body.bar-visible #nav{top:42px;}
 
       <div class="test-card reveal delay-2">
         <div class="test-stars">★★★★★</div>
-        <p class="test-text">„Seit ich das Hellenic Gold täglich verwende, spüre ich einen Unterschied in meinen Gelenken. Weniger Steifheit morgens. Meine Frau und ich bestellen jetzt regelmäßig das große Paket. Ein Produkt, das wirklich hält, was es verspricht."</p>
+        <p class="test-text">„Seit ich das Zakariya täglich verwende, spüre ich einen Unterschied in meinen Gelenken. Weniger Steifheit morgens. Meine Frau und ich bestellen jetzt regelmäßig das große Paket. Ein Produkt, das wirklich hält, was es verspricht."</p>
         <div class="test-author">
           <div class="test-avatar"><img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&q=80&auto=format&fit=crop&face=1" alt="Gerhard W." loading="lazy"/></div>
           <div>
@@ -1829,7 +1859,7 @@ body.bar-visible #nav{top:42px;}
 
       <div class="test-card reveal delay-4">
         <div class="test-stars">★★★★★</div>
-        <p class="test-text">„Ich bin pensionierter Arzt und esse seit Jahren mediterran. Hellenic Gold ist das einzige Olivenöl, das ich meinen Patienten wirklich guten Gewissens empfehlen kann. Der Polyphenolgehalt ist beeindruckend – spürbar im Geschmack und spürbar für den Körper."</p>
+        <p class="test-text">„Ich bin pensionierter Arzt und esse seit Jahren mediterran. Zakariya ist das einzige Olivenöl, das ich meinen Patienten wirklich guten Gewissens empfehlen kann. Der Polyphenolgehalt ist beeindruckend – spürbar im Geschmack und spürbar für den Körper."</p>
         <div class="test-author">
           <div class="test-avatar"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80&auto=format&fit=crop&face=1" alt="Dr. Klaus M." loading="lazy"/></div>
           <div>
@@ -1875,7 +1905,7 @@ body.bar-visible #nav{top:42px;}
         </div>
         <div class="timeline-item">
           <span class="timeline-year">2019</span>
-          <span class="timeline-text">Enkelin Elena bringt Hellenic Gold nach Deutschland – damit Familien überall von diesem flüssigen Gold profitieren können.</span>
+          <span class="timeline-text">Enkelin Elena bringt Zakariya nach Deutschland – damit Familien überall von diesem flüssigen Gold profitieren können.</span>
         </div>
       </div>
     </div>
@@ -1922,7 +1952,7 @@ body.bar-visible #nav{top:42px;}
       <span class="label reveal">Häufige Fragen</span>
       <h2 class="reveal delay-1">Ihre Fragen –<br><em style="font-style:italic;color:var(--gold)">unsere Antworten</em></h2>
       <div class="divider center reveal delay-2"></div>
-      <p class="reveal delay-3">Alles, was Sie über Hellenic Gold wissen möchten – klar und verständlich erklärt.</p>
+      <p class="reveal delay-3">Alles, was Sie über Zakariya wissen möchten – klar und verständlich erklärt.</p>
     </div>
     <div class="faq-grid">
 
@@ -1942,7 +1972,7 @@ body.bar-visible #nav{top:42px;}
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-answer">
-          <div class="faq-answer-inner">Bewahren Sie Hellenic Gold kühl, dunkel und trocken auf – am besten im Küchenschrank, weg von Herd und Fenster. Die dunkle Glasflasche schützt das Öl bereits vor Lichteinstrahlung. Bitte nicht im Kühlschrank lagern – das trübt das Öl (ist harmlos, aber unnötig).</div>
+          <div class="faq-answer-inner">Bewahren Sie Zakariya kühl, dunkel und trocken auf – am besten im Küchenschrank, weg von Herd und Fenster. Die dunkle Glasflasche schützt das Öl bereits vor Lichteinstrahlung. Bitte nicht im Kühlschrank lagern – das trübt das Öl (ist harmlos, aber unnötig).</div>
         </div>
       </div>
 
@@ -1952,7 +1982,7 @@ body.bar-visible #nav{top:42px;}
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-answer">
-          <div class="faq-answer-inner">Ungeöffnet hält Hellenic Gold mindestens 18 Monate ab Abfülldatum. Nach dem Öffnen empfehlen wir, das Öl innerhalb von 3–4 Monaten zu verbrauchen, damit Sie stets den vollen Genuss und die maximale Nährstoffdichte haben.</div>
+          <div class="faq-answer-inner">Ungeöffnet hält Zakariya mindestens 18 Monate ab Abfülldatum. Nach dem Öffnen empfehlen wir, das Öl innerhalb von 3–4 Monaten zu verbrauchen, damit Sie stets den vollen Genuss und die maximale Nährstoffdichte haben.</div>
         </div>
       </div>
 
@@ -1968,7 +1998,7 @@ body.bar-visible #nav{top:42px;}
 
       <div class="faq-item">
         <button class="faq-question" onclick="toggleFaq(this)">
-          <span>Kann ich Hellenic Gold auch zum Braten verwenden?</span>
+          <span>Kann ich Zakariya auch zum Braten verwenden?</span>
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-answer">
@@ -1978,7 +2008,7 @@ body.bar-visible #nav{top:42px;}
 
       <div class="faq-item">
         <button class="faq-question" onclick="toggleFaq(this)">
-          <span>Eignet sich Hellenic Gold als Geschenk?</span>
+          <span>Eignet sich Zakariya als Geschenk?</span>
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-answer">
@@ -2028,8 +2058,11 @@ body.bar-visible #nav{top:42px;}
     <div class="footer-top">
 
       <div class="footer-brand">
-        <a class="nav-logo" href="#start">Hellenic <span>Gold</span></a>
-        <p>Premium Extra Vergine Olivenöl, handgeerntet auf Kreta – direkt zu Ihnen nach Hause. Vier Generationen Leidenschaft in jeder Flasche.</p>
+        <a class="nav-logo" href="#start">
+          <span class="logo-main"><em class="logo-z">Z</em>AKARIYA</span>
+          <span class="logo-sub">Premium Olivenöl · Griechenland</span>
+        </a>
+        <p>Zakariya – Premium Extra Vergine Olivenöl, handgeerntet auf Kreta. Vier Generationen Leidenschaft, einmal im Jahr geerntet, direkt zu Ihnen nach Hause.</p>
         <div class="payment-icons">
           <span class="pay-icon">VISA</span>
           <span class="pay-icon">MC</span>
@@ -2080,7 +2113,7 @@ body.bar-visible #nav{top:42px;}
     </div>
 
     <div class="footer-bottom">
-      <span>© 2024 Hellenic Gold · Alle Rechte vorbehalten · Lassithi, Kreta, Griechenland</span>
+      <span>© 2025 ZAKARIYA · Alle Rechte vorbehalten · Lassithi, Kreta, Griechenland</span>
       <div class="footer-legal">
         <a href="#">Impressum</a>
         <a href="#">Datenschutz</a>
