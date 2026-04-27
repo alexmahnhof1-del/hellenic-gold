@@ -221,35 +221,31 @@ p+p{margin-top:16px;}
 
 .nav-inner{
   display:flex;align-items:center;justify-content:space-between;
-  max-width:1300px;margin:0 auto;padding:0 36px;
+  gap:24px;
+  max-width:1400px;margin:0 auto;padding:0 40px;
 }
 
 .nav-logo{
   font-family:'Playfair Display',serif;
-  font-size:1.45rem;font-weight:700;
+  font-size:1.25rem;font-weight:700;
   color:var(--warm-white);
-  letter-spacing:.5px;
-  transition:color .3s;
+  letter-spacing:1px;white-space:nowrap;
+  transition:color .3s;flex-shrink:0;
 }
 .nav-logo span{color:var(--gold);}
 #nav.scrolled .nav-logo{color:var(--green);}
 
-.nav-badge{
-  background:var(--gold);color:var(--green);
-  font-size:.58rem;font-weight:700;letter-spacing:1.5px;
-  text-transform:uppercase;padding:4px 10px;
-  border-radius:20px;white-space:nowrap;
-  display:none;
-}
-#nav.scrolled .nav-badge{display:inline-block;}
+.nav-badge{ display:none; }
 
 .nav-links{
-  display:flex;align-items:center;gap:28px;
+  display:flex;align-items:center;gap:22px;
+  flex:1;justify-content:center;
 }
 .nav-links a{
-  font-size:.8rem;font-weight:500;letter-spacing:.5px;
+  font-size:.75rem;font-weight:500;letter-spacing:.3px;
   color:rgba(255,255,255,.85);
   transition:color .25s;position:relative;
+  white-space:nowrap;
 }
 .nav-links a::after{
   content:'';position:absolute;bottom:-3px;left:0;
@@ -325,7 +321,7 @@ p+p{margin-top:16px;}
 .hero-bg{
   position:absolute;inset:0;
   background-color:var(--green);
-  background-image:url('https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=1920&q=85&auto=format&fit=crop');
+  background-image:url('https://source.unsplash.com/v8NbNY5OSbY/1920x1080');
   background-size:cover;background-position:center 30%;
   animation:heroZoom 14s ease-out both;
 }
@@ -1174,9 +1170,14 @@ body.bar-visible #nav{top:42px;}
 /* ═══════════════════════════════════
    RESPONSIVE
 ═══════════════════════════════════ */
+@media(max-width:1200px){
+  .nav-links{gap:14px;}
+  .nav-links a{font-size:.72rem;}
+}
 @media(max-width:1100px){
-  .nav-links{gap:18px;}
-  .nav-links a{font-size:.75rem;}
+  .nav-links{gap:12px;}
+  .nav-links a{font-size:.7rem;}
+  .cart-label{display:none;}
   .ernte-gallery{grid-template-columns:repeat(2,1fr);}
   .ernte-gallery-item:first-child{grid-column:span 2;}
   .health-grid{grid-template-columns:repeat(2,1fr);}
@@ -1269,12 +1270,11 @@ body.bar-visible #nav{top:42px;}
 <!-- ════════════ NAVIGATION ════════════ -->
 <header id="nav">
   <div class="nav-inner">
-    <a class="nav-logo" href="#start">Hellenic <span>Gold</span></a>
-    <span class="nav-badge">✦ Nur eine Ernte pro Jahr</span>
+    <a class="nav-logo" href="#start">Hellenic&nbsp;<span>Gold</span></a>
     <nav class="nav-links">
       <a href="#start">Start</a>
       <a href="#ernte">Unsere Ernte</a>
-      <a href="#prozess">Von der Ernte zur Flasche</a>
+      <a href="#prozess">Herstellung</a>
       <a href="#health">Gesundheit</a>
       <a href="#shop">Shop</a>
       <a href="#about">Über uns</a>
@@ -1282,7 +1282,7 @@ body.bar-visible #nav{top:42px;}
     </nav>
     <div class="nav-right">
       <button class="nav-cart-btn" onclick="openCart()" aria-label="Warenkorb öffnen">
-        🛒 Warenkorb
+        🛒&nbsp;<span class="cart-label">Warenkorb</span>
         <span class="cart-count" id="cartCount">0</span>
       </button>
       <button class="hamburger" onclick="openMobileNav()" aria-label="Menü öffnen">
@@ -1393,7 +1393,7 @@ body.bar-visible #nav{top:42px;}
         </div>
       </div>
       <div class="ernte-main-img reveal delay-2">
-        <img src="https://images.unsplash.com/photo-1508253578933-20b529302151?w=900&q=85&auto=format&fit=crop" alt="Olivenernte auf Kreta – Bäuerinnen pflücken Oliven von Hand"/>
+        <img src="https://source.unsplash.com/GByqbsuYI8M/900x600" alt="Olivenernte auf Kreta – Oliven wachsen am Baum"/>
         <div class="ernte-badge">
           <strong>1×</strong>
           <span>Ernte pro Jahr</span>
@@ -1404,16 +1404,16 @@ body.bar-visible #nav{top:42px;}
     <!-- Gallery -->
     <div class="ernte-gallery">
       <div class="ernte-gallery-item reveal">
-        <img src="https://images.unsplash.com/photo-1543083477-4f785aeafaa9?w=900&q=85&auto=format&fit=crop" alt="Weit ausgedehnte Olivenplantage auf Kreta" loading="lazy"/>
+        <img src="https://source.unsplash.com/axyreqgv-oY/900x600" alt="Weit ausgedehnte Olivenplantage auf Kreta" loading="lazy"/>
       </div>
       <div class="ernte-gallery-item reveal delay-1">
-        <img src="https://images.unsplash.com/photo-1560717845-968823efbee1?w=600&q=85&auto=format&fit=crop" alt="Hundertjähriger Olivenbaum" loading="lazy"/>
+        <img src="https://source.unsplash.com/UOgAEGya_VY/600x400" alt="Olivenbaum mit reifen Oliven" loading="lazy"/>
       </div>
       <div class="ernte-gallery-item reveal delay-2">
-        <img src="https://images.unsplash.com/photo-1611171711912-e3f4b0af2aa7?w=600&q=85&auto=format&fit=crop" alt="Frische grüne Oliven nach der Ernte" loading="lazy"/>
+        <img src="https://source.unsplash.com/fQHQp75Ap3E/600x400" alt="Frische Oliven und Olivenöl auf Holztisch" loading="lazy"/>
       </div>
       <div class="ernte-gallery-item reveal delay-3">
-        <img src="https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=600&q=85&auto=format&fit=crop" alt="Goldenes Premium Olivenöl" loading="lazy"/>
+        <img src="https://source.unsplash.com/xz5Oth5no_g/600x400" alt="Goldenes Olivenöl wird eingegossen" loading="lazy"/>
       </div>
     </div>
   </div>
@@ -1434,7 +1434,7 @@ body.bar-visible #nav{top:42px;}
 
       <div class="process-step reveal delay-1">
         <div class="step-img">
-          <img src="https://images.unsplash.com/photo-1508253578933-20b529302151?w=300&q=80&auto=format&fit=crop" alt="Handernte der Oliven" loading="lazy"/>
+          <img src="https://source.unsplash.com/GByqbsuYI8M/300x300" alt="Oliven am Baum – bereit zur Ernte" loading="lazy"/>
         </div>
         <span class="step-number">01</span>
         <h3 class="step-title">Handernte</h3>
@@ -1443,7 +1443,7 @@ body.bar-visible #nav{top:42px;}
 
       <div class="process-step reveal delay-2">
         <div class="step-img">
-          <img src="https://images.unsplash.com/photo-1611171711912-e3f4b0af2aa7?w=300&q=80&auto=format&fit=crop" alt="Selektion und Reinigung der Oliven" loading="lazy"/>
+          <img src="https://source.unsplash.com/UOgAEGya_VY/300x300" alt="Selektion und Reinigung der Oliven" loading="lazy"/>
         </div>
         <span class="step-number">02</span>
         <h3 class="step-title">Sorgfältige Selektion</h3>
@@ -1452,7 +1452,7 @@ body.bar-visible #nav{top:42px;}
 
       <div class="process-step reveal delay-3">
         <div class="step-img">
-          <img src="https://images.unsplash.com/photo-1519051256044-8f5cde9a8a9f?w=300&q=80&auto=format&fit=crop" alt="Kaltpressung bei max. 27 Grad" loading="lazy"/>
+          <img src="https://source.unsplash.com/xz5Oth5no_g/300x300" alt="Kaltpressung – Olivenöl wird gegossen" loading="lazy"/>
         </div>
         <span class="step-number">03</span>
         <h3 class="step-title">Schonende Kaltpressung</h3>
@@ -1461,7 +1461,7 @@ body.bar-visible #nav{top:42px;}
 
       <div class="process-step reveal delay-4">
         <div class="step-img">
-          <img src="https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=300&q=80&auto=format&fit=crop" alt="Abfüllung in dunkle Glasflaschen" loading="lazy"/>
+          <img src="https://source.unsplash.com/WiCo1iTLMRY/300x300" alt="Abfüllung in dunkle Glasflaschen" loading="lazy"/>
         </div>
         <span class="step-number">04</span>
         <h3 class="step-title">Schützende Abfüllung</h3>
@@ -1556,7 +1556,7 @@ body.bar-visible #nav{top:42px;}
       <div class="product-card reveal delay-1">
         <span class="product-badge badge-pop">Beliebt bei 50+</span>
         <div class="product-img-wrap">
-          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&q=85&auto=format&fit=crop" alt="Hellenic Gold Classico 500ml – Premium Olivenöl" loading="lazy"/>
+          <img src="https://source.unsplash.com/ZPjpIi0I0V4/700x400" alt="Hellenic Gold Classico 500ml – Premium Olivenöl" loading="lazy"/>
         </div>
         <div class="product-body">
           <span class="product-cat">Extra Vergine · Kaltgepresst</span>
@@ -1579,7 +1579,7 @@ body.bar-visible #nav{top:42px;}
       <div class="product-card reveal delay-2">
         <span class="product-badge badge-best">⭐ Bestseller</span>
         <div class="product-img-wrap">
-          <img src="https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=700&q=85&auto=format&fit=crop" alt="Hellenic Gold Riserva 500ml – Frühernte Olivenöl" loading="lazy"/>
+          <img src="https://source.unsplash.com/fQHQp75Ap3E/700x400" alt="Hellenic Gold Riserva 500ml – Frühernte Olivenöl" loading="lazy"/>
         </div>
         <div class="product-body">
           <span class="product-cat">Frühernte · Höchster Polyphenolgehalt</span>
@@ -1602,7 +1602,7 @@ body.bar-visible #nav{top:42px;}
       <div class="product-card reveal delay-3">
         <span class="product-badge badge-limited">⏳ Limitiert</span>
         <div class="product-img-wrap">
-          <img src="https://images.unsplash.com/photo-1601024445121-e5b82f020549?w=700&q=85&auto=format&fit=crop" alt="Hellenic Gold Grand Cru 250ml" loading="lazy"/>
+          <img src="https://source.unsplash.com/NKlODy91kgg/700x400" alt="Hellenic Gold Grand Cru 250ml – Exklusiv" loading="lazy"/>
         </div>
         <div class="product-body">
           <span class="product-cat">Grand Cru · Uralte Bäume · 250 ml</span>
@@ -1625,7 +1625,7 @@ body.bar-visible #nav{top:42px;}
       <div class="product-card reveal delay-1">
         <span class="product-badge badge-pop">Sparpaket</span>
         <div class="product-img-wrap">
-          <img src="https://images.unsplash.com/photo-1560717845-968823efbee1?w=700&q=85&auto=format&fit=crop" alt="Hellenic Gold Classico 1 Liter" loading="lazy"/>
+          <img src="https://source.unsplash.com/WiCo1iTLMRY/700x400" alt="Hellenic Gold Classico 1 Liter – Vorteilsgröße" loading="lazy"/>
         </div>
         <div class="product-body">
           <span class="product-cat">Extra Vergine · Haushaltsgröße</span>
@@ -1648,7 +1648,7 @@ body.bar-visible #nav{top:42px;}
       <div class="product-card reveal delay-2">
         <span class="product-badge badge-best">🎁 Geschenk-Tipp</span>
         <div class="product-img-wrap">
-          <img src="https://images.unsplash.com/photo-1543083477-4f785aeafaa9?w=700&q=85&auto=format&fit=crop" alt="Hellenic Gold Probier-Set – alle drei Sorten" loading="lazy"/>
+          <img src="https://source.unsplash.com/hDnpWMyrIhc/700x400" alt="Hellenic Gold Probier-Set – Brot und Olivenöl" loading="lazy"/>
         </div>
         <div class="product-body">
           <span class="product-cat">Exklusives Probier-Set · 3 Flaschen</span>
@@ -1671,7 +1671,7 @@ body.bar-visible #nav{top:42px;}
       <div class="product-card reveal delay-3">
         <span class="product-badge badge-limited">Neu</span>
         <div class="product-img-wrap">
-          <img src="https://images.unsplash.com/photo-1519051256044-8f5cde9a8a9f?w=700&q=85&auto=format&fit=crop" alt="Hellenic Gold Riserva 1 Liter – Große Flasche" loading="lazy"/>
+          <img src="https://source.unsplash.com/c_xqdv4QIcU/700x400" alt="Hellenic Gold Riserva 1 Liter – Große Flasche" loading="lazy"/>
         </div>
         <div class="product-body">
           <span class="product-cat">Frühernte · Riserva · Großflasche</span>
@@ -1734,7 +1734,7 @@ body.bar-visible #nav{top:42px;}
   <div class="container">
     <div class="why-inner">
       <div class="why-img reveal">
-        <img src="https://images.unsplash.com/photo-1543083477-4f785aeafaa9?w=900&q=85&auto=format&fit=crop" alt="Hellenic Gold – Olivenplantage Kreta" loading="lazy"/>
+        <img src="https://source.unsplash.com/axyreqgv-oY/900x600" alt="Hellenic Gold – Olivenplantage Kreta" loading="lazy"/>
         <div class="why-img-overlay"></div>
       </div>
       <div class="why-content reveal delay-1">
@@ -1848,7 +1848,7 @@ body.bar-visible #nav{top:42px;}
 <section class="family section-pad" id="familie">
   <div class="family-inner">
     <div class="family-img-col reveal">
-      <img src="https://images.unsplash.com/photo-1560717845-968823efbee1?w=900&q=85&auto=format&fit=crop" alt="Die Familie Konstantinou – vier Generationen Olivenöl auf Kreta" loading="lazy"/>
+      <img src="https://source.unsplash.com/v8NbNY5OSbY/900x700" alt="Die Familie Konstantinou – Olivenplantage Griechenland" loading="lazy"/>
       <div class="family-quote-overlay">
         <blockquote>„Jede Flasche trägt die Arbeit unserer Hände und die Liebe zu diesem Land in sich."</blockquote>
         <cite>Nikos Konstantinou, 3. Generation</cite>
@@ -2159,7 +2159,7 @@ function updateCart() {
     const el = document.createElement('div');
     el.className = 'cart-item';
     el.innerHTML = `
-      <img class="cart-item-img" src="https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=200&q=70&auto=format&fit=crop" alt="${item.name}"/>
+      <img class="cart-item-img" src="https://source.unsplash.com/ZPjpIi0I0V4/200x200" alt="${item.name}"/>
       <div class="cart-item-info">
         <div class="cart-item-name">${item.name}</div>
         <div class="cart-item-price">€${(item.price * item.qty).toFixed(2).replace('.',',')}</div>
