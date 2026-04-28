@@ -120,6 +120,17 @@ p+p{margin-top:16px;}
 .btn-green-outline:hover{background:var(--green);color:var(--warm-white);}
 
 /* ═══════════════════════════════════
+   PAGE VIEW SWITCHING
+═══════════════════════════════════ */
+.page-view{display:none;}
+.page-view.active{display:block;animation:pvFadeIn .45s ease;}
+@keyframes pvFadeIn{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:none;}}
+
+.nav-links a.nav-active{color:var(--gold)!important;}
+.nav-links a.nav-active::after{width:100%!important;}
+#nav.scrolled .nav-links a.nav-active{color:var(--green)!important;}
+
+/* ═══════════════════════════════════
    REVEAL ANIMATIONS
 ═══════════════════════════════════ */
 .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;}
@@ -1807,30 +1818,30 @@ footer{border-top:2px solid rgba(200,162,74,.2);}
 <!-- ════════════ MOBILE NAV ════════════ -->
 <div class="mobile-overlay" id="mobileOverlay" onclick="closeMobileNav()"></div>
 <nav class="mobile-nav" id="mobileNav">
-  <a href="#start" onclick="closeMobileNav()">Start</a>
-  <a href="#ernte" onclick="closeMobileNav()">Unsere Ernte</a>
-  <a href="#prozess" onclick="closeMobileNav()">Von der Ernte zur Flasche</a>
-  <a href="#health" onclick="closeMobileNav()">Gesundheit & Wohlbefinden</a>
-  <a href="#shop" onclick="closeMobileNav()">Shop</a>
-  <a href="#about" onclick="closeMobileNav()">Über uns</a>
-  <a href="#kontakt" onclick="closeMobileNav()">Kontakt</a>
+  <a href="#" onclick="showPage('start');closeMobileNav();return false;">Start</a>
+  <a href="#" onclick="showPage('ernte');closeMobileNav();return false;">Unsere Ernte</a>
+  <a href="#" onclick="showPage('ernte');closeMobileNav();return false;">Von der Ernte zur Flasche</a>
+  <a href="#" onclick="showPage('health');closeMobileNav();return false;">Gesundheit & Wohlbefinden</a>
+  <a href="#" onclick="showPage('shop');closeMobileNav();return false;">Shop</a>
+  <a href="#" onclick="showPage('about');closeMobileNav();return false;">Über uns</a>
+  <a href="#" onclick="showPage('kontakt');closeMobileNav();return false;">Kontakt</a>
 </nav>
 
 <!-- ════════════ NAVIGATION ════════════ -->
 <header id="nav">
   <div class="nav-inner">
-    <a class="nav-logo" href="#start">
+    <a class="nav-logo" href="#" onclick="showPage('start');return false;">
       <span class="logo-main"><em class="logo-z">Z</em>AKARIYA</span>
       <span class="logo-sub">Premium Olivenöl</span>
     </a>
     <nav class="nav-links">
-      <a href="#start">Start</a>
-      <a href="#ernte">Unsere Ernte</a>
-      <a href="#prozess">Herstellung</a>
-      <a href="#health">Gesundheit</a>
-      <a href="#shop">Shop</a>
-      <a href="#about">Über uns</a>
-      <a href="#kontakt">Kontakt</a>
+      <a href="#" onclick="showPage('start');return false;" data-page="start" class="nav-active">Start</a>
+      <a href="#" onclick="showPage('ernte');return false;" data-page="ernte">Unsere Ernte</a>
+      <a href="#" onclick="showPage('ernte');return false;" data-page="prozess">Herstellung</a>
+      <a href="#" onclick="showPage('health');return false;" data-page="health">Gesundheit</a>
+      <a href="#" onclick="showPage('shop');return false;" data-page="shop">Shop</a>
+      <a href="#" onclick="showPage('about');return false;" data-page="about">Über uns</a>
+      <a href="#" onclick="showPage('kontakt');return false;" data-page="kontakt">Kontakt</a>
     </nav>
     <div class="nav-right">
       <button class="nav-cart-btn" onclick="openCart()" aria-label="Warenkorb öffnen">
@@ -1843,6 +1854,9 @@ footer{border-top:2px solid rgba(200,162,74,.2);}
     </div>
   </div>
 </header>
+
+<!-- ════════════ PAGE VIEWS ════════════ -->
+<div class="page-view active" id="pv-start">
 
 <!-- ════════════ HERO ════════════ -->
 <section class="hero" id="start">
@@ -1857,8 +1871,8 @@ footer{border-top:2px solid rgba(200,162,74,.2);}
       für Ihr Wohlbefinden im besten Alter.
     </p>
     <div class="hero-btns">
-      <a href="#shop" class="btn btn-primary">Jetzt im Shop entdecken →</a>
-      <a href="#ernte" class="btn btn-outline">Mehr zur Ernte erfahren</a>
+      <a href="#" onclick="showPage('shop');return false;" class="btn btn-primary">Jetzt im Shop entdecken →</a>
+      <a href="#" onclick="showPage('ernte');return false;" class="btn btn-outline">Mehr zur Ernte erfahren</a>
     </div>
   </div>
   <div class="hero-trust">
@@ -1870,7 +1884,7 @@ footer{border-top:2px solid rgba(200,162,74,.2);}
     <span class="hero-trust-dot"></span>
     <span class="hero-trust-item"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Nur eine Ernte pro Jahr</span>
   </div>
-  <a class="hero-scroll" href="#stats" aria-label="Nach unten scrollen">
+  <a class="hero-scroll" href="#" onclick="showPage('shop');return false;" aria-label="Zum Shop">
     <div class="scroll-mouse"><div class="scroll-dot"></div></div>
     <span>Entdecken</span>
   </a>
@@ -1919,6 +1933,10 @@ footer{border-top:2px solid rgba(200,162,74,.2);}
     <cite class="reveal delay-2">Zakariya · Premium Olivenöl seit Generationen</cite>
   </div>
 </div>
+
+</div><!-- /pv-start -->
+
+<div class="page-view" id="pv-ernte">
 
 <!-- ════════════ UNSERE ERNTE ════════════ -->
 <section class="ernte section-pad" id="ernte">
@@ -2050,6 +2068,10 @@ footer{border-top:2px solid rgba(200,162,74,.2);}
   </div>
 </section>
 
+</div><!-- /pv-ernte -->
+
+<div class="page-view" id="pv-health">
+
 <!-- ════════════ HEALTH ════════════ -->
 <section class="health section-pad" id="health">
   <div class="container">
@@ -2115,6 +2137,10 @@ footer{border-top:2px solid rgba(200,162,74,.2);}
     </div>
   </div>
 </section>
+
+</div><!-- /pv-health -->
+
+<div class="page-view" id="pv-shop">
 
 <!-- ════════════ SHOP ════════════ -->
 <section class="shop section-pad" id="shop">
@@ -2312,6 +2338,10 @@ footer{border-top:2px solid rgba(200,162,74,.2);}
   </div>
 </div>
 
+</div><!-- /pv-shop -->
+
+<div class="page-view" id="pv-about">
+
 <!-- ════════════ WARUM WIR ════════════ -->
 <section class="why section-pad" id="about">
   <div class="container">
@@ -2466,6 +2496,10 @@ footer{border-top:2px solid rgba(200,162,74,.2);}
   </div>
 </section>
 
+</div><!-- /pv-about -->
+
+<div class="page-view" id="pv-kontakt">
+
 <!-- ════════════ VERSAND & SERVICE ════════════ -->
 <section class="shipping section-pad">
   <div class="container">
@@ -2606,13 +2640,15 @@ footer{border-top:2px solid rgba(200,162,74,.2);}
   </div>
 </div>
 
+</div><!-- /pv-kontakt -->
+
 <!-- ════════════ FOOTER ════════════ -->
 <footer>
   <div class="container">
     <div class="footer-top">
 
       <div class="footer-brand">
-        <a class="nav-logo" href="#start">
+        <a class="nav-logo" href="#" onclick="showPage('start');return false;">
           <span class="logo-main"><em class="logo-z">Z</em>AKARIYA</span>
           <span class="logo-sub">Premium Olivenöl · Griechenland</span>
         </a>
@@ -2633,12 +2669,12 @@ footer{border-top:2px solid rgba(200,162,74,.2);}
       <div class="footer-col">
         <h5>Navigation</h5>
         <ul>
-          <li><a href="#start">Start</a></li>
-          <li><a href="#ernte">Unsere Ernte</a></li>
-          <li><a href="#prozess">Von der Ernte zur Flasche</a></li>
-          <li><a href="#health">Gesundheit & Wohlbefinden</a></li>
-          <li><a href="#shop">Shop</a></li>
-          <li><a href="#about">Über uns</a></li>
+          <li><a href="#" onclick="showPage('start');return false;">Start</a></li>
+          <li><a href="#" onclick="showPage('ernte');return false;">Unsere Ernte</a></li>
+          <li><a href="#" onclick="showPage('ernte');return false;">Von der Ernte zur Flasche</a></li>
+          <li><a href="#" onclick="showPage('health');return false;">Gesundheit & Wohlbefinden</a></li>
+          <li><a href="#" onclick="showPage('shop');return false;">Shop</a></li>
+          <li><a href="#" onclick="showPage('about');return false;">Über uns</a></li>
         </ul>
       </div>
 
@@ -2826,6 +2862,46 @@ footer{border-top:2px solid rgba(200,162,74,.2);}
 
 <!-- ════════════ JAVASCRIPT ════════════ -->
 <script>
+/* ── Page Navigation ─────────────── */
+function showPage(pageId) {
+  // Hide all pages and reset their animations
+  document.querySelectorAll('.page-view').forEach(v => {
+    v.classList.remove('active');
+    v.querySelectorAll('.reveal.up').forEach(el => el.classList.remove('up'));
+  });
+
+  // Show selected page
+  const target = document.getElementById('pv-' + pageId);
+  if (!target) return;
+  target.classList.add('active');
+
+  // Update active nav link
+  document.querySelectorAll('.nav-links a[data-page]').forEach(a => a.classList.remove('nav-active'));
+  const activeLink = document.querySelector('.nav-links a[data-page="' + pageId + '"]');
+  if (activeLink) activeLink.classList.add('nav-active');
+
+  // Scroll to top instantly
+  window.scrollTo({ top: 0, behavior: 'instant' });
+
+  // Non-hero pages always show the scrolled nav style
+  const navEl = document.getElementById('nav');
+  if (navEl) navEl.classList.toggle('scrolled', pageId !== 'start');
+
+  // Stagger-animate reveal elements: immediate viewport items first, then as you scroll
+  setTimeout(() => {
+    const els = Array.from(target.querySelectorAll('.reveal'));
+    els.forEach((el, i) => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight) {
+        setTimeout(() => el.classList.add('up'), i * 60);
+      } else {
+        // Re-observe elements below the fold
+        if (window._revealIo) window._revealIo.observe(el);
+      }
+    });
+  }, 30);
+}
+
 /* ── Helpers ──────────────────────── */
 const id = selector => document.getElementById(selector);
 
@@ -3053,12 +3129,12 @@ function toggleFaq(btn) {
 
 /* ── Scroll Reveal ────────────────── */
 const revealEls = document.querySelectorAll('.reveal');
-const io = new IntersectionObserver((entries) => {
+window._revealIo = new IntersectionObserver((entries) => {
   entries.forEach(e => {
-    if (e.isIntersecting) { e.target.classList.add('up'); io.unobserve(e.target); }
+    if (e.isIntersecting) { e.target.classList.add('up'); window._revealIo.unobserve(e.target); }
   });
 }, { threshold: 0.08 });
-revealEls.forEach(el => io.observe(el));
+revealEls.forEach(el => window._revealIo.observe(el));
 
 /* ── Gallery Curtain Reveal + Parallax ─ */
 const galleryItems = document.querySelectorAll('.ernte-gallery-item');
