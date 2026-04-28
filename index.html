@@ -594,7 +594,26 @@ p+p{margin-top:16px;}
 }
 .health-card:hover{background:rgba(255,255,255,.1);transform:translateY(-4px);}
 .health-card-icon{
-  font-size:1.6rem;margin-bottom:12px;display:block;
+  display:flex;align-items:center;justify-content:center;
+  width:52px;height:52px;margin-bottom:20px;
+  border:1.5px solid rgba(200,162,74,.35);
+  background:rgba(200,162,74,.07);
+  flex-shrink:0;
+  transition:border-color .3s,background .3s;
+}
+.health-card:hover .health-card-icon{
+  border-color:rgba(200,162,74,.75);
+  background:rgba(200,162,74,.15);
+}
+.health-card-icon svg{
+  width:22px;height:22px;
+  stroke:var(--gold-light);stroke-width:1.5;
+  fill:none;stroke-linecap:round;stroke-linejoin:round;
+  transition:stroke .3s,transform .3s;
+}
+.health-card:hover .health-card-icon svg{
+  stroke:var(--gold);
+  transform:scale(1.1);
 }
 .health-card h4{
   font-family:'Playfair Display',serif;
@@ -2006,37 +2025,37 @@ footer{border-top:2px solid rgba(200,162,74,.2);}
 
     <div class="health-grid">
       <div class="health-card reveal delay-1">
-        <span class="health-card-icon">❤️</span>
+        <div class="health-card-icon"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
         <h4>Herzgesundheit</h4>
         <p>Die einfach ungesättigten Fettsäuren im Olivenöl (insb. Ölsäure) senken nachweislich den LDL-Cholesterinspiegel und schützen die Herzgefäße.</p>
         <span class="study-note">PREDIMED-Studie (2013): –30 % kardiovaskuläres Risiko durch mediterrane Ernährung</span>
       </div>
       <div class="health-card reveal delay-2">
-        <span class="health-card-icon">🛡️</span>
+        <div class="health-card-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
         <h4>Antioxidantien &amp; Polyphenole</h4>
         <p>Zakariya enthält außergewöhnlich viele Polyphenole – natürliche Antioxidantien, die freie Radikale neutralisieren und Zellen vor vorzeitiger Alterung schützen.</p>
         <span class="study-note">Journal of Nutritional Biochemistry: Polyphenole reduzieren oxidativen Stress signifikant</span>
       </div>
       <div class="health-card reveal delay-3">
-        <span class="health-card-icon">🔥</span>
+        <div class="health-card-icon"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
         <h4>Entzündungshemmende Wirkung</h4>
         <p>Oleocanthal, ein natürlicher Wirkstoff im extra vergine Olivenöl, wirkt ähnlich wie Ibuprofen – entzündungshemmend und schmerzlindernd, aber vollkommen natürlich.</p>
         <span class="study-note">Nature (2005): Oleocanthal hemmt COX-Enzyme wie klassische Antirheumatika</span>
       </div>
       <div class="health-card reveal delay-1">
-        <span class="health-card-icon">🧠</span>
+        <div class="health-card-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
         <h4>Gehirn &amp; geistige Klarheit</h4>
         <p>Regelmäßiger Olivenölkonsum ist mit verbesserter Gedächtnisleistung und einem verringerten Risiko für neurodegenerative Erkrankungen verbunden.</p>
         <span class="study-note">Annals of Clinical Nutrition: Mediterrane Diät schützt kognitive Funktionen im Alter</span>
       </div>
       <div class="health-card reveal delay-2">
-        <span class="health-card-icon">🦴</span>
+        <div class="health-card-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg></div>
         <h4>Gelenke &amp; Mobilität</h4>
         <p>Die antioxidativen und entzündungshemmenden Eigenschaften des Olivenöls unterstützen die Gelenkgesundheit und lindern Beschwerden bei rheumatischen Erkrankungen.</p>
         <span class="study-note">Nutrients (2018): Polyphenole reduzieren Marker für Gelenkentzündungen</span>
       </div>
       <div class="health-card reveal delay-3">
-        <span class="health-card-icon">✨</span>
+        <div class="health-card-icon"><svg viewBox="0 0 24 24"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg></div>
         <h4>Haut &amp; langes Leben</h4>
         <p>Olivenöl versorgt die Haut von innen mit wertvollen Fettsäuren und Vitamin E, fördert Zellerneuerung und ist in der Mittelmeerregion – bekannt für ihre Langlebigkeit – tägliches Grundnahrungsmittel.</p>
         <span class="study-note">Blue Zones-Forschung: Bewohner mit höchster Olivenölkonsumrate leben statistisch länger</span>
