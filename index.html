@@ -222,7 +222,9 @@ p+p{margin-top:16px;}
 ═══════════════════════════════════ */
 #nav{
   position:fixed;top:0;left:0;right:0;z-index:1000;
-  padding:18px 0;
+  padding:12px 0;
+  background:rgba(248,243,235,.97);
+  box-shadow:0 2px 20px var(--shadow);
   transition:background .35s ease,padding .35s ease,box-shadow .35s ease;
 }
 #nav.scrolled{
@@ -250,7 +252,7 @@ p+p{margin-top:16px;}
   font-size:1.35rem;font-weight:700;
   letter-spacing:6px;
   text-transform:uppercase;
-  color:var(--warm-white);
+  color:var(--green);
   display:flex;align-items:baseline;gap:0;
   transition:color .3s;
 }
@@ -281,7 +283,7 @@ p+p{margin-top:16px;}
 }
 .nav-links a{
   font-size:.75rem;font-weight:500;letter-spacing:.3px;
-  color:rgba(255,255,255,.85);
+  color:var(--text-mid);
   transition:color .25s;position:relative;
   white-space:nowrap;
 }
@@ -291,7 +293,7 @@ p+p{margin-top:16px;}
   transition:width .25s;
 }
 .nav-links a:hover::after{width:100%;}
-.nav-links a:hover{color:var(--gold);}
+.nav-links a:hover{color:var(--green);}
 #nav.scrolled .nav-links a{color:var(--text-mid);}
 #nav.scrolled .nav-links a:hover{color:var(--green);}
 
@@ -320,7 +322,7 @@ p+p{margin-top:16px;}
   cursor:pointer;background:none;border:none;padding:6px;
 }
 .hamburger span{
-  width:26px;height:2px;background:var(--warm-white);
+  width:26px;height:2px;background:var(--green);
   display:block;transition:all .3s;
 }
 #nav.scrolled .hamburger span{background:var(--green);}
