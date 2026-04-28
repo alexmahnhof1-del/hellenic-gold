@@ -683,7 +683,9 @@ p+p{margin-top:16px;}
   border:1px solid var(--border);
   position:relative;overflow:hidden;
   transition:transform .35s ease,box-shadow .35s ease;
+  display:flex;flex-direction:column;
 }
+.product-body{display:flex;flex-direction:column;flex:1;}
 .product-card:hover{transform:translateY(-6px);box-shadow:0 20px 50px var(--shadow-lg);}
 
 .product-badge{
@@ -720,7 +722,7 @@ p+p{margin-top:16px;}
 .product-vol{font-size:.8rem;color:var(--text-light);margin-bottom:12px;}
 .product-desc{font-size:.88rem;color:var(--text-mid);line-height:1.65;margin-bottom:18px;}
 
-.product-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;}
+.product-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;flex-grow:1;align-content:flex-start;}
 .tag{
   font-size:.64rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;
   padding:4px 10px;border:1px solid var(--border);color:var(--text-mid);
@@ -730,6 +732,7 @@ p+p{margin-top:16px;}
 .product-footer{
   display:flex;align-items:center;justify-content:space-between;
   padding-top:18px;border-top:1px solid var(--border);
+  margin-top:auto;
 }
 .product-price{
   font-family:'Playfair Display',serif;
@@ -2143,7 +2146,6 @@ footer{border-top:2px solid rgba(200,162,74,.2);}
           <div class="product-vol">500 ml · Koroneiki-Olive</div>
           <p class="product-desc">Unser meistgeliebtes Olivenöl: fruchtig, mild und aromatisch. Ideal zum täglichen Genuss – auf Salaten, Gemüse, Brot oder pur als Gesundheitsritual jeden Morgen.</p>
           <div class="product-tags">
-            <span class="tag">Bio</span>
             <span class="tag">Kaltgepresst</span>
             <span class="tag">Säure &lt; 0,2 %</span>
           </div>
@@ -2169,7 +2171,6 @@ footer{border-top:2px solid rgba(200,162,74,.2);}
           <div class="product-tags">
             <span class="tag">Reichste Polyphenole</span>
             <span class="tag">Anti-entzündlich</span>
-            <span class="tag">Bio</span>
           </div>
           <div class="product-footer">
             <div class="product-price">€32<sub>/Flasche</sub></div>
@@ -2216,7 +2217,6 @@ footer{border-top:2px solid rgba(200,162,74,.2);}
           <p class="product-desc">Unser Classico in der praktischen 1-Liter-Flasche – ideal für alle, die täglich von den Vorteilen des Premium-Olivenöls profitieren möchten. Besonders wirtschaftlich.</p>
           <div class="product-tags">
             <span class="tag">Sparpreis</span>
-            <span class="tag">Bio</span>
             <span class="tag">Familiengröße</span>
           </div>
           <div class="product-footer">
@@ -2265,7 +2265,6 @@ footer{border-top:2px solid rgba(200,162,74,.2);}
           <div class="product-tags">
             <span class="tag">Polyphenol-Reich</span>
             <span class="tag">Großpackung</span>
-            <span class="tag">Bio</span>
           </div>
           <div class="product-footer">
             <div class="product-price">€58<sub>/Flasche</sub></div>
