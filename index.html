@@ -163,7 +163,8 @@ p+p{margin-top:16px;}
 
 .cart-items{flex:1;overflow-y:auto;padding:20px 30px;}
 .cart-empty{text-align:center;padding:60px 0;color:var(--text-light);}
-.cart-empty span{font-size:3rem;display:block;margin-bottom:16px;}
+.cart-empty span{display:flex;align-items:center;justify-content:center;width:56px;height:56px;margin:0 auto 16px;background:var(--green-pale);border:1px solid rgba(59,88,40,.15);}
+.cart-empty span svg{width:26px;height:26px;stroke:var(--green-light);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;}
 .cart-empty p{font-size:.9rem;}
 
 .cart-item{
@@ -419,7 +420,13 @@ p+p{margin-top:16px;}
   display:flex;align-items:center;gap:12px;
   color:rgba(255,255,255,.82);font-size:.8rem;
 }
-.band-icon{color:var(--gold);font-size:1.1rem;}
+.band-icon{
+  display:flex;align-items:center;justify-content:center;
+  width:36px;height:36px;flex-shrink:0;
+  background:rgba(200,162,74,.12);
+  border:1px solid rgba(200,162,74,.28);
+}
+.band-icon svg{width:18px;height:18px;stroke:var(--gold);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;}
 .band-item strong{
   display:block;font-size:.78rem;font-weight:700;
   letter-spacing:1px;text-transform:uppercase;color:#fff;
@@ -471,8 +478,8 @@ p+p{margin-top:16px;}
   background:var(--green-pale);
   border:1px solid rgba(59,88,40,.15);
   display:flex;align-items:center;justify-content:center;
-  font-size:1rem;
 }
+.feature-icon svg{width:20px;height:20px;stroke:var(--green);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;}
 .feature-text strong{
   display:block;font-size:.88rem;font-weight:700;
   color:var(--text);margin-bottom:2px;
@@ -769,7 +776,14 @@ p+p{margin-top:16px;}
   transition:transform .25s,box-shadow .25s;
 }
 .why-point:hover{transform:translateX(4px);box-shadow:4px 0 20px var(--shadow);}
-.why-point-icon{font-size:1.3rem;flex-shrink:0;margin-top:2px;}
+.why-point-icon{
+  display:flex;align-items:center;justify-content:center;
+  width:36px;height:36px;flex-shrink:0;margin-top:2px;
+  background:var(--green);
+  font-family:'Inter',sans-serif;
+  font-size:.62rem;font-weight:700;letter-spacing:1px;
+  color:var(--gold);
+}
 .why-point-text h4{font-size:.92rem;color:var(--text);margin-bottom:4px;}
 .why-point-text p{font-size:.84rem;color:var(--text-mid);line-height:1.6;}
 
@@ -1128,7 +1142,14 @@ body.bar-visible #nav{top:42px;}
   transition:transform .25s,box-shadow .25s;
 }
 .cert-item:hover{transform:translateY(-4px);box-shadow:0 12px 30px var(--shadow);}
-.cert-icon{font-size:2.4rem;margin-bottom:14px;display:block;}
+.cert-icon{
+  width:52px;height:52px;
+  margin:0 auto 14px;
+  display:flex;align-items:center;justify-content:center;
+  background:rgba(200,162,74,.1);
+  border:1px solid rgba(200,162,74,.25);
+}
+.cert-icon svg{width:24px;height:24px;stroke:var(--gold);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;}
 .cert-name{
   font-size:.78rem;font-weight:700;letter-spacing:1.5px;
   text-transform:uppercase;color:var(--green);
@@ -1200,7 +1221,14 @@ body.bar-visible #nav{top:42px;}
 }
 .ship-card:last-child{border-right:none;}
 .ship-card:hover{background:var(--cream);}
-.ship-icon{font-size:2rem;margin-bottom:16px;display:block;}
+.ship-icon{
+  width:52px;height:52px;
+  margin:0 auto 16px;
+  display:flex;align-items:center;justify-content:center;
+  background:var(--green-pale);
+  border:1px solid rgba(59,88,40,.15);
+}
+.ship-icon svg{width:24px;height:24px;stroke:var(--green);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;}
 .ship-title{
   font-family:'Playfair Display',serif;
   font-size:1rem;color:var(--green);
@@ -1401,7 +1429,6 @@ body.bar-visible #nav{top:42px;}
   width:48px;height:48px;background:#25D366;color:#fff;
   border:none;border-radius:50%;cursor:pointer;
   display:flex;align-items:center;justify-content:center;
-  font-size:1.25rem;
   box-shadow:0 4px 18px rgba(37,211,102,.45);
   transition:transform .25s,box-shadow .25s;
   text-decoration:none;
@@ -1633,7 +1660,8 @@ body.bar-visible #nav{top:42px;}
 }
 .pay-opt:hover{border-color:var(--gold-light);}
 .pay-opt.selected{border-color:var(--gold);background:var(--gold-pale);color:var(--green);}
-.pay-opt-icon{font-size:1.3rem;display:block;margin-bottom:4px;}
+.pay-opt-icon{display:flex;align-items:center;justify-content:center;width:28px;height:28px;margin:0 auto 4px;}
+.pay-opt-icon svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;}
 .checkout-btn{
   width:100%;padding:14px;background:var(--green);color:#fff;border:none;
   cursor:pointer;font-size:.78rem;font-weight:700;letter-spacing:2px;
@@ -1644,7 +1672,14 @@ body.bar-visible #nav{top:42px;}
 .checkout-btn.gold-btn:hover{background:var(--gold-light);}
 .checkout-note{font-size:.75rem;color:var(--text-light);text-align:center;margin-top:10px;}
 .checkout-success{text-align:center;padding:16px 8px;}
-.checkout-success-icon{font-size:3.8rem;margin-bottom:16px;display:block;}
+.checkout-success-icon{
+  width:72px;height:72px;
+  margin:0 auto 16px;
+  display:flex;align-items:center;justify-content:center;
+  background:var(--green-pale);
+  border:1px solid rgba(59,88,40,.2);
+}
+.checkout-success-icon svg{width:36px;height:36px;stroke:var(--green);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;}
 .checkout-success h3{
   font-family:'Playfair Display',serif;font-size:1.35rem;
   color:var(--green);margin-bottom:12px;
@@ -1733,13 +1768,13 @@ footer{border-top:2px solid rgba(200,162,74,.2);}
 <!-- ════════════ ANNOUNCEMENT BAR ════════════ -->
 <div class="announce-bar" id="announceBar">
   <div class="announce-ticker">
-    <span>🫒 <strong>Ernte 2024</strong> – Jetzt verfügbar</span>
+    <span><strong>Ernte 2024</strong> – Jetzt verfügbar</span>
     <span class="announce-sep">·</span>
-    <span>✈️ Kostenloser Versand ab <strong>€49</strong></span>
+    <span>Kostenloser Versand ab <strong>€49</strong></span>
     <span class="announce-sep">·</span>
-    <span>🎁 <strong>10 % Rabatt</strong> bei Newsletter-Anmeldung</span>
+    <span><strong>10 % Rabatt</strong> bei Newsletter-Anmeldung</span>
     <span class="announce-sep">·</span>
-    <span>📅 Nur einmal im Jahr – begrenzte Menge!</span>
+    <span>Nur einmal im Jahr – begrenzte Menge!</span>
   </div>
   <button class="announce-close" onclick="closeAnnounce()" aria-label="Schließen">✕</button>
 </div>
@@ -1753,7 +1788,7 @@ footer{border-top:2px solid rgba(200,162,74,.2);}
   </div>
   <div class="cart-items" id="cartItems">
     <div class="cart-empty" id="cartEmpty">
-      <span>🫒</span>
+      <span><svg viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></span>
       <p>Ihr Warenkorb ist noch leer.</p>
     </div>
   </div>
@@ -1824,13 +1859,13 @@ footer{border-top:2px solid rgba(200,162,74,.2);}
     </div>
   </div>
   <div class="hero-trust">
-    <span class="hero-trust-item">🏅 Kaltgepresst</span>
+    <span class="hero-trust-item"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Kaltgepresst</span>
     <span class="hero-trust-dot"></span>
-    <span class="hero-trust-item">🌿 100% Bio-zertifiziert</span>
+    <span class="hero-trust-item"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 100% Bio-zertifiziert</span>
     <span class="hero-trust-dot"></span>
-    <span class="hero-trust-item">✈️ Versand in 2–4 Tagen</span>
+    <span class="hero-trust-item"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Versand in 2–4 Tagen</span>
     <span class="hero-trust-dot"></span>
-    <span class="hero-trust-item">⭐ Nur eine Ernte pro Jahr</span>
+    <span class="hero-trust-item"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Nur eine Ernte pro Jahr</span>
   </div>
   <a class="hero-scroll" href="#stats" aria-label="Nach unten scrollen">
     <div class="scroll-mouse"><div class="scroll-dot"></div></div>
@@ -1841,11 +1876,11 @@ footer{border-top:2px solid rgba(200,162,74,.2);}
 <!-- ════════════ BAND ════════════ -->
 <div class="band">
   <div class="band-inner">
-    <div class="band-item"><span class="band-icon">🫒</span><div><strong>Extra Vergine</strong><span>Höchste Qualitätsstufe</span></div></div>
-    <div class="band-item"><span class="band-icon">❄️</span><div><strong>Kaltgepresst</strong><span>Max. 27 °C – alle Nährstoffe erhalten</span></div></div>
-    <div class="band-item"><span class="band-icon">🌿</span><div><strong>Bio-zertifiziert</strong><span>Ohne Pestizide &amp; Kunstdünger</span></div></div>
-    <div class="band-item"><span class="band-icon">🏺</span><div><strong>Direkt vom Erzeuger</strong><span>Kein Zwischenhändler</span></div></div>
-    <div class="band-item"><span class="band-icon">🔬</span><div><strong>Laborgeprüft</strong><span>Säuregehalt unter 0,2 %</span></div></div>
+    <div class="band-item"><span class="band-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6 8 4 12 4 15a8 8 0 0 0 16 0c0-3-2-7-8-13z"/></svg></span><div><strong>Extra Vergine</strong><span>Höchste Qualitätsstufe</span></div></div>
+    <div class="band-item"><span class="band-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="2" x2="12" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="4.9" y1="4.9" x2="19.1" y2="19.1"/><line x1="19.1" y1="4.9" x2="4.9" y2="19.1"/><circle cx="12" cy="12" r="2.5"/></svg></span><div><strong>Kaltgepresst</strong><span>Max. 27 °C – alle Nährstoffe erhalten</span></div></div>
+    <div class="band-item"><span class="band-icon"><svg viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></span><div><strong>Bio-zertifiziert</strong><span>Ohne Pestizide &amp; Kunstdünger</span></div></div>
+    <div class="band-item"><span class="band-icon"><svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span><div><strong>Direkt vom Erzeuger</strong><span>Kein Zwischenhändler</span></div></div>
+    <div class="band-item"><span class="band-icon"><svg viewBox="0 0 24 24"><path d="M6 2v6l-2 4a5 5 0 0 0 4.53 7h7.94A5 5 0 0 0 21 14l-2-6V2"/><line x1="6" y1="2" x2="19" y2="2"/><line x1="9" y1="12" x2="16" y2="12"/></svg></span><div><strong>Laborgeprüft</strong><span>Säuregehalt unter 0,2 %</span></div></div>
   </div>
 </div>
 
@@ -1903,28 +1938,28 @@ footer{border-top:2px solid rgba(200,162,74,.2);}
         </p>
         <div class="ernte-features">
           <div class="ernte-feature reveal delay-1">
-            <div class="feature-icon">🌿</div>
+            <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></div>
             <div class="feature-text">
               <strong>Handgepflückte Koroneiki-Oliven</strong>
               <span>Die aromatischste und polyphenolreichste Sorte Griechenlands</span>
             </div>
           </div>
           <div class="ernte-feature reveal delay-2">
-            <div class="feature-icon">⏱️</div>
+            <div class="feature-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
             <div class="feature-text">
               <strong>Von der Olive zur Presse in unter 4 Stunden</strong>
               <span>Maximale Frische, kein Oxidationsverlust</span>
             </div>
           </div>
           <div class="ernte-feature reveal delay-3">
-            <div class="feature-icon">📅</div>
+            <div class="feature-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
             <div class="feature-text">
               <strong>Nur eine Ernte pro Jahr – Oktober/November</strong>
               <span>Limitierte Menge, garantierte Qualität</span>
             </div>
           </div>
           <div class="ernte-feature reveal delay-4">
-            <div class="feature-icon">🏔️</div>
+            <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg></div>
             <div class="feature-text">
               <strong>Terroir der Extraklasse – Lassithi, Kreta, 900 m ü. M.</strong>
               <span>Einzigartiges Mikroklima für intensive Aromen</span>
@@ -1963,7 +1998,7 @@ footer{border-top:2px solid rgba(200,162,74,.2);}
 <section class="process-section section-pad" id="prozess">
   <div class="container">
     <div class="process-header reveal">
-      <div class="section-ornament"><div class="orn-line orn-rev"></div><span class="orn-leaf">🫒</span><div class="orn-line"></div></div>
+      <div class="section-ornament"><div class="orn-line orn-rev"></div><span class="orn-leaf">◆</span><div class="orn-line"></div></div>
       <span class="label">Vom Baum zur Flasche</span>
       <h2>Der Weg unseres <em style="font-style:italic;color:var(--gold)">flüssigen Goldes</em></h2>
       <div class="divider center"></div>
@@ -2016,7 +2051,7 @@ footer{border-top:2px solid rgba(200,162,74,.2);}
 <section class="health section-pad" id="health">
   <div class="container">
     <div class="health-header reveal">
-      <div class="section-ornament"><div class="orn-line orn-rev"></div><span class="orn-leaf">🫒</span><div class="orn-line"></div></div>
+      <div class="section-ornament"><div class="orn-line orn-rev"></div><span class="orn-leaf">◆</span><div class="orn-line"></div></div>
       <span class="label">Gesundheit &amp; Wohlbefinden</span>
       <h2 style="color:var(--warm-white);">Was die Forschung sagt –<br>und was Sie spüren werden</h2>
       <div class="divider center"></div>
@@ -2082,7 +2117,7 @@ footer{border-top:2px solid rgba(200,162,74,.2);}
 <section class="shop section-pad" id="shop">
   <div class="container">
     <div class="shop-header reveal">
-      <div class="section-ornament"><div class="orn-line orn-rev"></div><span class="orn-leaf">🫒</span><div class="orn-line"></div></div>
+      <div class="section-ornament"><div class="orn-line orn-rev"></div><span class="orn-leaf">◆</span><div class="orn-line"></div></div>
       <span class="label">Unsere Produkte</span>
       <h2>Wählen Sie Ihr <em style="font-style:italic;color:var(--gold)">flüssiges Gold</em></h2>
       <div class="divider center"></div>
@@ -2108,9 +2143,9 @@ footer{border-top:2px solid rgba(200,162,74,.2);}
           <div class="product-vol">500 ml · Koroneiki-Olive</div>
           <p class="product-desc">Unser meistgeliebtes Olivenöl: fruchtig, mild und aromatisch. Ideal zum täglichen Genuss – auf Salaten, Gemüse, Brot oder pur als Gesundheitsritual jeden Morgen.</p>
           <div class="product-tags">
-            <span class="tag">🌿 Bio</span>
-            <span class="tag">❄️ Kaltgepresst</span>
-            <span class="tag">🏅 Säure &lt; 0,2 %</span>
+            <span class="tag">Bio</span>
+            <span class="tag">Kaltgepresst</span>
+            <span class="tag">Säure &lt; 0,2 %</span>
           </div>
           <div class="product-footer">
             <div class="product-price">€22<sub>/Flasche</sub></div>
@@ -2121,7 +2156,7 @@ footer{border-top:2px solid rgba(200,162,74,.2);}
 
       <!-- Produkt 2 -->
       <div class="product-card reveal delay-2">
-        <span class="product-badge badge-best">⭐ Bestseller</span>
+        <span class="product-badge badge-best">Bestseller</span>
         <div class="product-img-wrap">
           <img src="https://images.pexels.com/photos/9025074/pexels-photo-9025074.jpeg?auto=compress&cs=tinysrgb&w=700&h=400&fit=crop" alt="Zakariya Riserva 500ml" loading="lazy" class="img-reveal"/>
           <div class="product-img-overlay" onclick="openProductModal('Riserva 500ml')" style="cursor:pointer;"><span class="prod-overlay-btn">Details ansehen</span></div>
@@ -2132,9 +2167,9 @@ footer{border-top:2px solid rgba(200,162,74,.2);}
           <div class="product-vol">500 ml · Koroneiki-Frühernte</div>
           <p class="product-desc">Von unreif geernteten Oliven gewonnen – intensiv grün, würzig mit leichtem Pfeffer-Abgang. Außergewöhnlich reich an Polyphenolen und Antioxidantien. Für alle, die das Beste wollen.</p>
           <div class="product-tags">
-            <span class="tag">🔬 Reichste Polyphenole</span>
-            <span class="tag">💚 Anti-entzündlich</span>
-            <span class="tag">🌿 Bio</span>
+            <span class="tag">Reichste Polyphenole</span>
+            <span class="tag">Anti-entzündlich</span>
+            <span class="tag">Bio</span>
           </div>
           <div class="product-footer">
             <div class="product-price">€32<sub>/Flasche</sub></div>
@@ -2145,7 +2180,7 @@ footer{border-top:2px solid rgba(200,162,74,.2);}
 
       <!-- Produkt 3 -->
       <div class="product-card reveal delay-3">
-        <span class="product-badge badge-limited">⏳ Limitiert</span>
+        <span class="product-badge badge-limited">Limitiert</span>
         <div class="product-img-wrap">
           <img src="https://images.pexels.com/photos/4109912/pexels-photo-4109912.jpeg?auto=compress&cs=tinysrgb&w=700&h=400&fit=crop" alt="Zakariya Grand Cru 250ml" loading="lazy" class="img-reveal"/>
           <div class="product-img-overlay" onclick="openProductModal('Grand Cru 250ml')" style="cursor:pointer;"><span class="prod-overlay-btn">Details ansehen</span></div>
@@ -2156,9 +2191,9 @@ footer{border-top:2px solid rgba(200,162,74,.2);}
           <div class="product-vol">250 ml · Selektion über 400-jähriger Bäume</div>
           <p class="product-desc">Aus dem ältesten Teil unserer Plantage – Bäume, die seit über 400 Jahren Wurzeln schlagen. Limitiert auf 800 Flaschen pro Saison. Ein Öl für besondere Momente und edle Geschenke.</p>
           <div class="product-tags">
-            <span class="tag">💎 Limitiert</span>
-            <span class="tag">🏺 400-j. Bäume</span>
-            <span class="tag">🎁 Geschenkidee</span>
+            <span class="tag">Limitiert</span>
+            <span class="tag">400-j. Bäume</span>
+            <span class="tag">Geschenkidee</span>
           </div>
           <div class="product-footer">
             <div class="product-price">€54<sub>/Flasche</sub></div>
@@ -2180,9 +2215,9 @@ footer{border-top:2px solid rgba(200,162,74,.2);}
           <div class="product-vol">1000 ml · Vorteilsgröße für die Familie</div>
           <p class="product-desc">Unser Classico in der praktischen 1-Liter-Flasche – ideal für alle, die täglich von den Vorteilen des Premium-Olivenöls profitieren möchten. Besonders wirtschaftlich.</p>
           <div class="product-tags">
-            <span class="tag">💰 Sparpreis</span>
-            <span class="tag">🌿 Bio</span>
-            <span class="tag">🏡 Familiengröße</span>
+            <span class="tag">Sparpreis</span>
+            <span class="tag">Bio</span>
+            <span class="tag">Familiengröße</span>
           </div>
           <div class="product-footer">
             <div class="product-price">€38<sub>/Flasche</sub></div>
@@ -2193,7 +2228,7 @@ footer{border-top:2px solid rgba(200,162,74,.2);}
 
       <!-- Produkt 5 -->
       <div class="product-card reveal delay-2">
-        <span class="product-badge badge-best">🎁 Geschenk-Tipp</span>
+        <span class="product-badge badge-best">Geschenk-Tipp</span>
         <div class="product-img-wrap">
           <img src="https://images.pexels.com/photos/5737246/pexels-photo-5737246.jpeg?auto=compress&cs=tinysrgb&w=700&h=400&fit=crop" alt="Zakariya Probier-Set" loading="lazy" class="img-reveal"/>
           <div class="product-img-overlay" onclick="openProductModal('Probier-Set 3×250ml')" style="cursor:pointer;"><span class="prod-overlay-btn">Details ansehen</span></div>
@@ -2204,9 +2239,9 @@ footer{border-top:2px solid rgba(200,162,74,.2);}
           <div class="product-vol">3 × 250 ml – Classico, Riserva &amp; Grand Cru</div>
           <p class="product-desc">Das ideale Einstiegsset: Entdecken Sie alle drei Sorten und erleben Sie die Vielfalt unseres griechischen Olivenöls. Auch ein wunderschönes Geschenk für liebe Menschen.</p>
           <div class="product-tags">
-            <span class="tag">🎁 Perfektes Geschenk</span>
-            <span class="tag">💚 3 Sorten</span>
-            <span class="tag">⭐ Beliebt</span>
+            <span class="tag">Perfektes Geschenk</span>
+            <span class="tag">3 Sorten</span>
+            <span class="tag">Beliebt</span>
           </div>
           <div class="product-footer">
             <div class="product-price">€65<sub>/Set</sub></div>
@@ -2228,9 +2263,9 @@ footer{border-top:2px solid rgba(200,162,74,.2);}
           <div class="product-vol">1000 ml · Für den gesundheitsbewussten Genuss</div>
           <p class="product-desc">Unser polyphenolreichstes Öl jetzt auch in der 1-Liter-Flasche – für alle, die täglich von der heilsamen Kraft der Frühernte-Oliven profitieren möchten.</p>
           <div class="product-tags">
-            <span class="tag">🔬 Polyphenol-Reich</span>
-            <span class="tag">💰 Großpackung</span>
-            <span class="tag">🌿 Bio</span>
+            <span class="tag">Polyphenol-Reich</span>
+            <span class="tag">Großpackung</span>
+            <span class="tag">Bio</span>
           </div>
           <div class="product-footer">
             <div class="product-price">€58<sub>/Flasche</sub></div>
@@ -2250,27 +2285,27 @@ footer{border-top:2px solid rgba(200,162,74,.2);}
     <p class="certs-sub reveal delay-1">Unabhängige Labore und internationale Organisationen bestätigen unsere Qualität.</p>
     <div class="cert-row">
       <div class="cert-item reveal delay-1">
-        <span class="cert-icon">🌿</span>
+        <span class="cert-icon"><svg viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></span>
         <span class="cert-name">Bio-Zertifikat</span>
         <span class="cert-desc">Zertifiziert nach EU-Öko-Verordnung Nr. 848/2018</span>
       </div>
       <div class="cert-item reveal delay-2">
-        <span class="cert-icon">🏺</span>
+        <span class="cert-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
         <span class="cert-name">PDO Kreta</span>
         <span class="cert-desc">Geschützte Ursprungsbezeichnung – Lassithi, Kreta</span>
       </div>
       <div class="cert-item reveal delay-3">
-        <span class="cert-icon">❄️</span>
+        <span class="cert-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6 8 4 12 4 15a8 8 0 0 0 16 0c0-3-2-7-8-13z"/></svg></span>
         <span class="cert-name">Extra Vergine</span>
         <span class="cert-desc">Säuregehalt unter 0,2 % – höchste Qualitätsstufe</span>
       </div>
       <div class="cert-item reveal delay-4">
-        <span class="cert-icon">🔬</span>
+        <span class="cert-icon"><svg viewBox="0 0 24 24"><path d="M6 2v6l-2 4a5 5 0 0 0 4.53 7h7.94A5 5 0 0 0 21 14l-2-6V2"/><line x1="6" y1="2" x2="19" y2="2"/><line x1="9" y1="12" x2="16" y2="12"/></svg></span>
         <span class="cert-name">Laborgeprüft</span>
         <span class="cert-desc">Polyphenolgehalt & Frische bei jeder Ernte analysiert</span>
       </div>
       <div class="cert-item reveal delay-5">
-        <span class="cert-icon">🏅</span>
+        <span class="cert-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg></span>
         <span class="cert-name">12 Auszeichnungen</span>
         <span class="cert-desc">International preisgekrönt – u. a. NYIOOC Gold Award</span>
       </div>
@@ -2293,28 +2328,28 @@ footer{border-top:2px solid rgba(200,162,74,.2);}
         <p>Wir sind keine anonyme Großmarke. Wir sind eine Familie aus Kreta, die seit Generationen Olivenöl mit Leidenschaft und Verantwortung herstellt – für Menschen, denen Qualität und Gesundheit etwas bedeuten.</p>
         <div class="why-points">
           <div class="why-point reveal delay-1">
-            <span class="why-point-icon">🇬🇷</span>
+            <span class="why-point-icon">01</span>
             <div class="why-point-text">
               <h4>Direkt aus Griechenland – kein Zwischenhändler</h4>
               <p>Von unserer Plantage auf Kreta direkt in Ihre Hände – ohne Umwege, ohne Qualitätsverlust.</p>
             </div>
           </div>
           <div class="why-point reveal delay-2">
-            <span class="why-point-icon">🌿</span>
+            <span class="why-point-icon">02</span>
             <div class="why-point-text">
               <h4>100 % bio-zertifiziert seit über 30 Jahren</h4>
               <p>Kein Pestizid, kein Kunstdünger. Nur Sonne, Erde, Wasser und die Arbeit unserer Hände.</p>
             </div>
           </div>
           <div class="why-point reveal delay-3">
-            <span class="why-point-icon">🔬</span>
+            <span class="why-point-icon">03</span>
             <div class="why-point-text">
               <h4>Laborgeprüft – jede Charge analysiert</h4>
               <p>Säuregehalt, Polyphenolgehalt und Frische werden von unabhängigen Laboren bestätigt.</p>
             </div>
           </div>
           <div class="why-point reveal delay-4">
-            <span class="why-point-icon">📦</span>
+            <span class="why-point-icon">04</span>
             <div class="why-point-text">
               <h4>Sichere Lieferung &amp; 30 Tage Zufriedenheitsgarantie</h4>
               <p>Ihre Bestellung kommt sicher verpackt an – und wenn Sie nicht begeistert sind, erstatten wir den Betrag vollständig.</p>
@@ -2330,7 +2365,7 @@ footer{border-top:2px solid rgba(200,162,74,.2);}
 <section class="testimonials section-pad">
   <div class="container">
     <div class="test-header reveal">
-      <div class="section-ornament"><div class="orn-line orn-rev"></div><span class="orn-leaf">🫒</span><div class="orn-line"></div></div>
+      <div class="section-ornament"><div class="orn-line orn-rev"></div><span class="orn-leaf">◆</span><div class="orn-line"></div></div>
       <span class="label">Kundenstimmen</span>
       <h2>Was unsere Kunden <em style="font-style:italic;color:var(--gold)">sagen</em></h2>
       <div class="divider center"></div>
@@ -2442,22 +2477,22 @@ footer{border-top:2px solid rgba(200,162,74,.2);}
     </div>
     <div class="shipping-grid reveal">
       <div class="ship-card">
-        <span class="ship-icon">📦</span>
+        <span class="ship-icon"><svg viewBox="0 0 24 24"><polyline points="21 8 21 21 3 21 3 8"/><rect x="1" y="3" width="22" height="5"/><line x1="10" y1="12" x2="14" y2="12"/></svg></span>
         <h4 class="ship-title">Sicherer Versand</h4>
         <p class="ship-text">Jede Flasche wird sorgfältig verpackt und klimatisch geschützt geliefert – direkt aus unserer Mühle auf Kreta.</p>
       </div>
       <div class="ship-card">
-        <span class="ship-icon">✈️</span>
+        <span class="ship-icon"><svg viewBox="0 0 24 24"><path d="M17.8 19.2L16 11l3.5-3.5C21 6 21 4 19.5 2.5S18 2 16.5 3.5L13 7 4.8 5.2l-2.3 2.3 5.9 3.7L6.7 14l-2.4.8L2.5 12.5l-1.3 1.3 3.5 5.5 5.5 3.5 1.3-1.3L10.7 19l.8-2.4 2.7-1.7 3.7 5.9 2.3-2.3z"/></svg></span>
         <h4 class="ship-title">Lieferung in 2–4 Tagen</h4>
         <p class="ship-text">Schneller Versand nach Deutschland, Österreich und in die Schweiz. Kostenlos ab einem Bestellwert von €49.</p>
       </div>
       <div class="ship-card">
-        <span class="ship-icon">🔄</span>
+        <span class="ship-icon"><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg></span>
         <h4 class="ship-title">30 Tage Rückgabe</h4>
         <p class="ship-text">Nicht zufrieden? Selten, aber kein Problem: Wir erstatten Ihnen den vollen Kaufpreis – ohne Fragen, ohne Bürokratie.</p>
       </div>
       <div class="ship-card">
-        <span class="ship-icon">📞</span>
+        <span class="ship-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.7a16 16 0 0 0 6.07 6.07l.92-.92a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
         <h4 class="ship-title">Persönlicher Service</h4>
         <p class="ship-text">Unser deutschsprachiges Team ist Mo–Fr von 9–17 Uhr erreichbar. Wir helfen Ihnen gerne persönlich und geduldig.</p>
       </div>
@@ -2646,7 +2681,7 @@ footer{border-top:2px solid rgba(200,162,74,.2);}
 
 <!-- ════════════ WHATSAPP FLOAT ════════════ -->
 <a class="whatsapp-float" href="https://wa.me/49123456789" target="_blank" rel="noopener" aria-label="WhatsApp Kontakt">
-  💬
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
   <span class="wa-tooltip">Jetzt per WhatsApp anfragen</span>
 </a>
 
@@ -2656,7 +2691,7 @@ footer{border-top:2px solid rgba(200,162,74,.2);}
 <!-- ════════════ COOKIE BANNER ════════════ -->
 <div class="cookie-bar" id="cookieBar">
   <p class="cookie-text">
-    🍪 Wir verwenden Cookies, um Ihnen die beste Erfahrung auf unserer Website zu bieten. Mit der Nutzung dieser Seite stimmen Sie unserer <a href="#">Datenschutzerklärung</a> zu.
+    Wir verwenden Cookies, um Ihnen die beste Erfahrung auf unserer Website zu bieten. Mit der Nutzung dieser Seite stimmen Sie unserer <a href="#">Datenschutzerklärung</a> zu.
   </p>
   <div class="cookie-btns">
     <button class="cookie-accept" onclick="acceptCookie()">Alle akzeptieren</button>
@@ -2718,7 +2753,7 @@ footer{border-top:2px solid rgba(200,162,74,.2);}
         <input type="text" placeholder="Code eingeben (z.B. ZAKARIYA10)" id="couponInput"/>
       </div>
       <button class="checkout-btn gold-btn" onclick="checkoutNext(2)">Weiter zur Lieferadresse →</button>
-      <p class="checkout-note">🔒 Sichere, verschlüsselte Übertragung · SSL-geschützt</p>
+      <p class="checkout-note"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle;margin-right:4px;"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Sichere, verschlüsselte Übertragung · SSL-geschützt</p>
     </div>
 
     <!-- Step 2: Lieferadresse -->
@@ -2750,13 +2785,13 @@ footer{border-top:2px solid rgba(200,162,74,.2);}
       <p style="font-size:.82rem;color:var(--text-mid);margin-bottom:14px;">Wählen Sie Ihre bevorzugte Zahlungsmethode:</p>
       <div class="pay-opts">
         <div class="pay-opt selected" onclick="selectPayment(this)">
-          <span class="pay-opt-icon">💳</span>Kreditkarte
+          <span class="pay-opt-icon"><svg viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></span>Kreditkarte
         </div>
         <div class="pay-opt" onclick="selectPayment(this)">
-          <span class="pay-opt-icon">🅿️</span>PayPal
+          <span class="pay-opt-icon"><svg viewBox="0 0 24 24"><path d="M7 11l2 2 4-4"/><rect x="3" y="3" width="18" height="18" rx="2"/></svg></span>PayPal
         </div>
         <div class="pay-opt" onclick="selectPayment(this)">
-          <span class="pay-opt-icon">🏦</span>Banküberweisung
+          <span class="pay-opt-icon"><svg viewBox="0 0 24 24"><line x1="3" y1="22" x2="21" y2="22"/><line x1="6" y1="18" x2="6" y2="11"/><line x1="10" y1="18" x2="10" y2="11"/><line x1="14" y1="18" x2="14" y2="11"/><line x1="18" y1="18" x2="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg></span>Banküberweisung
         </div>
       </div>
       <div id="paymentFields">
@@ -2768,13 +2803,13 @@ footer{border-top:2px solid rgba(200,162,74,.2);}
         </div>
       </div>
       <button class="checkout-btn gold-btn" onclick="checkoutFinish()">Jetzt kaufen – kostenpflichtig bestellen ✓</button>
-      <p class="checkout-note">🌿 Zufriedenheitsgarantie · 30 Tage kostenlose Rückgabe</p>
+      <p class="checkout-note"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle;margin-right:4px;"><polyline points="20 6 9 17 4 12"/></svg> Zufriedenheitsgarantie · 30 Tage kostenlose Rückgabe</p>
     </div>
 
     <!-- Step 4: Bestätigung -->
     <div class="checkout-step" id="checkoutStep4">
       <div class="checkout-success">
-        <span class="checkout-success-icon">🫒</span>
+        <span class="checkout-success-icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></span>
         <h3>Vielen Dank für Ihre Bestellung!</h3>
         <p>Ihre Bestellung wurde erfolgreich aufgegeben. Sie erhalten in Kürze eine Bestätigung per E-Mail mit allen Details.</p>
         <p style="margin-top:10px;">Ihr Zakariya Olivenöl wird mit größter Sorgfalt verpackt und innerhalb von <strong>2–4 Werktagen</strong> geliefert.</p>
@@ -2800,62 +2835,62 @@ const PRODUCTS = {
   'Classico 500ml': {
     name: 'Classico', label: 'Extra Vergine · Kaltgepresst',
     vol: '500 ml · Koroneiki-Olive', price: 22,
-    badge: '🌿 Beliebt bei 50+', badgeClass: 'badge-pop',
+    badge: 'Beliebt bei 50+', badgeClass: 'badge-pop',
     img: 'https://images.pexels.com/photos/6231898/pexels-photo-6231898.jpeg?auto=compress&cs=tinysrgb&w=900&h=700&fit=crop',
     thumb: 'https://images.pexels.com/photos/6231898/pexels-photo-6231898.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop',
     desc: 'Unser meistgeliebtes Olivenöl: fruchtig, mild und aromatisch. Ideal zum täglichen Genuss – auf Salaten, Gemüse, Brot oder pur als Gesundheitsritual jeden Morgen.',
     analysis: ['Polyphenole: 280 mg/kg','Säuregehalt: 0,18 %','Peroxidzahl: < 5 meq/kg','Ernte: Oktober 2024'],
-    tags: ['🌿 Bio-zertifiziert','❄️ Kaltgepresst','🏅 Extra Vergine','🇬🇷 Kreta']
+    tags: ['Bio-zertifiziert','Kaltgepresst','Extra Vergine','Kreta']
   },
   'Riserva 500ml': {
     name: 'Riserva', label: 'Frühernte · Höchster Polyphenolgehalt',
     vol: '500 ml · Koroneiki-Frühernte', price: 32,
-    badge: '⭐ Bestseller', badgeClass: 'badge-best',
+    badge: 'Bestseller', badgeClass: 'badge-best',
     img: 'https://images.pexels.com/photos/9025074/pexels-photo-9025074.jpeg?auto=compress&cs=tinysrgb&w=900&h=700&fit=crop',
     thumb: 'https://images.pexels.com/photos/9025074/pexels-photo-9025074.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop',
     desc: 'Von unreif geernteten Oliven gewonnen – intensiv grün, würzig mit leichtem Pfeffer-Abgang. Außergewöhnlich reich an Polyphenolen und Antioxidantien.',
     analysis: ['Polyphenole: 620 mg/kg','Säuregehalt: 0,12 %','Peroxidzahl: < 4 meq/kg','Ernte: Oktober 2024'],
-    tags: ['🔬 Reichste Polyphenole','💚 Anti-entzündlich','🌿 Bio','⭐ Bestseller']
+    tags: ['Reichste Polyphenole','Anti-entzündlich','Bio','Bestseller']
   },
   'Grand Cru 250ml': {
     name: 'Grand Cru', label: 'Selektion · Uralte Bäume · 250 ml',
     vol: '250 ml · Selektion über 400-jähriger Bäume', price: 54,
-    badge: '⏳ Limitiert', badgeClass: 'badge-limited',
+    badge: 'Limitiert', badgeClass: 'badge-limited',
     img: 'https://images.pexels.com/photos/4109912/pexels-photo-4109912.jpeg?auto=compress&cs=tinysrgb&w=900&h=700&fit=crop',
     thumb: 'https://images.pexels.com/photos/4109912/pexels-photo-4109912.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop',
     desc: 'Aus dem ältesten Teil unserer Plantage – Bäume, die seit über 400 Jahren Wurzeln schlagen. Limitiert auf 800 Flaschen pro Saison.',
     analysis: ['Polyphenole: 780 mg/kg','Säuregehalt: 0,09 %','Nur 800 Flaschen / Jahr','NYIOOC Gold Award 2024'],
-    tags: ['💎 Limitiert','🏺 400-j. Bäume','🎁 Geschenkidee','🏅 Gold Award']
+    tags: ['Limitiert','400-j. Bäume','Geschenkidee','Gold Award']
   },
   'Classico 1L': {
     name: 'Classico 1 Liter', label: 'Extra Vergine · Haushaltsgröße',
     vol: '1000 ml · Vorteilsgröße für die Familie', price: 38,
-    badge: '💰 Sparpaket', badgeClass: 'badge-pop',
+    badge: 'Sparpaket', badgeClass: 'badge-pop',
     img: 'https://images.pexels.com/photos/11254917/pexels-photo-11254917.jpeg?auto=compress&cs=tinysrgb&w=900&h=700&fit=crop',
     thumb: 'https://images.pexels.com/photos/11254917/pexels-photo-11254917.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop',
     desc: 'Unser Classico in der praktischen 1-Liter-Flasche – ideal für alle, die täglich von den Vorteilen des Premium-Olivenöls profitieren möchten.',
     analysis: ['Polyphenole: 280 mg/kg','Säuregehalt: 0,18 %','€3,80 pro 100ml','Ernte: Oktober 2024'],
-    tags: ['💰 Sparpreis','🌿 Bio','🏡 Familiengröße','❄️ Kaltgepresst']
+    tags: ['Sparpreis','Bio','Familiengröße','Kaltgepresst']
   },
   'Probier-Set 3×250ml': {
     name: 'Probier-Set', label: 'Exklusives Set · 3 Sorten',
     vol: '3 × 250 ml – Classico, Riserva & Grand Cru', price: 65,
-    badge: '🎁 Geschenk-Tipp', badgeClass: 'badge-best',
+    badge: 'Geschenk-Tipp', badgeClass: 'badge-best',
     img: 'https://images.pexels.com/photos/5737246/pexels-photo-5737246.jpeg?auto=compress&cs=tinysrgb&w=900&h=700&fit=crop',
     thumb: 'https://images.pexels.com/photos/5737246/pexels-photo-5737246.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop',
     desc: 'Das ideale Einstiegsset: Entdecken Sie alle drei Sorten und erleben Sie die Vielfalt unseres griechischen Olivenöls. Auch ein wunderschönes Geschenk für liebe Menschen.',
     analysis: ['3 Flaschen à 250 ml','Classico + Riserva + Grand Cru','Inkl. Verkostungsguide','Elegante Geschenkbox'],
-    tags: ['🎁 Perfektes Geschenk','💚 3 Sorten','⭐ Beliebt','📦 Geschenkverpackung']
+    tags: ['Perfektes Geschenk','3 Sorten','Beliebt','Geschenkverpackung']
   },
   'Riserva 1L': {
     name: 'Riserva 1 Liter', label: 'Frühernte · Riserva · Großflasche',
     vol: '1000 ml · Für den gesundheitsbewussten Genuss', price: 58,
-    badge: '✨ Neu', badgeClass: 'badge-limited',
+    badge: 'Neu', badgeClass: 'badge-limited',
     img: 'https://images.pexels.com/photos/6094524/pexels-photo-6094524.jpeg?auto=compress&cs=tinysrgb&w=900&h=700&fit=crop',
     thumb: 'https://images.pexels.com/photos/6094524/pexels-photo-6094524.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop',
     desc: 'Unser polyphenolreichstes Öl jetzt auch in der 1-Liter-Flasche – für alle, die täglich von der heilsamen Kraft der Frühernte-Oliven profitieren möchten.',
     analysis: ['Polyphenole: 620 mg/kg','Säuregehalt: 0,12 %','€5,80 pro 100ml','Ernte: Oktober 2024'],
-    tags: ['🔬 Polyphenol-Reich','💰 Großpackung','🌿 Bio','❄️ Kaltgepresst']
+    tags: ['Polyphenol-Reich','Großpackung','Bio','Kaltgepresst']
   }
 };
 
